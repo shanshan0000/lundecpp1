@@ -10,7 +10,3 @@ void bonjour() {
     cout<<"Bonjour "<<prenom<<"\n";
 }
 
-int main() {
-    bonjour();
-    return 0;
-}
