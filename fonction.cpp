@@ -1,5 +1,6 @@
 #include<iostream>
 #include<string>
+#include "fonction.h"
 
 using namespace std;
 
