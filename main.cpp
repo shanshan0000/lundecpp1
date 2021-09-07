@@ -1,3 +1,5 @@
+#include "fonction.h"
+
 
 int main() {
     bonjour();
