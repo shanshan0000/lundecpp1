@@ -1,12 +1,12 @@
 #include <iostream>
 
 void essai_alloc(){
-    int* pt_int;
-    double* pt_double;
-    pt_int=(int*)malloc(sizeof(int));
-    pt_double=(double*)malloc(sizeof(double)*100);
-    free(pt_int);
-    free(pt_double);
+    int* pt_int=nullptr;
+    double* pt_double=nullptr;
+    pt_int=new int;
+    pt_double=new double[100];
+    delete pt_int;
+    delete[] pt_double;
 }
 
 int main() {
