@@ -1,3 +1,5 @@
+https://www.learncpp.com/cpp-tutorial/variable-assignment-and-initialization/
+
 Une initialisation de variable signifie qu’une valeur doit être donnée au moment de la définition de la variable. Une
 affectation correspond à l’utilisation de l’opérateur = en dehors d’une initialisation. Si une variable n’est pas initialisée, sa valeur n’est pas connue jusqu’à sa première affectation. Certains compilateurs bloquent (en provoquant
 une erreur), l’utilisation d’une variable non-initialisée ou non-affectée. Le C++11 permet aussi les initialisations
