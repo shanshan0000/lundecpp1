@@ -1,5 +1,7 @@
 #include "fonction.h"
 
+using namespace TD1;
+
 int main() {
     compte tab[4]={ {"courant", 0},
                     {"codevi", 1500 },

@@ -6,11 +6,14 @@
 
 using namespace std;
 
-struct compte {
-    string id;
-    int solde;
-};
+namespace TD1 {
+    struct compte {
+        string id;
+        int solde;
+    };
 
+    int& operation(compte* tab, const std::string& c);
+}
 
 
 
