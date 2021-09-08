@@ -3,10 +3,18 @@
 
 #include <iostream>
 
-using namespace std;
+inline void bonjour()
+{
+    std::cout << "Zaoshang hao\n";
+}
+
 
 namespace N1 {
     void bonjour();
+
+    namespace N3{
+        void bonjour();
+    }
 }
 
 namespace N2 {
