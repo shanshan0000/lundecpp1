@@ -1,10 +1,12 @@
 #include "fonction.h"
 
-void N1::bonjour() {
-    std::cout<<"nichao\n";
+namespace N1 {
+    void bonjour() {
+        cout << "nichao\n";
+    }
 }
 
 void N2::bonjour() {
-    std::cout<<"hello\n";
+    cout<<"hello\n";
 }
 

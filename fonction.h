@@ -3,6 +3,8 @@
 
 #include <iostream>
 
+using namespace std;
+
 namespace N1 {
     void bonjour();
 }
