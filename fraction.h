@@ -14,9 +14,11 @@ namespace MATH {
         // accesseur en écriture (édition)
         void setFraction(int n, int d);
 
-        Fraction(int n, int d) { setFraction(n,d); }
-        Fraction(int n) { setFraction(n,1); }
-        Fraction() { setFraction(0,1); } // éviter denominateur=0
+        Fraction(int n=0, int d=1):numerateur(n),denominateur(d) {
+            if (denominateur==0) { std::cerr<<"erreur : denominateur nul\n";
+            denominateur=1;
+            }
+        }
     };
 
 }
