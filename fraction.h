@@ -9,14 +9,7 @@ namespace MATH {
         int denominateur;
     };
 
-
 }
-
-
-
-
-
-
 
 
 #endif //CPP_2021_FRACTION_H
