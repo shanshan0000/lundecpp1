@@ -4,9 +4,11 @@
 
 namespace MATH {
     class Fraction {
-
-
+    public :
+        int numerateur;
+        int denominateur;
     };
+
 
 }
 
