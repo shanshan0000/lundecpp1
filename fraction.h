@@ -21,7 +21,7 @@ namespace MATH {
             }
         }
         Fraction(int n):numerateur(n){} // denominateur=1
-        Fraction(){} // numerateur=0, denominateur=1
+        Fraction()= default; // numerateur=0, denominateur=1
     };
 
 }
