@@ -4,9 +4,15 @@
 
 namespace MATH {
     class Fraction {
-    public :
+    private:
         int numerateur;
         int denominateur;
+    public:
+        // accesseurs en lectureint getNumerateur() const { return numerateur; }
+        int getDenominateur() const { return denominateur; }
+
+        // accesseur en écriture (édition)
+        void setFraction(int n, int d);
     };
 
 }
