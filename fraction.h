@@ -13,6 +13,8 @@ namespace MATH {
 
         // accesseur en écriture (édition)
         void setFraction(int n, int d);
+
+        Fraction(int n=0, int d=1) { setFraction(n,d); }
     };
 
 }
