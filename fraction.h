@@ -7,6 +7,7 @@ namespace MATH {
     private:
         int numerateur;
         int denominateur;
+        void simplification();
     public:
         // accesseurs en lectureint getNumerateur() const { return numerateur; }
         int getDenominateur() const { return denominateur; }
@@ -14,11 +15,7 @@ namespace MATH {
         // accesseur en écriture (édition)
         void setFraction(int n, int d);
 
-        Fraction(int n=0, int d=1):numerateur(n),denominateur(d) {
-            if (denominateur==0) { std::cerr<<"erreur : denominateur nul\n";
-            denominateur=1;
-            }
-        }
+        Fraction(int n=0, int d=1);
     };
 
 }
