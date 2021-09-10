@@ -41,3 +41,10 @@ void MATH::Fraction::simplification(){
         numerateur=-numerateur;
     }
 }
+
+const MATH::Fraction MATH::somme(const MATH::Fraction& f1, const MATH::
+Fraction& f2) {
+    return MATH::Fraction(f1.getNumerateur() * f2.getDenominateur()
+                          + f2.getNumerateur() * f1.getDenominateur(),
+                          f1.getDenominateur() * f2.getDenominateur());
+}

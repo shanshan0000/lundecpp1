@@ -19,6 +19,8 @@ namespace MATH {
         Fraction(int n=0, int d=1);
     };
 
+    const Fraction somme(const Fraction& f1, const Fraction& f2);
+
 }
 
 
