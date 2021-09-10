@@ -8,7 +8,7 @@ float fct(float x, int y){ std::cout<<"4:"<<x<<y<<"\n"; return 3.14; }
 void exercice_surcharge(){
     int i=3,j=15;
     float x=3.14159,y=1.414;
-    char c=’A’;
+    char c='A';
     double z=3.14159265;
     fct(i); //appel 1
     fct(x); //appel 2
