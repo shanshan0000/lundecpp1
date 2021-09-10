@@ -4,8 +4,10 @@
 #include <iostream>
 
 int fct(int x);
+int fct(char c);
 int fct(float y);
 int fct(int x, float y);
+int fct(int x, double y);
 float fct(float x, int y);
 
 

@@ -1,6 +1,6 @@
 #include <iostream>
+#include "fonction.h"
 
-void exercice_surcharge();
 
 int main() {
 
@@ -26,3 +26,7 @@ int main() {
 
     return 0;
 }
+
+
+
+int fct(char c){ std::cout<<"5:"<<c<<"\n"; return 0; }
