@@ -9,15 +9,17 @@ namespace MATH {
         int denominateur;
         void simplification();
     public:
-        // accesseurs en lectureint getNumerateur() const { return numerateur; }
+        // accesseurs en lecture
+        int getNumerateur() const { return numerateur; }
         int getDenominateur() const { return denominateur; }
-        const Fraction somme(const Fraction& f) const;
 
         // accesseur en écriture (édition)
         void setFraction(int n, int d);
 
         Fraction(int n=0, int d=1);
     };
+
+    const Fraction somme(const Fraction& f1, const Fraction& f2);
 
 }
 
