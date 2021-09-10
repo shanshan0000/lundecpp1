@@ -11,6 +11,7 @@ namespace MATH {
     public:
         // accesseurs en lectureint getNumerateur() const { return numerateur; }
         int getDenominateur() const { return denominateur; }
+        const Fraction somme(const Fraction& f) const;
 
         // accesseur en écriture (édition)
         void setFraction(int n, int d);
