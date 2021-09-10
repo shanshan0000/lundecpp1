@@ -8,7 +8,8 @@ namespace MATH {
         int numerateur;
         int denominateur;
     public:
-        // accesseurs en lectureint getNumerateur() const { return numerateur; }
+        // accesseurs en lecture
+        int getNumerateur() const { return numerateur; }
         int getDenominateur() const { return denominateur; }
 
         // accesseur en écriture (édition)
