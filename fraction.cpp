@@ -2,12 +2,16 @@
 #include "fraction.h"
 
 void MATH::Fraction::setFraction(int n, int d) {
-    numerateur=n; denominateur=d;
-    if (d==0) {
-        std::cerr<<"erreur : denominateur nul\n";
-        denominateur=1;
-    }
-    simplification();
+
+//    numerateur=n; denominateur=d;
+//    if (d==0) {
+//        std::cerr<<"erreur : denominateur nul\n";
+//        denominateur=1;
+//    }
+//    simplification();
+
+    if (d==0) throw "erreur : denominateur nul";
+    numerateur=n; denominateur=d; simplification();
 }
 
 MATH::Fraction::Fraction(int n, int d):numerateur(n),denominateur(d) {
