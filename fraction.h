@@ -2,6 +2,8 @@
 #define CPP_2021_FRACTION_H
 
 #include<iostream> // nécessaire pour utiliser les objets \cc{ostream}
+#include <cstring>
+
 
 namespace MATH {
     class Fraction {
@@ -22,6 +24,12 @@ namespace MATH {
 
         Fraction(int n=0, int d=1);
         ~Fraction(){};
+    };
+
+    class FractionException {
+        char info[256];public:
+        FractionException(const char* str){ std::strcpy(info,str); }
+        const char* getInfo() const { return info; }
     };
 
     const Fraction operator+(const Fraction& f1, const Fraction& f2);
