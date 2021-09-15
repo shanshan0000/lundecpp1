@@ -49,7 +49,6 @@ Fraction& f2){
                           f1.getDenominateur()*f2.getDenominateur());
 }
 
-// For more information, see Readme.md
 
 MATH::Fraction& MATH::Fraction::operator++() {
     setFraction(getNumerateur()+getDenominateur(),getDenominateur());
@@ -60,6 +59,15 @@ const MATH::Fraction MATH::Fraction::operator++(int){
     Fraction f(getNumerateur(), getDenominateur()); // copie de la fraction
     setFraction(getNumerateur()+getDenominateur(),getDenominateur());
     return f;
+}
+
+
+// For more information, see Readme.md
+
+std::ostream& operator<<(std::ostream& F, const MATH::Fraction& frac){
+    F<<frac.getNumerateur();
+    if (frac.getDenominateur()!=1) F<<"/"<<frac.getDenominateur();
+    return F;
 }
 
 // For more information, see Readme.md

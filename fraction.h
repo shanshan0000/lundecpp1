@@ -1,6 +1,7 @@
 #ifndef CPP_2021_FRACTION_H
 #define CPP_2021_FRACTION_H
 
+#include<iostream> // nécessaire pour utiliser les objets \cc{ostream}
 
 namespace MATH {
     class Fraction {
@@ -26,5 +27,6 @@ namespace MATH {
     const Fraction operator+(const Fraction& f1, const Fraction& f2);
 }
 
+std::ostream& operator<<(std::ostream& F, const MATH::Fraction& frac);
 
 #endif //CPP_2021_FRACTION_H
