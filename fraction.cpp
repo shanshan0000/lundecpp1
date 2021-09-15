@@ -15,10 +15,7 @@ void MATH::Fraction::setFraction(int n, int d) {
 }
 
 MATH::Fraction::Fraction(int n, int d):numerateur(n),denominateur(d) {
-    if (denominateur==0){
-        std::cerr<<"erreur: denominateur=0\n";
-        denominateur=1;
-    }
+    setFraction(n, d);
     simplification();
 }
 
