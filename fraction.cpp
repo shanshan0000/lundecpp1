@@ -49,6 +49,8 @@ Fraction& f2){
                           f1.getDenominateur()*f2.getDenominateur());
 }
 
+// For more information, see Readme.md
+
 MATH::Fraction& MATH::Fraction::operator++() {
     setFraction(getNumerateur()+getDenominateur(),getDenominateur());
     return *this;
@@ -59,3 +61,5 @@ const MATH::Fraction MATH::Fraction::operator++(int){
     setFraction(getNumerateur()+getDenominateur(),getDenominateur());
     return f;
 }
+
+// For more information, see Readme.md
