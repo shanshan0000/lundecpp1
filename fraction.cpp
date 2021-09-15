@@ -41,10 +41,3 @@ void MATH::Fraction::simplification(){
         numerateur=-numerateur;
     }
 }
-
-const MATH::Fraction MATH::Fraction::operator+(const MATH::Fraction& f) const
-{
-    return Fraction(numerateur*f.denominateur+f.numerateur*denominateur,
-                    denominateur*f.denominateur);
-}
-
