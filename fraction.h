@@ -16,6 +16,9 @@ namespace MATH {
         // accesseur en écriture (édition)
         void setFraction(int n, int d);
 
+        Fraction& operator++(); // version préfixe
+        const Fraction operator++(int); // version postfixe
+
         Fraction(int n=0, int d=1);
         ~Fraction(){};
     };

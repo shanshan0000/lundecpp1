@@ -48,3 +48,14 @@ Fraction& f2){
                           +f2.getNumerateur()*f1.getDenominateur(),
                           f1.getDenominateur()*f2.getDenominateur());
 }
+
+MATH::Fraction& MATH::Fraction::operator++() {
+    setFraction(getNumerateur()+getDenominateur(),getDenominateur());
+    return *this;
+}
+
+const MATH::Fraction MATH::Fraction::operator++(int){
+    Fraction f(getNumerateur(), getDenominateur()); // copie de la fraction
+    setFraction(getNumerateur()+getDenominateur(),getDenominateur());
+    return f;
+}
