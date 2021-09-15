@@ -42,6 +42,8 @@ void MATH::Fraction::simplification(){
     }
 }
 
+// See the answer at Readme.md
+
 const MATH::Fraction MATH::operator+(const MATH::Fraction& f1, const MATH::
 Fraction& f2){
     return MATH::Fraction(f1.getNumerateur()*f2.getDenominateur()

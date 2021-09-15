@@ -2,6 +2,8 @@
 #define CPP_2021_FRACTION_H
 
 
+// See the answer at Readme.md
+
 namespace MATH {
     class Fraction {
     private:
@@ -23,5 +25,6 @@ namespace MATH {
     const Fraction operator+(const Fraction& f1, const Fraction& f2);
 }
 
+// See the answer at Readme.md
 
 #endif //CPP_2021_FRACTION_H
