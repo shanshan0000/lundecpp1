@@ -16,10 +16,11 @@ namespace MATH {
         // accesseur en écriture (édition)
         void setFraction(int n, int d);
 
-        Fraction(int n=0, int d=1);
-    };
+        const Fraction operator+(const Fraction& f) const;
 
-    const Fraction somme(const Fraction& f1, const Fraction& f2);
+        Fraction(int n=0, int d=1);
+        ~Fraction(){};
+    };
 
 }
 
