@@ -9,8 +9,8 @@ constexpr int getNumber() { return 3; }
 
 int main() {
     constexpr const int N = getNumber();
-    int x;
-    cin >> x;
-    array<int,calcul(N)> tableau;
+    int i;
+    cin >> i;
+    array<int,i> tableau;
     return 0;
 }
