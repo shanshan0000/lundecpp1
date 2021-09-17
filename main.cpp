@@ -1,3 +1,4 @@
+#include <iostream>
 #include<array>
 
 using namespace std;
@@ -8,6 +9,8 @@ constexpr int getNumber() { return 3; }
 
 int main() {
     constexpr const int N = getNumber();
+    int x;
+    cin >> x;
     array<int,calcul(N)> tableau;
     return 0;
 }
