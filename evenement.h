@@ -1,0 +1,14 @@
+#ifndef CPP_2021_EVENEMENT_H
+#define CPP_2021_EVENEMENT_H
+
+
+
+
+
+
+
+
+
+
+
+#endif //CPP_2021_EVENEMENT_H
