@@ -14,9 +14,7 @@ namespace TIME{
         Evt1j(const Date& d, const std::string& s):date(d),sujet(s){}
         const std::string& getDescription() const { return sujet; }
         const Date& getDate() const { return date; }
-        void afficher(std::ostream& f= std::cout) const {
-            f<<"***** Evt ********"<<"\n"<<"Date="<<date<<" sujet="<<sujet<<"\n";
-        }
+        virtual void afficher(std::ostream& f= std::cout) const;
     };
 
     class Evt1jDur : public Evt1j {
@@ -30,11 +28,8 @@ namespace TIME{
                 debut(h),duree(t){}
         const Horaire& getHoraire() const { return debut; }
         const Duree& getDuree() const { return duree; }
-        void afficher(std::ostream& f= std::cout) const {
-            //f<<"***** Evt ********"<<"\n"<<"Date="<<date<<" sujet="<<sujet<<"\n";
-            Evt1j::afficher(f); // rappel de la méthode de la classe de base.
-            f<<"debut="<<debut<<" duree="<<duree<<"\n";
-        }
+        void afficher(std::ostream& f= std::cout) const;
+
     };
 
     class Rdv : public Evt1jDur {
@@ -73,10 +68,8 @@ namespace TIME{
 
         const std::string& getPersonne() const { return personne; }
         const std::string& getLieu() const { return lieu; }
-        void afficher(std::ostream& f=std::cout) const {
-            Evt1jDur::afficher(f); // rappel de la méthode de la classe de base.
-            f<<"personne(s)="<<personne<<" lieu="<<lieu<<"\n";
-        }
+        void afficher(std::ostream& f= std::cout) const;
+
     };
 }
 
