@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include "timing.h"
 
 namespace TIME{
@@ -49,27 +50,24 @@ namespace TIME{
             lieu=r.lieu;
             return *this;
         }
-        // Or:
-//        Rdv& operator=(const Rdv& r){
-//            this->Evt1jDur::operator=(r);
-//            personne=r.personne;
-//            lieu=r.lieu;
-//            return *this;
-//        }
-
-
 
         Rdv(const Rdv& r):Evt1jDur(r),personne(r.personne),lieu(r.lieu){}
-        // Or:
-//        Rdv(const Rdv& r):
-//                Evt1jDur(r.getDate(), r.getDescription(),r.getHoraire(),r.getDuree()),
-//                personne(r.personne),lieu(r.lieu){}
-
 
         const std::string& getPersonne() const { return personne; }
         const std::string& getLieu() const { return lieu; }
         void afficher(std::ostream& f= std::cout) const;
+    };
 
+    class Agenda {
+        std::vector<Evt1j*> tab;
+    public:
+//Agenda() :tab() {} // le constructeur par défaut fait la même chose
+        Agenda() = default;
+        virtual ~Agenda(); // destructeur par défaut virtuel
+        Agenda(const Agenda&) = delete;
+        Agenda& operator=(const Agenda&) = delete;
+        Agenda& operator<<(Evt1j& e);
+        void afficher(std::ostream& f = std::cout)const;
     };
 }
 

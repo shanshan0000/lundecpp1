@@ -22,3 +22,14 @@ void Rdv::afficher(std::ostream& f) const {
     Evt1jDur::afficher(f); // rappel de la méthode de la classe de base.
     f<<"personne(s)="<<personne<<" lieu="<<lieu<<"\n";
 }
+
+TIME::Agenda& TIME::Agenda::operator<<(TIME::Evt1j& e) {
+    tab.push_back(&e);
+    return *this;
+}
+void TIME::Agenda::afficher(std::ostream& f) const{
+    f<<"##### AGENDA #####"<<"\n";
+    for(unsigned int i=0; i<tab.size(); i++) { tab[i]->afficher(f); }
+    f<<"##### FIN AGENDA #####"<<"\n";
+}
+TIME::Agenda::~Agenda(){ }
