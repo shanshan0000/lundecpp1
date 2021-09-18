@@ -11,7 +11,14 @@ namespace TIME{
         Date date;
         std::string sujet;
     public:
-        Evt1j(const Date& d, const std::string& s):date(d),sujet(s){}
+        Evt1j(const Date& d, const std::string& s):date(d),sujet(s)
+        {
+            std::cout << "construction d'un objet de la classe Evt1j" << std::endl;
+        }
+        ~Evt1j()
+        {
+            std::cout << "destruction d'un objet de la classe Evt1j" << std::endl;
+        }
         const std::string& getDescription() const { return sujet; }
         const Date& getDate() const { return date; }
         virtual void afficher(std::ostream& f= std::cout) const;
@@ -25,7 +32,14 @@ namespace TIME{
         Evt1jDur(const Date& d, const std::string& s,
                  const Horaire& h, const Duree t):
                 Evt1j(d,s), // appel au constructeur de la classe de base
-                debut(h),duree(t){}
+                debut(h),duree(t)
+        {
+            std::cout << "construction d'un objet de la classe Evt1jDur" << std::endl;
+        }
+        ~Evt1jDur()
+        {
+            std::cout << "destruction d'un objet de la classe Evt1jDur" << std::endl;
+        }
         const Horaire& getHoraire() const { return debut; }
         const Duree& getDuree() const { return duree; }
         void afficher(std::ostream& f= std::cout) const;
@@ -40,7 +54,14 @@ namespace TIME{
             const Horaire& h,const Duree& dur,
             const std::string& p, const std::string& l):
                 Evt1jDur(d,s,h,dur),
-                personne(p),lieu(l){}
+                personne(p),lieu(l)
+        {
+            std::cout << "construction d'un objet de la classe Rdv" << std::endl;
+        }
+        ~Rdv()
+        {
+            std::cout << "destruction d'un objet de la classe Rdv" << std::endl;
+        }
 
         Rdv& operator=(const Rdv& r){
             Evt1jDur* x=this;
