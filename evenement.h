@@ -73,5 +73,6 @@ namespace TIME{
     };
 }
 
+std::ostream& operator<<(std::ostream&, const TIME::Evt1j&);
 
 #endif //CPP_2021_EVENEMENT_H
