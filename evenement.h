@@ -46,6 +46,31 @@ namespace TIME{
             const std::string& p, const std::string& l):
                 Evt1jDur(d,s,h,dur),
                 personne(p),lieu(l){}
+
+        Rdv& operator=(const Rdv& r){
+            Evt1jDur* x=this;
+            *x=r; // recopie de la partie Evt1jDur
+            personne=r.personne;
+            lieu=r.lieu;
+            return *this;
+        }
+        // Or:
+//        Rdv& operator=(const Rdv& r){
+//            this->Evt1jDur::operator=(r);
+//            personne=r.personne;
+//            lieu=r.lieu;
+//            return *this;
+//        }
+
+
+
+        Rdv(const Rdv& r):Evt1jDur(r),personne(r.personne),lieu(r.lieu){}
+        // Or:
+//        Rdv(const Rdv& r):
+//                Evt1jDur(r.getDate(), r.getDescription(),r.getHoraire(),r.getDuree()),
+//                personne(r.personne),lieu(r.lieu){}
+
+
         const std::string& getPersonne() const { return personne; }
         const std::string& getLieu() const { return lieu; }
         void afficher(std::ostream& f=std::cout) const {
