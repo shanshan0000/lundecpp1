@@ -22,3 +22,18 @@ void Rdv::afficher(std::ostream& f) const {
     Evt1jDur::afficher(f); // rappel de la méthode de la classe de base.
     f<<"personne(s)="<<personne<<" lieu="<<lieu<<"\n";
 }
+
+Evt1j::~Evt1j()
+{
+    std::cout << "destruction d'un objet de la classe Evt1j" << std::endl;
+}
+
+Evt1jDur::~Evt1jDur()
+{
+    std::cout << "destruction d'un objet de la classe Evt1jDur" << std::endl;
+}
+
+Rdv::~Rdv()
+{
+    std::cout << "destruction d'un objet de la classe Rdv" << std::endl;
+}

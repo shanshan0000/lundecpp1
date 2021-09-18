@@ -15,10 +15,7 @@ namespace TIME{
         {
             std::cout << "construction d'un objet de la classe Evt1j" << std::endl;
         }
-        ~Evt1j()
-        {
-            std::cout << "destruction d'un objet de la classe Evt1j" << std::endl;
-        }
+        virtual ~Evt1j();
         const std::string& getDescription() const { return sujet; }
         const Date& getDate() const { return date; }
         virtual void afficher(std::ostream& f= std::cout) const;
@@ -36,10 +33,7 @@ namespace TIME{
         {
             std::cout << "construction d'un objet de la classe Evt1jDur" << std::endl;
         }
-        ~Evt1jDur()
-        {
-            std::cout << "destruction d'un objet de la classe Evt1jDur" << std::endl;
-        }
+        ~Evt1jDur();
         const Horaire& getHoraire() const { return debut; }
         const Duree& getDuree() const { return duree; }
         void afficher(std::ostream& f= std::cout) const;
@@ -58,10 +52,7 @@ namespace TIME{
         {
             std::cout << "construction d'un objet de la classe Rdv" << std::endl;
         }
-        ~Rdv()
-        {
-            std::cout << "destruction d'un objet de la classe Rdv" << std::endl;
-        }
+        ~Rdv();
 
         Rdv& operator=(const Rdv& r){
             Evt1jDur* x=this;
