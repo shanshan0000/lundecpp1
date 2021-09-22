@@ -54,6 +54,22 @@ namespace Set {
         const Carte* cartes[81];
     };
 
+    class Pioche {
+// désigne un paquet de cartes on l’on ne peut que piocher : prendre une carte au hasard
+    public:
+        explicit Pioche(const Jeu& j); // construction d’une pioche à partir du jeu
+        bool estVide() const { return nb == 0; }
+        size_t getNbCartes() const { return nb; }
+        const Carte& piocher();
+        ~Pioche();
+        Pioche(const Pioche& p) = delete;
+        Pioche& operator=(const Pioche& p) = delete;
+    private:
+        const Carte** cartes = nullptr;
+        size_t nb = 0;
+    };
+
+
     ostream& operator<<(ostream& f, const Carte& c);
 
 }
