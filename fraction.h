@@ -22,11 +22,13 @@ namespace MATH {
 
         Fraction(int n=0, int d=1);
         ~Fraction(){};
+        friend std::ostream& operator<<(std::ostream&, const MATH::Fraction& frac);
     };
 
     const Fraction operator+(const Fraction& f1, const Fraction& f2);
+    std::ostream& operator<<(std::ostream&, const MATH::Fraction& frac);
+    std::ostream& operator<(std::ostream&, const MATH::Fraction& frac);
 }
 
-std::ostream& operator<<(std::ostream& F, const MATH::Fraction& frac);
 
 #endif //CPP_2021_FRACTION_H

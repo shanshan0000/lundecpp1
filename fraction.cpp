@@ -64,9 +64,15 @@ const MATH::Fraction MATH::Fraction::operator++(int){
 
 // For more information, see Readme.md
 
-std::ostream& operator<<(std::ostream& F, const MATH::Fraction& frac){
+std::ostream& MATH::operator<<(std::ostream& F, const MATH::Fraction& frac){
+    F<<frac.numerateur;
+    F<<"/"<<frac.denominateur;
+    return F;
+}
+
+std::ostream& MATH::operator<(std::ostream& F, const MATH::Fraction& frac){
     F<<frac.getNumerateur();
-    if (frac.getDenominateur()!=1) F<<"/"<<frac.getDenominateur();
+    F<<"/"<<frac.getDenominateur();
     return F;
 }
 
