@@ -1,10 +1,10 @@
 #include <iostream>
 
 
-class ParkingSystemTwo {
+class ParkingSystemOne {
 public:
     int big = 0 , small = 0, medium = 0;
-    ParkingSystemTwo(int big, int medium, int small) {
+    ParkingSystemOne(int big, int medium, int small) {
         this->big = big ;
         this->medium = medium ;
         this->small = small ;
