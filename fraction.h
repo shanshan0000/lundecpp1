@@ -27,7 +27,9 @@ namespace MATH {
     };
 
     class FractionException {
-        char info[256];public:
+    private:
+        char info[256];
+    public:
         FractionException(const char* str){ std::strcpy(info,str); }
         const char* getInfo() const { return info; }
     };
