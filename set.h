@@ -114,8 +114,28 @@ namespace Set {
         size_t nb = 0;
     };
 
+    class Combinaison {
+    public:
+        Combinaison(const Carte& u, const Carte& d, const Carte& t) :c1(&u), c2(&d),
+                                                                     c3(&t) {}
+        bool estUnSET() const;
+        const Carte& getCarte1() const { return *c1; }
+        const Carte& getCarte2() const { return *c1; }
+        const Carte& getCarte3() const { return *c1; }
+        ~Combinaison() = default;
+        Combinaison(const Combinaison& c) = default;
+        Combinaison& operator=(const Combinaison& c) = default;
+    private:
+        const Carte* c1;
+        const Carte* c2;
+        const Carte* c3;
+    };
+
+
     ostream& operator<<(ostream& f, const Carte& c);
     ostream& operator<<(ostream& f, const Plateau& m);
+    ostream& operator<<(ostream& f, const Combinaison& c);
+
 
 }
 
