@@ -2,6 +2,7 @@
 #define CPP_2021_SET_H
 
 #include <iostream>
+#include <cstring>
 
 using namespace std;
 
@@ -15,6 +16,14 @@ namespace Set {
     static const Nombre Nombres[] = {un, deux, trois };
     static const Forme Formes[] = { ovale, vague, losange };
     static const Remplissage Remplissages[] = { plein, hachure, vide };
+
+    class SetException{
+    private:
+        char info[256];
+    public:
+        SetException(const char* str){ std::strcpy(info,str); }
+        const char* getInfo(){return this->info;}
+    };
 
     class Carte {
     public:
