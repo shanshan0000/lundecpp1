@@ -2,27 +2,47 @@
 #define CPP_2021_SET_H
 
 #include <iostream>
-#include <cstring>
+#include <string>
 
 using namespace std;
 
 namespace Set {
-    enum Couleur { rouge, violet, vert };
-    enum Nombre { un, deux, trois };
-    enum Forme { ovale, vague, losange };
-    enum Remplissage { plein, hachure, vide };
+    // caracteristiques
+    enum class Couleur { rouge, mauve, vert };
+    enum class Nombre { un=1, deux=2, trois=3 };
+    enum class Forme { ovale, vague, losange };
+    enum class Remplissage { plein, vide, hachure };
 
-    static const Couleur Couleurs[] = { rouge, violet, vert };
-    static const Nombre Nombres[] = {un, deux, trois };
-    static const Forme Formes[] = { ovale, vague, losange };
-    static const Remplissage Remplissages[] = { plein, hachure, vide };
+    // conversion d'une caracteristique en string
+    string toString(Couleur c);
+    string toString(Nombre v);
+    string toString(Forme f);
+    string toString(Remplissage v);
 
-    class SetException{
-    private:
-        char info[256];
+    // ecriture d'une caracteristique sur un flux ostream
+    ostream& operator<<(ostream& f, Couleur c);
+    ostream& operator<<(ostream& f, Nombre v);
+    ostream& operator<<(ostream& f, Forme x);
+    ostream& operator<<(ostream& f, Remplissage r);
+
+    // listes contenant les valeurs possibles pour chacune des caracteristiques
+    extern std::initializer_list<Couleur> Couleurs;
+    extern std::initializer_list<Nombre> Nombres;
+    extern std::initializer_list<Forme> Formes;
+    extern std::initializer_list<Remplissage> Remplissages;
+
+    // affichage des valeurs possibles pour chaque caracteristiques
+    void printCouleurs(std::ostream& f = cout);
+    void printNombres(std::ostream& f = cout);
+    void printFormes(std::ostream& f = cout);
+    void printRemplissages(std::ostream& f = cout);
+
+    class SetException {
     public:
-        SetException(const char* str){ std::strcpy(info,str); }
-        const char* getInfo(){return this->info;}
+        SetException(const string& i) :info(i) {}
+        string getInfo() const { return info; }
+    private:
+        string info;
     };
 
     class Carte {
@@ -78,8 +98,24 @@ namespace Set {
         size_t nb = 0;
     };
 
+    class Plateau {
+    public:
+        Plateau() = default;
+        ~Plateau() { delete[] cartes; }
+        size_t getNbCartes() const { return nb; }
+        void ajouter(const Carte& c);
+        void retirer(const Carte& c);
+        void print(ostream& f = cout) const;
+        Plateau(const Plateau& p);
+        Plateau& operator=(const Plateau& p);
+    private:
+        const Carte** cartes = nullptr;
+        size_t nbMax = 0;
+        size_t nb = 0;
+    };
 
     ostream& operator<<(ostream& f, const Carte& c);
+    ostream& operator<<(ostream& f, const Plateau& m);
 
 }
 
