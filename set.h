@@ -131,6 +131,18 @@ namespace Set {
         const Carte* c3;
     };
 
+    class Controleur {
+    public:
+        Controleur();
+        void distribuer();
+        ~Controleur() { delete pioche; }
+        const Plateau& getPlateau() const { return plateau; }
+    private:
+        Jeu jeu;
+        Pioche* pioche=nullptr;
+        Plateau plateau;
+    };
+
 
     ostream& operator<<(ostream& f, const Carte& c);
     ostream& operator<<(ostream& f, const Plateau& m);
