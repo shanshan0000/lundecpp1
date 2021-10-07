@@ -204,5 +204,4 @@ namespace Set {
             plateau.ajouter(pioche->piocher());
     }
 
-
 }
