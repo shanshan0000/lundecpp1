@@ -76,10 +76,15 @@ namespace Set {
             return *cartes[i];
         }
 
-        static Jeu& getInstance()
-        {
-            static Jeu jeu; // unique instance
-            return jeu; // c’est toujours le même objet retourné
+        static Jeu& getInstance() {
+            if (instance == nullptr)
+                instance = new Jeu;
+            return *instance;
+        }
+
+        static void libererInstance() {
+            delete instance;
+            instance = nullptr;
         }
 
     private:
@@ -89,6 +94,9 @@ namespace Set {
         ~Jeu();
         Jeu(const Jeu& j) = delete;
         Jeu& operator=(const Jeu& j) = delete;
+
+        static Jeu* instance;
+
     };
 
     class Pioche {
