@@ -81,7 +81,7 @@ namespace Set {
         for (size_t i = 0; i < getNbCartes(); i++) delete cartes[i];
     }
 
-    Jeu* Jeu::instance=nullptr;
+    Jeu::Handler Jeu::handler = Handler();
 
     Pioche::Pioche(const Jeu& j) :cartes(new const Carte*[j.getNbCartes()]), nb(j.getNbCartes()) {
         for (size_t i = 0; i < nb; i++) cartes[i] = &j.getCarte(i);

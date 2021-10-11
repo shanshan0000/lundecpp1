@@ -77,14 +77,13 @@ namespace Set {
         }
 
         static Jeu& getInstance() {
-            if (instance == nullptr)
-                instance = new Jeu;
-            return *instance;
-        }
+            if (handler.instance == nullptr)
+                handler.instance = new Jeu;
+            return *handler.instance; }
 
         static void libererInstance() {
-            delete instance;
-            instance = nullptr;
+            delete handler.instance;
+            handler.instance = nullptr;
         }
 
     private:
@@ -95,12 +94,19 @@ namespace Set {
         Jeu(const Jeu& j) = delete;
         Jeu& operator=(const Jeu& j) = delete;
 
-        static Jeu* instance;
+        struct Handler {
+            Jeu* instance;
+            Handler() :instance(nullptr) {} // pointeur initialisé à la création de
+                                            // l’objet Handler
+            ~Handler() { delete instance; } // l’instance est libérée au moment
+                                            // de la destruction (automatique) du Handler
+        };
+        static Handler handler;
 
     };
 
     class Pioche {
-// désigne un paquet de cartes on l’on ne peut que piocher : prendre une carte au hasard
+    // désigne un paquet de cartes on l’on ne peut que piocher : prendre une carte au hasard
     public:
         explicit Pioche(const Jeu& j); // construction d’une pioche à partir du jeu
         bool estVide() const { return nb == 0; }
