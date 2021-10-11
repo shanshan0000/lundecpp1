@@ -65,10 +65,6 @@ namespace Set {
 
     class Jeu {
     public:
-        Jeu();
-        ~Jeu();
-        Jeu(const Jeu& j) = delete;
-        Jeu& operator=(const Jeu& j) = delete;
         size_t getNbCartes() const
         {
             return 81;
@@ -79,8 +75,20 @@ namespace Set {
                 throw SetException("Carte invalide");
             return *cartes[i];
         }
+
+        static Jeu& getInstance()
+        {
+            static Jeu jeu; // unique instance
+            return jeu; // c’est toujours le même objet retourné
+        }
+
     private:
         const Carte* cartes[81];
+
+        Jeu();
+        ~Jeu();
+        Jeu(const Jeu& j) = delete;
+        Jeu& operator=(const Jeu& j) = delete;
     };
 
     class Pioche {
