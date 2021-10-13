@@ -53,5 +53,13 @@ int main() {
         cout << endl;
     }
 
+    cout << endl;
+    cout << endl;
+    for(auto it_i = vec.begin(); it_i != vec.end(); ++ it_i) {
+        for (auto it_j = (*it_i).begin(); it_j != (*it_i).end(); ++ it_j)
+            cout << *it_j << " ";
+        cout << endl;
+    }
+
     return 0;
 }
