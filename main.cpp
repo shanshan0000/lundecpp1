@@ -20,24 +20,24 @@ public:
 
 class PeekingIterator : public Iterator {
 public:
-    vector<int> v;
-    int i = 0;
+    int nextVal;
 
     PeekingIterator(const vector<int>& nums) : Iterator(nums) {
-        v = nums;
+        nextVal = Iterator::hasNext() ? Iterator::next() : NULL;
     }
 
     int peek() {
-        return v[i];
+        return nextVal;
     }
 
     int next() {
-        i ++;
-        return v[i-1];
+        int oldNext = nextVal;
+        nextVal = Iterator::hasNext() ? Iterator::next() : NULL;
+        return oldNext;
     }
 
     bool hasNext() const {
-        return i < v.size();
+        return (nextVal != NULL);
     }
 };
 
