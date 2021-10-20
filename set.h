@@ -87,8 +87,75 @@ namespace Set {
             instance = nullptr;
         }
 
+        class Iterator_2{
+        private:
+            size_t j = 0;
+            Iterator_2(){};
+            friend class Jeu;
+        public:
+            const bool isDone() const{
+                return j >= Jeu::getInstance().getNbCartes();
+            }
+
+            const Carte& currentItem() const{
+                return Jeu::getInstance().getCarte(j);
+            }
+
+            void next(){
+                ++ j;
+            }
+        };
+
+        class Iterator_3{
+        private:
+            Carte** current;
+            friend class Jeu;
+        public:
+            Iterator_3& begin(){
+            }
+
+            Iterator_3& end(){
+
+            }
+
+            Iterator_3& operator++();
+
+            const Carte& operator*() const;
+
+
+        };
+
+        Iterator_2& getIterator() const{
+            return Iterator_2();
+        }
+
     private:
         const Carte* cartes[81];
+
+        void bianli(){
+            for(int i = 0; i < 81; i ++)
+            {
+                cout << cartes[i];
+            }
+        }
+
+
+
+
+        void bianli2(){
+            while(!this->isDone()){
+                this->currentItem();
+                this->next();
+            }
+        }
+
+        void bianli3(){
+            for(auto it = this->begin(); it != this->end(); ++it)
+            {
+                *it;
+            }
+        }
+
 
         Jeu();
         ~Jeu();
@@ -154,7 +221,6 @@ namespace Set {
         ~Controleur() { delete pioche; }
         const Plateau& getPlateau() const { return plateau; }
     private:
-        Jeu jeu;
         Pioche* pioche=nullptr;
         Plateau plateau;
     };
