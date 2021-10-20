@@ -4,16 +4,27 @@
 using namespace Set;
 
 int main() {
-    Jeu::Iterator_2& it = Jeu::getInstance().getIterator();
+    auto it = Jeu::getInstance().getInterator2();
     while(!it.isDone()){
-        cout << it.currentItem();
+        it.currentItem();
         it.next();
     }
 
-    for (auto it2 = Jeu::getInstance().getIterator(); !it2.isDone(); it2.next()) {
+    auto it2 = Jeu::getInstance().getInterator2();
+    while(!it2.isDone()){
         it2.currentItem();
+        it2.next();
     }
 
-    std::cin.get();
+    for(Jeu::Iterator2 it3 = Jeu::getInstance().getInterator2(); !it3.isDone(); it3.next())
+    {
+
+    }
+
+    for(Jeu::Iterator3 itt = Jeu::getInstance().begin(); !itt.end(); ++ itt){
+        *itt;
+    }
+
+
     return 0;
 }

@@ -87,17 +87,17 @@ namespace Set {
             instance = nullptr;
         }
 
-        class Iterator_2{
+        class Iterator2{
         private:
             size_t j = 0;
-            Iterator_2(){};
+            Iterator2() = default;
             friend class Jeu;
         public:
-            const bool isDone() const{
+            bool isDone() const {
                 return j >= Jeu::getInstance().getNbCartes();
             }
 
-            const Carte& currentItem() const{
+            const Carte& currentItem() const {
                 return Jeu::getInstance().getCarte(j);
             }
 
@@ -106,46 +106,56 @@ namespace Set {
             }
         };
 
-        class Iterator_3{
+        Iterator2 getInterator2() const{
+            return Iterator2();
+        }
+
+        class Iterator3{
         private:
-            Carte** current;
-            friend class Jeu;
+            Carte** current = nullptr;
         public:
-            Iterator_3& begin(){
+            Iterator3(Carte** c):current(c){}
+
+            Iterator3& operator++(){
+                current ++;
+                return *this;
             }
 
-            Iterator_3& end(){
-
+            Iterator3 operator++(int){
+                Carte** tmp = current;
+                current ++;
+                return Iterator3(tmp);
             }
 
-            Iterator_3& operator++();
-
-            const Carte& operator*() const;
-
+            const Carte& operator*() const{
+                return **current;
+            }
 
         };
 
-        Iterator_2& getIterator() const{
-            return Iterator_2();
+        Iterator3 begin() const {
+            return Iterator3(cartes);
+        }
+
+        Iterator3 end() const {
+            return Iterator3(cartes + getNbCartes());
         }
 
     private:
         const Carte* cartes[81];
 
-        void bianli(){
+        void bianli1(){
             for(int i = 0; i < 81; i ++)
             {
-                cout << cartes[i];
+                cartes[i];
             }
         }
 
-
-
-
         void bianli2(){
-            while(!this->isDone()){
-                this->currentItem();
-                this->next();
+            Iterator2 it;
+            while(!it.isDone()){
+                it.currentItem();
+                it.next();
             }
         }
 
@@ -155,7 +165,6 @@ namespace Set {
                 *it;
             }
         }
-
 
         Jeu();
         ~Jeu();
