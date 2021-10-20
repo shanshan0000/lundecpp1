@@ -21,7 +21,7 @@ int main() {
 
     }
 
-    for(Jeu::Iterator3 itt = Jeu::getInstance().begin(); !itt.end(); ++ itt){
+    for(auto itt = Jeu::getInstance().begin(); itt != Jeu::getInstance().end(); ++ itt){
         *itt;
     }
 

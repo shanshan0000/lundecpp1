@@ -116,6 +116,11 @@ namespace Set {
         public:
             Iterator3(Carte** c):current(c){}
 
+
+            bool operator!=(Iterator3& another){
+                return current != another.current;
+            }
+
             Iterator3& operator++(){
                 current ++;
                 return *this;
@@ -134,11 +139,11 @@ namespace Set {
         };
 
         Iterator3 begin() const {
-            return Iterator3(cartes);
+            return Iterator3(const_cast<Carte **>(this->cartes));
         }
 
         Iterator3 end() const {
-            return Iterator3(cartes + getNbCartes());
+            return Iterator3(const_cast<Carte **>(cartes + getNbCartes()));
         }
 
     private:
