@@ -83,8 +83,8 @@ namespace Set {
 
     Jeu* Jeu::instance=nullptr;
 
-    Pioche::Pioche(const Jeu& j) :cartes(new const Carte*[j.getNbCartes()]), nb(j.getNbCartes()) {
-        for (size_t i = 0; i < nb; i++) cartes[i] = &j.getCarte(i);
+    Pioche::Pioche() :cartes(new const Carte*[Jeu::getInstance().getNbCartes()]), nb(Jeu::getInstance().getNbCartes()) {
+        for (size_t i = 0; i < nb; i++) cartes[i] = &(Jeu::getInstance().getCarte(i));
     }
 
     const Carte& Pioche::piocher() {
@@ -195,7 +195,7 @@ namespace Set {
     }
 
     Controleur::Controleur() {
-        pioche = new Pioche(jeu);
+        pioche = new Pioche();
     }
 
     void Controleur::distribuer() {

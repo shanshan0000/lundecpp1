@@ -117,7 +117,7 @@ namespace Set {
             Iterator3(Carte** c):current(c){}
 
 
-            bool operator!=(Iterator3& another){
+            bool operator!=(Iterator3 another){
                 return current != another.current;
             }
 
@@ -183,7 +183,7 @@ namespace Set {
     class Pioche {
 // désigne un paquet de cartes on l’on ne peut que piocher : prendre une carte au hasard
     public:
-        explicit Pioche(const Jeu& j); // construction d’une pioche à partir du jeu
+        explicit Pioche(); // construction d’une pioche à partir du jeu
         bool estVide() const { return nb == 0; }
         size_t getNbCartes() const { return nb; }
         const Carte& piocher();

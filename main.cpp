@@ -4,25 +4,25 @@
 using namespace Set;
 
 int main() {
-    auto it = Jeu::getInstance().getInterator2();
-    while(!it.isDone()){
-        it.currentItem();
-        it.next();
+    auto it2a = Jeu::getInstance().getInterator2();
+    while(!it2a.isDone()){
+        it2a.currentItem();
+        it2a.next();
     }
 
-    auto it2 = Jeu::getInstance().getInterator2();
-    while(!it2.isDone()){
-        it2.currentItem();
-        it2.next();
+    auto it2b = Jeu::getInstance().getInterator2();
+    while(!it2b.isDone()){
+        it2b.currentItem();
+        it2b.next();
     }
 
-    for(Jeu::Iterator2 it3 = Jeu::getInstance().getInterator2(); !it3.isDone(); it3.next())
+    for(Jeu::Iterator2 it2c = Jeu::getInstance().getInterator2(); !it2c.isDone(); it2c.next())
     {
 
     }
 
-    for(auto itt = Jeu::getInstance().begin(); itt != Jeu::getInstance().end(); ++ itt){
-        *itt;
+    for(auto it3a = Jeu::getInstance().begin(); it3a != Jeu::getInstance().end(); ++ it3a){
+        *it3a;
     }
 
 
