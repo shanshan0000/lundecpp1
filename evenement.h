@@ -13,7 +13,8 @@ namespace TIME{
     public:
         Evt(const std::string& s): sujet(s){}
         const std::string& getDescription() const { return sujet; }
-        virtual void afficher(std::ostream& f=std::cout) const=0;
+        virtual std::string toString() const=0;
+        void afficher(std::ostream& f=std::cout) const { f<<toString(); }
         virtual Evt* clone() const = 0;
     };
 
@@ -25,7 +26,7 @@ namespace TIME{
                 Evt(s),debut(d),fin(f){}
         const Date& getDateDebut() const { return debut; }
         const Date& getDateFin() const { return fin; }
-        void afficher(std::ostream& f=std::cout) const;
+        std::string toString() const;
         EvtPj* clone() const;
     };
 
@@ -35,7 +36,7 @@ namespace TIME{
     public:
         Evt1j(const Date& d, const std::string& s): Evt(s), date(d){}
         const Date& getDate() const { return date; }
-        virtual void afficher(std::ostream& f= std::cout) const;
+        std::string toString() const;
         Evt1j* clone() const;
     };
 
@@ -52,7 +53,7 @@ namespace TIME{
                 debut(h),duree(t){}
         const Horaire& getHoraire() const { return debut; }
         const Duree& getDuree() const { return duree; }
-        void afficher(std::ostream& f= std::cout) const;
+        std::string toString() const;
         Evt1jDur* clone() const;
 
     };
@@ -81,7 +82,7 @@ namespace TIME{
 
         const std::string& getPersonne() const { return personne; }
         const std::string& getLieu() const { return lieu; }
-        void afficher(std::ostream& f= std::cout) const;
+        std::string toString() const;
         Rdv* clone() const;
     };
 

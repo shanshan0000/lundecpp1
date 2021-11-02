@@ -7,24 +7,29 @@ std::ostream& operator<<(std::ostream& f, const Evt& e){
     return f;
 }
 
-void EvtPj::afficher(std::ostream& f) const {
-    f<<"***** EvtPj ********"<<"\n";
+std::string Evt1j::toString() const{
+    std::stringstream f;
+    f<<"***** Evt ********"<<"\n";
+    f<<"Date="<<getDate()<<" objet="<<getDescription()<<"\n";
+    return f.str();
+}
+std::string Evt1jDur::toString() const{
+    std::stringstream f;
+    f<<Evt1j::toString()<<"debut="<<debut<<" duree="<<duree<<"\n";
+    return f.str();
+}
+std::string Rdv::toString() const{
+    std::stringstream f;
+    f<<Evt1jDur::toString()<<"personne="<<personne<<" lieu="<<lieu<<"\n";
+    return f.str();
 }
 
-void Evt1j::afficher(std::ostream& f) const {
-    f<<"***** Evt ********"<<"\n"<<"Date="<<date<<"\n";
-}
-
-
-void Evt1jDur::afficher(std::ostream& f) const {
-    //f<<"***** Evt ********"<<"\n"<<"Date="<<date<<" sujet="<<sujet<<"\n";
-    Evt1j::afficher(f); // rappel de la méthode de la classe de base.
-    f<<"debut="<<debut<<" duree="<<duree<<"\n";
-}
-
-void Rdv::afficher(std::ostream& f) const {
-    Evt1jDur::afficher(f); // rappel de la méthode de la classe de base.
-    f<<"personne(s)="<<personne<<" lieu="<<lieu<<"\n";
+std::string EvtPj::toString() const{
+    std::stringstream f;
+    f<<"***** Evt ********"<<"\n";
+    f<<"Date debut="<<getDateDebut()<<" Date fin="
+     <<getDateFin()<<" objet="<<getDescription()<<"\n";
+    return f.str();
 }
 
 Evt1j* Evt1j::clone() const { return new Evt1j(*this); }
