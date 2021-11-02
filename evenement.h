@@ -7,16 +7,35 @@
 #include "timing.h"
 
 namespace TIME{
-    class Evt1j {
+    class Evt {
     private:
-        Date date;
         std::string sujet;
     public:
-        Evt1j(const Date& d, const std::string& s):date(d),sujet(s){}
+        Evt(const std::string& s): sujet(s){}
         const std::string& getDescription() const { return sujet; }
+        virtual void afficher(std::ostream& f=std::cout) const=0;
+    };
+
+    class EvtPj : public Evt {
+        Date debut;
+        Date fin;
+    public:
+        EvtPj(const Date& d,const Date& f, const std::string& s):
+                Evt(s),debut(d),fin(f){}
+        const Date& getDateDebut() const { return debut; }
+        const Date& getDateFin() const { return fin; }
+    };
+
+    class Evt1j : public Evt{
+    private:
+        Date date;
+    public:
+        Evt1j(const Date& d, const std::string& s): Evt(s), date(d){}
         const Date& getDate() const { return date; }
         virtual void afficher(std::ostream& f= std::cout) const;
     };
+
+
 
     class Evt1jDur : public Evt1j {
     private:
@@ -32,6 +51,8 @@ namespace TIME{
         void afficher(std::ostream& f= std::cout) const;
 
     };
+
+
 
     class Rdv : public Evt1jDur {
         std::string personne;
@@ -59,14 +80,13 @@ namespace TIME{
     };
 
     class Agenda {
-        std::vector<Evt1j*> tab;
+        std::vector<Evt*> tab;
     public:
-//Agenda() :tab() {} // le constructeur par défaut fait la même chose
         Agenda() = default;
         virtual ~Agenda(); // destructeur par défaut virtuel
         Agenda(const Agenda&) = delete;
         Agenda& operator=(const Agenda&) = delete;
-        Agenda& operator<<(Evt1j& e);
+        Agenda& operator<<(Evt& e);
         void afficher(std::ostream& f = std::cout)const;
     };
 }

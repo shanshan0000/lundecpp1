@@ -23,7 +23,7 @@ void Rdv::afficher(std::ostream& f) const {
     f<<"personne(s)="<<personne<<" lieu="<<lieu<<"\n";
 }
 
-TIME::Agenda& TIME::Agenda::operator<<(TIME::Evt1j& e) {
+TIME::Agenda& TIME::Agenda::operator<<(TIME::Evt& e) {
     tab.push_back(&e);
     return *this;
 }
