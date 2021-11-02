@@ -83,13 +83,6 @@ namespace TIME{
     class Agenda {
         std::vector<Evt*> tab;
     public:
-        Agenda() = default;
-        virtual ~Agenda(); // destructeur par défaut virtuel
-        Agenda(const Agenda&) = delete;
-        Agenda& operator=(const Agenda&) = delete;
-        Agenda& operator<<(Evt& e);
-        void afficher(std::ostream& f = std::cout)const;
-
         class iterator : public std::vector<Evt*>::iterator {
         public:
             Evt & operator*() const {
@@ -117,6 +110,12 @@ namespace TIME{
         const_iterator begin() const { return const_iterator(tab.begin()); }
         const_iterator end() const { return const_iterator(tab.end()); }
 
+        Agenda() = default;
+        virtual ~Agenda(); // destructeur par défaut virtuel
+        Agenda(const Agenda&) = delete;
+        Agenda& operator=(const Agenda&) = delete;
+        Agenda& operator<<(Evt& e);
+        void afficher(std::ostream& f = std::cout)const;
     };
 }
 

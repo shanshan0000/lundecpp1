@@ -2,6 +2,76 @@
 #include "evenement.h"
 
 
+class MyVector{
+public:
+    int* arr;
+    MyVector()
+    {
+        arr = new int[5];
+        for(int i = 0; i <= 4; i ++)
+            arr[i] = i;
+    }
+    class iterator{
+    public:
+        int* current;
+        iterator(int* c) : current(c){}
+        bool operator!=(iterator another){
+            return current != another.current;
+        }
+
+        iterator& operator++(){
+            current ++;
+            return *this;
+        }
+
+        iterator operator++(int){
+            int* tmp = current;
+            current ++;
+            return iterator(tmp);
+        }
+
+        const int operator*() const{
+            return *current;
+        }
+
+    };
+
+    const MyVector::iterator begin() const {
+        return MyVector::iterator(this->arr);
+    }
+
+    iterator end() const {
+        return iterator(this->arr + 5);
+    }
+};
+
+class MyAgenda
+{
+public:
+    MyVector tab;
+    MyAgenda(){
+        tab = MyVector();
+    }
+    class iterator : public MyVector::iterator{
+    public:
+        // 这儿的星号可以不重载
+        int operator*(){
+            return MyVector::iterator::operator*();
+        }
+
+        iterator(const MyVector::iterator& it): MyVector::iterator(it){};
+    };
+
+    iterator begin() const{
+        return iterator(tab.begin());
+    }
+
+    iterator end() const{
+        return iterator(tab.end());
+    }
+};
+
+
 int main() {
     using namespace std;
     using namespace TIME;
@@ -24,6 +94,11 @@ int main() {
         std::cout  <<*it  <<"\n";
 // maintenant, on peut aussi utiliser un range for
     for(auto& e : mon_agenda) std:cout<<e<<"\n";
+
+
+    MyAgenda a;
+    for(MyAgenda::iterator it = a.begin(); it != a.end(); ++it )
+        std::cout << *it << std::endl;
 
 
 
