@@ -122,8 +122,33 @@ namespace TIME{
         Agenda& operator<<(Evt& e);
         void afficher(std::ostream& f = std::cout)const;
     };
+
+    inline Date getDate(const Evt& e){
+        const Evt1j* pt1=dynamic_cast<const Evt1j*>(&e);
+        const EvtPj* pt2=dynamic_cast<const EvtPj*>(&e);
+        if (pt1) return pt1->getDate();
+        if (pt2) return pt2->getDateDebut();
+        throw "type evt inattendu";
+    }
+
+    inline bool operator<(const Evt& e1, const Evt& e2){
+        Date d1=getDate(e1);
+        Date d2=getDate(e2);
+        if (d1 < d2) return true;
+        if (d2 < d1) return false;
+// d1==d2
+        const Evt1jDur* pt1=dynamic_cast<const Evt1jDur*>(&e1);
+        const Evt1jDur* pt2=dynamic_cast<const Evt1jDur*>(&e2);
+        if (pt1==nullptr && pt2!=nullptr) return true;
+        if (pt1!=nullptr && pt2==nullptr) return false;
+// ce sont deux evt avec un horaire, on les compare
+        return pt1->getHoraire() < pt2->getHoraire();
+    }
 }
 
 std::ostream& operator<<(std::ostream&, const TIME::Evt&);
+
+
+
 
 #endif //CPP_2021_EVENEMENT_H
