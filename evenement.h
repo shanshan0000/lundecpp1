@@ -92,6 +92,6 @@ namespace TIME{
     };
 }
 
-std::ostream& operator<<(std::ostream&, const TIME::Evt1j&);
+std::ostream& operator<<(std::ostream&, const TIME::Evt&);
 
 #endif //CPP_2021_EVENEMENT_H
