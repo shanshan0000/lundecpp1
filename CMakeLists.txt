@@ -4,4 +4,4 @@ project(cpp_2021)
 set(CMAKE_CXX_STANDARD 14)
 set(DCMAKE_SH="CMAKE_SH-NOTFOUND")
 
-add_executable(cpp_2021 main.cpp evenement.h evenement.cpp timing.h timing.cpp)
+add_executable(cpp_2021 main.cpp evenement.h evenement.cpp timing.h timing.cpp log.h mylog.cpp mylog.h)
