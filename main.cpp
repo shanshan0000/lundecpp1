@@ -69,6 +69,19 @@ public:
     iterator end() const{
         return iterator(tab.end());
     }
+
+    class iterator2 : public MyVector::iterator{
+    public:
+        iterator2(int* cc) : MyVector::iterator(cc){}
+    };
+
+    iterator2 begin2() const{
+        return iterator2(tab.begin().current);
+    }
+
+    iterator2 end2() const{
+        return iterator2(tab.end().current);
+    }
 };
 
 
@@ -100,7 +113,8 @@ int main() {
     for(MyAgenda::iterator it = a.begin(); it != a.end(); ++it )
         std::cout << *it << std::endl;
 
-
+    for(MyAgenda::iterator2 it = a.begin2(); it != a.end2(); ++it )
+        std::cout << *it << std::endl;
 
     return 0;
 }
