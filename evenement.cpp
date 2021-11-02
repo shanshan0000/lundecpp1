@@ -7,8 +7,12 @@ std::ostream& operator<<(std::ostream& f, const Evt1j& e){
     return f;
 }
 
+void EvtPj::afficher(std::ostream& f) const {
+    f<<"***** EvtPj ********"<<"\n";
+}
+
 void Evt1j::afficher(std::ostream& f) const {
-    f<<"***** Evt ********"<<"\n"<<"Date="<<date<<" sujet="<<sujet<<"\n";
+    f<<"***** Evt ********"<<"\n"<<"Date="<<date<<"\n";
 }
 
 
