@@ -2,7 +2,7 @@
 
 using namespace TIME;
 
-std::ostream& operator<<(std::ostream& f, const Evt1j& e){
+std::ostream& operator<<(std::ostream& f, const Evt& e){
     e.afficher(f);
     return f;
 }
