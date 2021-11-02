@@ -2,13 +2,17 @@
 
 using namespace TIME;
 
-std::ostream& operator<<(std::ostream& f, const Evt1j& e){
+std::ostream& operator<<(std::ostream& f, const Evt& e){
     e.afficher(f);
     return f;
 }
 
+void EvtPj::afficher(std::ostream& f) const {
+    f<<"***** EvtPj ********"<<"\n";
+}
+
 void Evt1j::afficher(std::ostream& f) const {
-    f<<"***** Evt ********"<<"\n"<<"Date="<<date<<" sujet="<<sujet<<"\n";
+    f<<"***** Evt ********"<<"\n"<<"Date="<<date<<"\n";
 }
 
 

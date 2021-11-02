@@ -24,6 +24,7 @@ namespace TIME{
                 Evt(s),debut(d),fin(f){}
         const Date& getDateDebut() const { return debut; }
         const Date& getDateFin() const { return fin; }
+        void afficher(std::ostream& f=std::cout) const;
     };
 
     class Evt1j : public Evt{
