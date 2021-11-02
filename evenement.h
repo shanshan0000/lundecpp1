@@ -14,6 +14,7 @@ namespace TIME{
         Evt(const std::string& s): sujet(s){}
         const std::string& getDescription() const { return sujet; }
         virtual void afficher(std::ostream& f=std::cout) const=0;
+        virtual Evt* clone() const = 0;
     };
 
     class EvtPj : public Evt {
@@ -25,6 +26,7 @@ namespace TIME{
         const Date& getDateDebut() const { return debut; }
         const Date& getDateFin() const { return fin; }
         void afficher(std::ostream& f=std::cout) const;
+        EvtPj* clone() const;
     };
 
     class Evt1j : public Evt{
@@ -34,6 +36,7 @@ namespace TIME{
         Evt1j(const Date& d, const std::string& s): Evt(s), date(d){}
         const Date& getDate() const { return date; }
         virtual void afficher(std::ostream& f= std::cout) const;
+        Evt1j* clone() const;
     };
 
 
@@ -50,6 +53,7 @@ namespace TIME{
         const Horaire& getHoraire() const { return debut; }
         const Duree& getDuree() const { return duree; }
         void afficher(std::ostream& f= std::cout) const;
+        Evt1jDur* clone() const;
 
     };
 
@@ -78,6 +82,7 @@ namespace TIME{
         const std::string& getPersonne() const { return personne; }
         const std::string& getLieu() const { return lieu; }
         void afficher(std::ostream& f= std::cout) const;
+        Rdv* clone() const;
     };
 
     class Agenda {

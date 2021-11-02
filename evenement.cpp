@@ -27,13 +27,24 @@ void Rdv::afficher(std::ostream& f) const {
     f<<"personne(s)="<<personne<<" lieu="<<lieu<<"\n";
 }
 
-TIME::Agenda& TIME::Agenda::operator<<(TIME::Evt& e) {
-    tab.push_back(&e);
+Evt1j* Evt1j::clone() const { return new Evt1j(*this); }
+Evt1jDur* Evt1jDur::clone() const { return new Evt1jDur(*this); }
+Rdv* Rdv::clone() const { return new Rdv(*this); }
+EvtPj* EvtPj::clone() const { return new EvtPj(*this); }
+
+
+Agenda& Agenda::operator<<(Evt& e) {
+    tab.push_back(e.clone());
     return *this;
 }
-void TIME::Agenda::afficher(std::ostream& f) const{
+
+void Agenda::afficher(std::ostream& f) const{
     f<<"##### AGENDA #####"<<"\n";
     for(unsigned int i=0; i<tab.size(); i++) { tab[i]->afficher(f); }
     f<<"##### FIN AGENDA #####"<<"\n";
 }
-TIME::Agenda::~Agenda(){ }
+
+Agenda::~Agenda(){
+    for (unsigned int i = 0; i < tab.size(); i++)
+        delete tab[i];
+}
