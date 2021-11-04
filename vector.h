@@ -10,6 +10,35 @@ namespace TD {
         // memory_size : taille memoire dynamique du conteneur
         unsigned int memory_size;
     public:
+
+        class iterator {
+            T* courant;
+        public:
+            iterator(T* c=0):courant(c) {}
+            iterator& operator++() { courant++; return *this; } // Prefix unary operateur
+            iterator operator++(int) { iterator tmp=*this; courant++; return tmp; } // Postfix unary operator
+            bool operator==(const iterator& it) const { return courant==it.courant; }
+            bool operator!=(const iterator& it) const { return courant!=it.courant; }
+            T& operator*() const { return *courant; }
+        };
+
+        iterator begin() { return iterator(tab); }
+        iterator end() { return iterator(tab+Container<T>::nb); }
+
+        class const_iterator {
+            const T* courant;
+        public:
+            const_iterator(const T* c=0):courant(c) {}
+            const_iterator& operator++() { courant++; return *this; } // Prefix unary operator
+            const_iterator operator++(int) { const_iterator tmp=*this; courant++; return tmp; } // Postfix unary operator
+            bool operator==(const const_iterator& it) const { return courant==it.courant; }
+            bool operator!=(const const_iterator& it) const { return courant!=it.courant; }
+            const T& operator*() const { return *courant; }
+        };
+
+        const_iterator cbegin() const { return const_iterator(tab); }
+        const_iterator cend() const { return const_iterator(tab+Container<T>::nb); }
+
         // initialize_with : parameter pour initializer les "s" valeurs du conteneurs (on fourni un constructeur pour un objet ou une valeur pour un type natif)
         Vector(unsigned int s=0, const T& initialize_with=T());
         Vector(const Vector<T>&);
