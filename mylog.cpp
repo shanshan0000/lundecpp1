@@ -3,11 +3,12 @@
 void MyLog::addEvt(const TIME::Date& d, const TIME::Horaire& h,
         const std::string& s){
     if (begin()!=end()){
-        const TIME::Evt1jDur& lastEvent=dynamic_cast<const TIME::Evt1jDur&>(*(--end()));
-        if (d<lastEvent.getDate() || (d==lastEvent.getDate()&&h<lastEvent.getHoraire()))
+        const TIME::Evt1jDur* lastEvent=dynamic_cast<const TIME::Evt1jDur*>(*(--end()));
+        if (d<lastEvent->getDate() || (d==lastEvent->getDate()&&h<lastEvent->getHoraire()))
             throw LogError("Addition of a posterior event");
     }
-    *this<<TIME::Evt1jDur(d,s,h,TIME::Duree(0));
+    TIME::Evt1jDur e(d,s,h,TIME::Duree(0));
+    *this << e;
 }
 
 void MyLog::displayLog(std::ostream& f) const{
