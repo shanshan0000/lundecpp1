@@ -8,7 +8,7 @@ using namespace TD;
 namespace AO {
     // adapteur d’objet
     template<class T, class CONT=Vector<T>>
-    class Stack {
+    class StackP {
         CONT cont;
     public:
         class iterator {
@@ -43,7 +43,7 @@ namespace AO {
         const_iterator cbegin() const { return const_iterator(cont.cbegin()); }
         const_iterator cend() const { return const_iterator(cont.cend()); }
 
-        Stack():cont(0){}
+        StackP():cont(0){}
 
         void push(const T& x) { cont.push_back(x); }
         void pop() { cont.pop_back(); }
@@ -58,7 +58,7 @@ namespace AO {
 
 namespace AC { // adapteur de classe
     template<class T, class CONT=Vector<T>>
-    class Stack : private CONT {
+    class StackP : private CONT {
     public:
         class iterator : public CONT::iterator {
             // Le type : type de l'iterateur du contenur dont on fait une composition
@@ -82,7 +82,7 @@ namespace AC { // adapteur de classe
         const_iterator cbegin() const { return const_iterator(CONT::begin()); }
         const_iterator cend() const { return const_iterator(CONT::end()); }
 
-        Stack(): CONT(0){}
+        StackP(): CONT(0){}
         void push(const T& x) { CONT::push_back(x); }
         void pop() { CONT::pop_back(); }
         const T& top() const { return CONT::back(); }
