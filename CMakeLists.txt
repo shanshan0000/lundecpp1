@@ -4,4 +4,4 @@ project(cpp_2021)
 set(CMAKE_CXX_STANDARD 14)
 set(DCMAKE_SH="CMAKE_SH-NOTFOUND")
 
-add_executable(cpp_2021 main.cpp container.h vector.h)
+add_executable(cpp_2021 main.cpp container.h vector.h stack.h)
