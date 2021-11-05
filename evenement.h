@@ -11,18 +11,21 @@ namespace TIME{
     private:
         std::string sujet;
     public:
-        Evt(const std::string& s): sujet(s){}
+        Evt(const std::string& s, const std::string& t): sujet(s), type(t){}
         const std::string& getDescription() const { return sujet; }
         virtual void afficher(std::ostream& f=std::cout) const=0;
         virtual Evt* clone() const = 0;
+        std::string type;
+        const std::string  getType() const{return this->type;}
     };
 
     class EvtPj : public Evt {
         Date debut;
         Date fin;
     public:
-        EvtPj(const Date& d,const Date& f, const std::string& s):
-                Evt(s),debut(d),fin(f){}
+        EvtPj(const Date& d,const Date& f,
+                const std::string& s):
+                Evt(s, "Pj"),debut(d),fin(f){};
         const Date& getDateDebut() const { return debut; }
         const Date& getDateFin() const { return fin; }
         void afficher(std::ostream& f=std::cout) const;
@@ -33,7 +36,9 @@ namespace TIME{
     private:
         Date date;
     public:
-        Evt1j(const Date& d, const std::string& s): Evt(s), date(d){}
+        Evt1j(const Date& d, const std::string& s):
+                Evt(s, "1j"), date(d){}
+
         const Date& getDate() const { return date; }
         virtual void afficher(std::ostream& f= std::cout) const;
         Evt1j* clone() const;
@@ -128,6 +133,17 @@ namespace TIME{
         const EvtPj* pt2=dynamic_cast<const EvtPj*>(&e);
         if (pt1) return pt1->getDate();
         if (pt2) return pt2->getDateDebut();
+
+        if(e.getType() == "1j"){
+            const Evt1j* pt=dynamic_cast<const Evt1j*>(&e);
+            return pt->getDate();
+        }
+        else if (e.getType() == "Pj"){
+            const EvtPj* pt=dynamic_cast<const EvtPj*>(&e);
+            return pt->getDateDebut();
+        }
+
+
         throw "type evt inattendu";
     }
 
@@ -137,12 +153,12 @@ namespace TIME{
         if (d1 < d2) return true;
         if (d2 < d1) return false;
 // d1==d2
-        const Evt1jDur* pt1=dynamic_cast<const Evt1jDur*>(&e1);
-        const Evt1jDur* pt2=dynamic_cast<const Evt1jDur*>(&e2);
-        if (pt1==nullptr && pt2!=nullptr) return true;
-        if (pt1!=nullptr && pt2==nullptr) return false;
-// ce sont deux evt avec un horaire, on les compare
-        return pt1->getHoraire() < pt2->getHoraire();
+//        const Evt1jDur* pt1=dynamic_cast<const Evt1jDur*>(&e1);
+//        const Evt1jDur* pt2=dynamic_cast<const Evt1jDur*>(&e2);
+//        if (pt1==nullptr && pt2!=nullptr) return true;
+//        if (pt1!=nullptr && pt2==nullptr) return false;
+//// ce sont deux evt avec un horaire, on les compare
+//        return pt1->getHoraire() < pt2->getHoraire();
     }
 }
 
