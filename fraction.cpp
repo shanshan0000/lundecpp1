@@ -7,7 +7,7 @@ void MATH::Fraction::setFraction(int n, int d) {
         std::cerr<<"erreur : denominateur nul\n";
         denominateur=1;
     }
-    simplification();
+    ____();
 }
 
 MATH::Fraction::Fraction(int n, int d):numerateur(n),denominateur(d) {
@@ -15,7 +15,7 @@ MATH::Fraction::Fraction(int n, int d):numerateur(n),denominateur(d) {
         std::cerr<<"erreur: denominateur=0\n";
         denominateur=1;
     }
-    simplification();
+    ____();
 }
 
 void MATH::Fraction::simplification(){

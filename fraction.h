@@ -7,11 +7,11 @@ namespace MATH {
     private:
         int numerateur;
         int denominateur;
-        void simplification();
+        void ____();
     public:
         // accesseurs en lecture
-        int getNumerateur() const { return numerateur; }
-        int getDenominateur() const { return denominateur; }
+        int ____() const { return numerateur; }
+        int ____() const { return denominateur; }
 
         // accesseur en écriture (édition)
         void setFraction(int n, int d);
