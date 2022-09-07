@@ -3,21 +3,21 @@
 
 #include <iostream>
 
-inline void bonjour()
+____ void bonjour()
 {
     std::cout << "Zaoshang hao\n";
 }
 
 
-namespace N1 {
+____ N1 {
     void bonjour();
 
-    namespace N3{
+    ____ N3{
         void bonjour();
     }
 }
 
-namespace N2 {
+____ N2 {
     void bonjour();
 }
 
