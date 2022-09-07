@@ -2,9 +2,9 @@
 #include "fraction.h"
 
 void MATH::Fraction::setFraction(int n, int d) {
-    numerateur=n;
-    denominateur=d;
-    if (d==0) {
+    numerateur=____;
+    denominateur=____;
+    if (d==____) {
         std::cerr<<"erreur : denominateur nul\n";
         denominateur=1;
     }

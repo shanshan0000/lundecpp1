@@ -9,8 +9,8 @@ namespace MATH {
         int denominateur;
     public:
         // accesseurs en lecture
-        int getNumerateur() const { return numerateur; }
-        int getDenominateur() const { return denominateur; }
+        int getNumerateur() const { return ____; }
+        int getDenominateur() const { return ____; }
 
         // accesseur en écriture (édition)
         void setFraction(int n, int d);
