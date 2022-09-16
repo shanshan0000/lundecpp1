@@ -11,6 +11,6 @@ int main() {
     constexpr const int N = getNumber();
     int i;
     cin >> i;
-    array<int,i> tableau;
+    array<int, calcul(N)> tableau;
     return 0;
 }
