@@ -1,16 +1,12 @@
 #include <iostream>
-#include<array>
 
 using namespace std;
 
-constexpr int calcul(int x) { return 2 * x + 1; }
-
-constexpr int getNumber() { return 3; }
-
 int main() {
-    constexpr const int N = getNumber();
     int i;
     cin >> i;
-    array<int, calcul(N)> tableau;
+    int a[i];
+    for (int j = 0; j < i; j ++)
+        a[j] = j;
     return 0;
 }
