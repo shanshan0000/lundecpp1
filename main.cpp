@@ -57,8 +57,8 @@ ostream& operator<< (ostream &stream, const Complex &c)
 }
 
 int main() {
-    Complex d1(5, 10);
-    Complex d2(7, 19);
+    Complex d1(5, 5);
+    Complex d2(3, 3);
 
     Complex d3(0, 0);
     Complex d4(0, 0);
