@@ -34,12 +34,13 @@ private:
 ostream& operator << (ostream &stream, const Complex &c)
 {
     stream << c._real;
-    stream << "+i" << c._image << endl;
+    stream << " + i" << c._image << endl;
     return stream;
 }
 
 int main() {
     Complex d1(5, 10);
     Complex d2(7, 19);
+    cout << d1;
     return 0;
 }
