@@ -6,9 +6,9 @@ class Complex
 {
 public:
     Complex(int real = 0, int image = 0)
-    :_real(real), _image(image){};
+    :_real(real), _image(image){}
 
-    ~Complex(){};
+    ~Complex(){}
 
     Complex operator+(const Complex& d)
     {
