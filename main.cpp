@@ -25,9 +25,18 @@ public:
         return *this;
     }
 
+    friend ostream & operator << (ostream &stream, const Complex &c);
+
 private:
     int _real, _image;
 };
+
+ostream& operator << (ostream &stream, const Complex &c)
+{
+    stream << c._real;
+    stream << "+i" << c._image << endl;
+    return stream;
+}
 
 int main() {
     Complex d1(5, 10);
