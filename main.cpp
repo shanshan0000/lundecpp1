@@ -10,7 +10,7 @@ public:
 
     ~Complex(){}
 
-    Complex operator+(const Complex& d)
+    Complex operator+(const Complex& d) const
     {
         Complex temp(0, 0);
         temp._real = this->_real + d._real;
@@ -64,12 +64,13 @@ int main() {
     Complex d4(0, 0);
     Complex d5(0, 0);
     Complex d6(0, 0);
-    d3 = d1 - d2;
-    d4 = d1 + d2 + d3;
+
+    cout << d1 << "  " << d2;
+    operator<<(operator<<(operator<<(cout, d1), "  "), d2);
+    d1.operator+(d2);
 
 //    d5 = (d1 += d2);
-    d6 = (d1 -= d2);
+//    d6 = (d1 -= d2);
 
-    cout << d1 << "   " << d2;
     return 0;
 }
