@@ -25,22 +25,51 @@ public:
         return *this;
     }
 
-    friend ostream & operator << (ostream &stream, const Complex &c);
+    friend ostream& operator << (ostream &stream, const Complex &c);
+
+    friend Complex operator-(const Complex& c, const Complex& d);
+    friend Complex operator-=(Complex& c, const Complex& d);
 
 private:
     int _real, _image;
 };
 
-ostream& operator << (ostream &stream, const Complex &c)
+Complex operator-(const Complex& c, const Complex& d)
+{
+    Complex temp(0, 0);
+    temp._real = c._real - d._real;
+    temp._image = c._image - d._image;
+    return temp;
+}
+
+Complex operator-=(Complex& c, const Complex& d)
+{
+    c._real -= d._real;
+    c._image -= d._image;
+    return c;
+}
+
+ostream& operator<< (ostream &stream, const Complex &c)
 {
     stream << c._real;
-    stream << " + i" << c._image << endl;
+    stream << " + " << c._image << "i" << endl;
     return stream;
 }
 
 int main() {
     Complex d1(5, 10);
     Complex d2(7, 19);
-    cout << d1;
+
+    Complex d3(0, 0);
+    Complex d4(0, 0);
+    Complex d5(0, 0);
+    Complex d6(0, 0);
+    d3 = d1 - d2;
+    d4 = d1 + d2 + d3;
+
+//    d5 = (d1 += d2);
+    d6 = (d1 -= d2);
+
+    cout << d1 << "   " << d2;
     return 0;
 }
