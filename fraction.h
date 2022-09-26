@@ -1,7 +1,7 @@
 #ifndef CPP_2021_FRACTION_H
 #define CPP_2021_FRACTION_H
 
-#include<iostream> // nécessaire pour utiliser les objets \cc{ostream}
+#include<iostream> // nécessaire pour utiliser les objets ostream
 
 namespace MATH {
     class Fraction {
