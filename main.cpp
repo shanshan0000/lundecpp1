@@ -2,7 +2,7 @@
 
 int main(){
     using namespace MATH;
-    try{
+    try {
         Fraction A(1,2);
         Fraction B(3,0);
     }
