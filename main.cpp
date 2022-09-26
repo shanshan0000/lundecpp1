@@ -8,15 +8,15 @@ using namespace std;
 
 class Solution {
 public:
-    int sumOfUnique(vector<int>& nums) {
-        unordered_map<int,int>m;
-        int sum=0;
-        for(auto val:nums) {
+    int sumOfUnique(vector<int> &nums) {
+        unordered_map<int, int> m;
+        int sum = 0;
+        for (auto val:nums) {
             m[val]++;
         }
-        for(auto val:m) {
-            if(val.second==1)
-                sum+=val.first;
+        for (auto val:m) {
+            if (val.second == 1)
+                sum += val.first;
         }
         return sum;
     }
