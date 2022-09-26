@@ -53,7 +53,8 @@ public:
         else if(carType == 3 && small > 0)  {small-- ; std::cout << "Parking Samll success";}
         else if(carType == 3 && small == 0)
             throw NoPlaceException("No Parking lot for small");
-        throw MyException();
+        else
+            throw MyException();
     }
 };
 
