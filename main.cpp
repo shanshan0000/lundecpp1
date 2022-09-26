@@ -7,6 +7,5 @@ int main(){
 
     std::cout << f1 << std::endl;
     std::cout << f2 << std::endl;
-    // For more information, see Readme.md
 
 }
