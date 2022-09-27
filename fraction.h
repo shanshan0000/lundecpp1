@@ -28,10 +28,10 @@ namespace MATH {
 
     class FractionException {
     private:
-        char info[256];
+        std::string info;
     public:
-        FractionException(const char* str){ std::strcpy(info,str); }
-        const char* getInfo() const { return info; }
+        FractionException(const std::string str){ info = str; }
+        const std::string getInfo() const { return info; }
     };
 
     const Fraction operator+(const Fraction& f1, const Fraction& f2);
