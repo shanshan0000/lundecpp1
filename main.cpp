@@ -2,10 +2,8 @@
 
 int main(){
     using namespace MATH;
-    Fraction f1(3,4);
-    Fraction f2(5);
+    Fraction f2(5, 0);
 
-    std::cout << f1 << std::endl;
     std::cout << f2 << std::endl;
 
 }
