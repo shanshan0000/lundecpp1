@@ -4,7 +4,6 @@
 #include<iostream> // nécessaire pour utiliser les objets \cc{ostream}
 #include <cstring>
 
-
 namespace MATH {
     class Fraction {
     private:
