@@ -6,10 +6,9 @@ private:
     int big = 0 , small = 0, medium = 0;
 
 public:
-    ParkingSystem(int _big, int _medium, int _small) {
-        big = _big ;
-        medium = _medium ;
-        small = _small ;
+    ParkingSystem(int _big, int _medium, int _small) :
+        big(_big), medium(_medium), small(_small){
+
     }
 
     bool addCar(int carType) {
@@ -26,11 +25,11 @@ class ParkingSystemTwo {
 public:
     class NoPlaceException {
     private:
-        std::string msg;
+        std::string info;
     public:
-        NoPlaceException(std::string _msg ) {msg = _msg;}
-        std::string getMsg(){
-            return msg;
+        NoPlaceException(std::string _info ) {info = _info;}
+        std::string getInfo(){
+            return info;
         }
     };
 
@@ -59,25 +58,27 @@ public:
 };
 
 int main() {
-    ParkingSystemTwo ps{-1, -2, -3};
+    ParkingSystemTwo ps{1, 1, 1};
     try {
         ps.addCar(1);
         ps.addCar(1);
-        ps.addCar(2);
-        ps.addCar(2);
-        ps.addCar(2);
+        ps.addCar(1);
     }
-    catch (ParkingSystemTwo::MyException& e)
+    catch (ParkingSystemTwo::NoPlaceException& e)
     {
         ps.big += 10;
         ps.medium += 10;
         ps.small += 10;
     }
-//    catch (ParkingSystemTwo::NoPlaceException& e)
-//    {
-//        std::cout << e.getMsg() << std::endl;
-//    }
+    catch (ParkingSystemTwo::NoPlaceException& e)
+    {
+        ps.big += 100;
+        ps.medium += 100;
+        ps.small += 100;
+        std::cout << e.getInfo() << std::endl;
+    }
 
-    ps.addCar(1);
+
+
     return 0;
 }
