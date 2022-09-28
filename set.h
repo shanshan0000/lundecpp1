@@ -29,7 +29,7 @@ namespace Set {
         Remplissage remplissage;
     };
 
-    ostream& operator<<(ostream& f, const Carte& c);
+    std::ostream& operator<<(ostream& f, const Carte& c);
 
 }
 
