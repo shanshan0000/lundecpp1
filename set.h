@@ -27,6 +27,7 @@ namespace Set {
             this->forme = c.forme;
             this->couleur = c.couleur;
         }
+
         Carte& operator=(const Carte& c)
         {
             this->nombre = c.nombre;

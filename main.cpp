@@ -9,11 +9,9 @@ int main() {
     Carte c{a};
 
     Carte d{Couleur::rouge, Nombre::trois, Forme::ovale, Remplissage::hachure};
-    d = c;
+    cout << &c << endl;
+    cout << &d << endl;
+    cout << &(d = c) << endl;
 
-
-
-
-    std::cin.get();
     return 0;
 }
