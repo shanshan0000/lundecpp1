@@ -13,5 +13,7 @@ int main() {
     cout << &d << endl;
     cout << &(d = c) << endl;
 
+    cout << a << "\n\n\n" << d;
+
     return 0;
 }
