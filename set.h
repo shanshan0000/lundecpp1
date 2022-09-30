@@ -20,8 +20,21 @@ namespace Set {
         Forme getForme() const { return forme; }
         Remplissage getRemplissage() const { return remplissage; }
         ~Carte() = default; // optionnel
-        Carte(const Carte& c) = default; // optionnel
-        Carte& operator=(const Carte& c) = default; // optionnel
+        Carte(const Carte& c)
+        {
+            this->nombre = c.nombre;
+            this->remplissage = c.remplissage;
+            this->forme = c.forme;
+            this->couleur = c.couleur;
+        }
+        Carte& operator=(const Carte& c)
+        {
+            this->nombre = c.nombre;
+            this->remplissage = c.remplissage;
+            this->forme = c.forme;
+            this->couleur = c.couleur;
+            return *this;
+        }
     private:
         Couleur couleur;
         Nombre nombre;
