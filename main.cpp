@@ -1,11 +1,10 @@
 #include <iostream>
+#include "set.h"
+
+using namespace Set;
 
 int main() {
+    Carte* array[10];
 
-
-    // See Readme.md
-
-
-    std::cin.get();
     return 0;
 }
