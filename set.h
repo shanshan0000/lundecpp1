@@ -57,7 +57,7 @@ namespace Set {
         {
             if (i >= 81)
                 throw SetException("Carte invalide");
-            return *cartes[i];
+            return * cartes[i];
         }
     private:
         const Carte* cartes[81];
