@@ -1,5 +1,5 @@
-#ifndef CPP_2021_FONCTION_H
-#define CPP_2021_FONCTION_H
+#ifndef CPP_FONCTION_H
+#define CPP_FONCTION_H
 
 #include <iostream>
 
@@ -8,4 +8,4 @@ int fct(float y);
 int fct(int x, float y);
 float fct(float x, int y); // overload  surcharge
 
-#endif //CPP_2021_FONCTION_H
+#endif //CPP_FONCTION_H
