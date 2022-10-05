@@ -1,5 +1,5 @@
-#ifndef CPP_2021_FONCTION_H
-#define CPP_2021_FONCTION_H
+#ifndef CPP_FONCTION_H
+#define CPP_FONCTION_H
 
 struct point {
     int x;
@@ -8,4 +8,4 @@ struct point {
 };
 
 
-#endif //CPP_2021_FONCTION_H
+#endif //CPP_FONCTION_H
