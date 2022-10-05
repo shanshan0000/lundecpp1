@@ -1,5 +1,5 @@
-#ifndef CPP_2021_FRACTION_H
-#define CPP_2021_FRACTION_H
+#ifndef CPP_FRACTION_H
+#define CPP_FRACTION_H
 
 #include<iostream> // nécessaire pour utiliser les objets \cc{ostream}
 
@@ -31,4 +31,4 @@ namespace MATH {
 }
 
 
-#endif //CPP_2021_FRACTION_H
+#endif //CPP_FRACTION_H
