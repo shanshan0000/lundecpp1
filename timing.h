@@ -1,5 +1,5 @@
-#ifndef CPP_2021_TIMING_H
-#define CPP_2021_TIMING_H
+#ifndef CPP_TIMING_H
+#define CPP_TIMING_H
 
 #include<string>
 #include<cstring>
@@ -79,4 +79,4 @@ namespace TIME
 }
 
 
-#endif //CPP_2021_TIMING_H
+#endif //CPP_TIMING_H
