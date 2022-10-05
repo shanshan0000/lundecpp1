@@ -1,5 +1,5 @@
-#ifndef CPP_2021_FONCTION_H
-#define CPP_2021_FONCTION_H
+#ifndef CPP_FONCTION_H
+#define CPP_FONCTION_H
 
 Une université de technologie,
         est un établissement à caractère scientifique, culturel et professionnel
@@ -7,4 +7,4 @@ Une université de technologie,
         le développement de la recherche et de la technologie.
 
 
-#endif //CPP_2021_FONCTION_H
+#endif //CPP_FONCTION_H
