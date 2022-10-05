@@ -16,7 +16,7 @@ int main() {
         G1.addEdge(3,0);
         cout<<G1;
     }
-    catch(exception e)
+    catch(exception& e)
     {
         std::cout<<e.what()<<"\n";
     }
