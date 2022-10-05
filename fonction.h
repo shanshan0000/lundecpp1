@@ -1,5 +1,5 @@
-#ifndef CPP_2021_FONCTION_H
-#define CPP_2021_FONCTION_H
+#ifndef CPP_FONCTION_H
+#define CPP_FONCTION_H
 
 #include <iostream>
 
@@ -21,4 +21,4 @@ ____ N2 {
     void bonjour();
 }
 
-#endif //CPP_2021_FONCTION_H
+#endif //CPP_FONCTION_H
