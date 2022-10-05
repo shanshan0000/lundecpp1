@@ -1,5 +1,5 @@
-#ifndef CPP_2021_FONCTION_H
-#define CPP_2021_FONCTION_H
+#ifndef CPP_FONCTION_H
+#define CPP_FONCTION_H
 
 #include<string>
 #include<iostream>
@@ -14,4 +14,4 @@ struct compte {
 
 
 
-#endif //CPP_2021_FONCTION_H
+#endif //CPP_FONCTION_H
