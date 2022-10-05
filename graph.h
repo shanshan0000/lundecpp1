@@ -1,5 +1,5 @@
-#ifndef CPP_2021_GRAPH_H
-#define CPP_2021_GRAPH_H
+#ifndef CPP_GRAPH_H
+#define CPP_GRAPH_H
 
 #include <vector>
 #include <stdexcept>
@@ -39,4 +39,4 @@ public:
 ostream& operator<<(ostream& f, const Graph& G);
 
 
-#endif //CPP_2021_GRAPH_H
+#endif //CPP_GRAPH_H
