@@ -1,5 +1,5 @@
-#ifndef CPP_2021_FONCTION_H
-#define CPP_2021_FONCTION_H
+#ifndef CPP_FONCTION_H
+#define CPP_FONCTION_H
 
 namespace TD1 {
     struct essai {
@@ -12,4 +12,4 @@ void raz(TD1::essai* e);
 void raz(TD1::essai& e);
 
 
-#endif //CPP_2021_FONCTION_H
+#endif //CPP_FONCTION_H
