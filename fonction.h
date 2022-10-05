@@ -1,5 +1,5 @@
-#ifndef CPP_2021_FONCTION_H
-#define CPP_2021_FONCTION_H
+#ifndef CPP_FONCTION_H
+#define CPP_FONCTION_H
 
 #include <iostream>
 
@@ -17,4 +17,4 @@ void copy_struct(personne& dest, const personne& source);
 void copy_tab(personne* dest, const personne* source, size_t n);
 
 
-#endif //CPP_2021_FONCTION_H
+#endif //CPP_FONCTION_H
