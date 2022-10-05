@@ -1,5 +1,5 @@
-#ifndef CPP_2021_FONCTION_H
-#define CPP_2021_FONCTION_H
+#ifndef CPP_FONCTION_H
+#define CPP_FONCTION_H
 
 struct point {
     int x;
@@ -14,4 +14,4 @@ void init(point& pt, int _x=0, int _y=0, int _z=0);
 void init(point* pt, int _x=0, int _y=0, int _z=0);
 
 
-#endif //CPP_2021_FONCTION_H
+#endif //CPP_FONCTION_H
