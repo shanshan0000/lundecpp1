@@ -1,5 +1,5 @@
-#ifndef CPP_2021_SET_H
-#define CPP_2021_SET_H
+#ifndef CPP_SET_H
+#define CPP_SET_H
 
 #include <iostream>
 #include <cstring>
@@ -87,4 +87,4 @@ namespace Set {
 
 
 
-#endif //CPP_2021_SET_H
+#endif //CPP_SET_H
