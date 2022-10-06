@@ -1,5 +1,5 @@
-#ifndef CPP_2021_MYLOG_H
-#define CPP_2021_MYLOG_H
+#ifndef CPP_MYLOG_H
+#define CPP_MYLOG_H
 
 
 
@@ -22,4 +22,4 @@ public:
 
 
 
-#endif //CPP_2021_MYLOG_H
+#endif //CPP_MYLOG_H
