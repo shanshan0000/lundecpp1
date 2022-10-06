@@ -1,5 +1,5 @@
-#ifndef CPP_2021_LOG_H
-#define CPP_2021_LOG_H
+#ifndef CPP_LOG_H
+#define CPP_LOG_H
 
 #include "timing.h"
 #include<iostream>
@@ -11,4 +11,4 @@ public:
 };
 
 
-#endif //CPP_2021_LOG_H
+#endif //CPP_LOG_H
