@@ -11,6 +11,5 @@ int main() {
     Jeu c;
     c = a;
 
-    std::cin.get();
     return 0;
 }
