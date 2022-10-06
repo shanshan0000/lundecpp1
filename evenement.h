@@ -1,5 +1,5 @@
-#ifndef CPP_2021_EVENEMENT_H
-#define CPP_2021_EVENEMENT_H
+#ifndef CPP_EVENEMENT_H
+#define CPP_EVENEMENT_H
 
 #include <iostream>
 #include <string>
@@ -75,4 +75,4 @@ namespace TIME{
 
 std::ostream& operator<<(std::ostream&, const TIME::Evt1j&);
 
-#endif //CPP_2021_EVENEMENT_H
+#endif //CPP_EVENEMENT_H
