@@ -82,15 +82,29 @@ private:
 };
 
 // COMPOSTION
-class Foo6
+class Foo6A
 {
 private:
     Bar bar;
 public:
-    Foo6()
+    Foo6A()
     {
         this->bar = Bar{};
     }
+    void useBar()
+    {
+        bar.doSth();
+    }
+};
+
+// COMPOSTION
+class Foo6B
+{
+private:
+    Bar bar;
+public:
+    Foo6B():bar{Bar()} {}
+    ~Foo6B() = default;
     void useBar()
     {
         bar.doSth();
@@ -140,6 +154,29 @@ public:
     }
 };
 
+
+//COMPOSTION
+class Foo9
+{
+private:
+    Bar** arr;
+    int size;
+public:
+    Foo9()
+    {
+        for(int i = 0; i <= size;  i++)
+            arr[i] = new Bar;
+    }
+    ~Foo9()
+    {
+        for(int i = 0; i <= size;  i++)
+            delete arr[i];
+    }
+    void useBar(int i)
+    {
+        arr[i]->doSth();
+    }
+};
 
 
 int main() {
