@@ -16,9 +16,8 @@ namespace Set {
         for (size_t i = 0; i < getNbCartes(); i++) delete cartes[i];
     }
 
-    Pioche::Pioche(const Jeu& j) :cartes(new const Carte*[j.getNbCartes()]), nb(j
-                                                                                        .getNbCartes()) {
-        for (size_t i = 0; i < nb; i++) cartes[i] = &j.getCarte(i);
+    Pioche::Pioche(const Jeu& j) :cartes(new const Carte*[j.getNbCartes()]), nb(j.getNbCartes()) {
+        for (size_t i = 0; i < nb; i++) cartes[i] = &(j.getCarte(i));
     }
     const Carte& Pioche::piocher() {
         if (nb == 0) throw SetException("Pioche vide");
