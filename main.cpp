@@ -7,7 +7,7 @@ public:
 };
 
 // Simple ASSOCIATION
-class Foo
+class Foo1
 {
     void useBar(Bar* _bar)
     {
@@ -16,7 +16,7 @@ class Foo
 };
 
 // Simple ASSOCIATION
-class Foo1
+class Foo2
 {
     void useBar(Bar _bar)
     {
@@ -26,7 +26,7 @@ class Foo1
 
 
 // Aggregation
-class Foo2
+class Foo3
 {
 public:
     Foo2(){}
@@ -41,8 +41,8 @@ private:
 };
 
 
-//COMPOSTION
-class Foo3
+// COMPOSTION
+class Foo4
 {
 private:
     Bar bar;
@@ -58,7 +58,7 @@ public:
 };
 
 //COMPOSTION
-class Foo4
+class Foo5
 {
 private:
     Bar *bar;
