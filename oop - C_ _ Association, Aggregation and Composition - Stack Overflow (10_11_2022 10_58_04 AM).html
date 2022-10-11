@@ -1,0 +1,484 @@
+<!DOCTYPE html> <html itemscope itemtype=https://schema.org/QAPage class=html__responsive style lang=en><!--
+ Page saved with SingleFile 
+ url: https://stackoverflow.com/questions/25779394/c-association-aggregation-and-composition#:~:text=Association%3A%20Foo%20has%20a%20pointer,Bar%20object%20as%20data%20member. 
+ saved date: Tue Oct 11 2022 10:58:04 GMT+0800 (China Standard Time)
+--><meta charset=utf-8>
+<title>oop - C++ : Association, Aggregation and Composition - Stack Overflow</title>
+<link rel=image_src href="https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon.png?v=c78bd457575a">
+<link rel=search type=application/opensearchdescription+xml title="Stack Overflow" href=https://stackoverflow.com/opensearch.xml>
+<link rel=canonical href=https://stackoverflow.com/questions/25779394/c-association-aggregation-and-composition>
+<meta name=viewport content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0">
+<meta property=og:type content=website>
+<meta property=og:url content=https://stackoverflow.com/questions/25779394/c-association-aggregation-and-composition>
+<meta property=og:site_name content="Stack Overflow">
+<meta property=og:image itemprop="image primaryImageOfPage" content="https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v=73d79a89bded">
+<meta name=twitter:card content=summary>
+<meta name=twitter:domain content=stackoverflow.com>
+<meta name=twitter:title property=og:title itemprop=name content="C++ : Association, Aggregation and Composition">
+<meta name=twitter:description property=og:description itemprop=description content="I'm beginning to study OOAD and I'm having difficulty finding a C++ code example that'd illustrate how Association, Aggregation and Composition are implemented programmatically. (There are several ...">
+<style>html,body,div,span,h1,h2,p,pre,a,code,strong,ul,li,time{margin:0;padding:0;border:0;font:inherit;font-size:100%;vertical-align:baseline}ul{list-style:none}button{margin:0}.svg-spot{vertical-align:bottom}.svg-icon:not(.native) *,.svg-spot:not(.native) *{fill:currentColor}pre.s-code-block{font-size:var(--fs-body1);font-family:var(--ff-mono);line-height:var(--lh-md);color:var(--highlight-color);background-color:var(--highlight-bg);border-radius:var(--br-md);margin:0;padding:var(--su12);overflow:auto;scrollbar-color:var(--scrollbar) transparent}pre.s-code-block::-webkit-scrollbar{width:calc(var(--su-static12) - var(--su-static2));height:calc(var(--su-static12) - var(--su-static2));background-color:transparent}pre.s-code-block::-webkit-scrollbar-track{border-radius:calc(var(--su-static12) - var(--su-static2));background-color:transparent}pre.s-code-block::-webkit-scrollbar-thumb{border-radius:calc(var(--su-static12) - var(--su-static2));background-color:var(--scrollbar)}pre.s-code-block::-webkit-scrollbar-corner{background-color:transparent;border-color:transparent}pre.s-code-block>code{font-family:inherit}pre.s-code-block>code .hljs-comment{color:var(--highlight-comment)}pre.s-code-block>code .hljs-keyword{color:var(--highlight-keyword)}pre.s-code-block>code .hljs-type,pre.s-code-block>code .hljs-number{color:var(--highlight-namespace)}pre.s-code-block>code .hljs-string{color:var(--highlight-variable)}pre.s-code-block>code .hljs-built_in,pre.s-code-block>code .hljs-title{color:var(--highlight-literal)}@supports ((-webkit-clip-path:polygon(0% 0%,100% 0%,100% 100%,0% 100%)) or (clip-path:polygon(0% 0%,100% 0%,100% 100%,0% 100%))){.s-expandable:not(.is-expanded) .s-expandable--content{opacity:1;-webkit-transform:none;transform:none}}@supports (-webkit-overflow-scrolling:touch){.s-input,.s-textarea{font-size:16px;padding:.36em .55em}.s-input::-webkit-input-placeholder,.s-textarea::-webkit-input-placeholder{line-height:normal!important}}@supports (-webkit-overflow-scrolling:touch){.s-select>select{font-size:16px;padding:.4em .55em}}@supports ((-webkit-appearance:none) or (-moz-appearance:none) or (appearance:none)){.s-checkbox,.s-radio{-webkit-appearance:none;-moz-appearance:none;appearance:none;margin:0;width:1em;height:1em;border:1px solid var(--bc-darker);background-color:var(--white);outline:0;font-size:inherit;vertical-align:middle;cursor:pointer}.s-checkbox::-ms-check,.s-radio::-ms-check{display:none}}@supports ((-webkit-appearance:none) or (-moz-appearance:none) or (appearance:none)){.s-checkbox{border-radius:var(--br-sm);background-position:center center;background-repeat:no-repeat;background-size:contain}.s-checkbox:checked,.s-checkbox:indeterminate{border-color:var(--theme-secondary-400)!important;background-color:var(--theme-secondary-400)}@media (prefers-color-scheme:dark){body.theme-highcontrast.theme-system .s-checkbox:checked,body.theme-highcontrast.theme-system .s-checkbox:indeterminate{border-color:var(--blue-700)!important;background-color:var(--blue-300)}}body.theme-highcontrast.theme-dark .s-checkbox:checked,body.theme-highcontrast.theme-dark .s-checkbox:indeterminate{border-color:var(--blue-700)!important;background-color:var(--blue-300)}.s-checkbox:checked:focus,.s-checkbox:indeterminate:focus{border-color:var(--theme-secondary-400)}.s-checkbox:checked{background-image:url(data:image/svg+xml,%3Csvg\ width=\'11\'\ height=\'11\'\ xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath\ d=\'M10\ 3.41L8.59\ 2\ 4\ 6.59\ 2.41\ 5\ 1\ 6.41l3\ 3z\'\ fill=\'%23fff\'/%3E%3C/svg%3E)}.s-checkbox:indeterminate{background-image:url(data:image/svg+xml,%3Csvg\ width=\'11\'\ height=\'11\'\ xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath\ d=\'M2\ 4.5\ h7\ v2\ h-7\ z\'\ fill=\'%23fff\'/%3E%3C/svg%3E)}.s-checkbox:focus{border-color:var(--theme-secondary-300);box-shadow:0 0 0 var(--su-static4) var(--focus-ring)}}@supports ((-webkit-appearance:none) or (-moz-appearance:none) or (appearance:none)){.s-radio{border-radius:var(--br-circle)}.s-radio:checked{border-color:var(--theme-secondary-400);border-width:.30769231em;background-color:hsl(0,0%,100%)}@media (prefers-color-scheme:dark){body.theme-highcontrast.theme-system .s-radio:checked{border-color:var(--blue-300);outline:1px solid var(--black)}}body.theme-highcontrast.theme-dark .s-radio:checked{border-color:var(--blue-300);outline:1px solid var(--black)}.s-radio:focus{box-shadow:0 0 0 var(--su-static4) var(--focus-ring)}}@supports (-webkit-overflow-scrolling:touch){.s-input__md,.s-textarea__md{font-size:17px;padding-top:.4em;padding-bottom:.4em}}.s-prose{--s-prose-line-height:1.5;--s-prose-spacing:1.1em;--s-prose-spacing-condensed:calc(var(--s-prose-spacing)/2);font-size:15px;line-height:var(--s-prose-line-height);overflow-wrap:break-word}.s-prose p{margin-bottom:var(--s-prose-spacing)}.s-prose pre{overflow-wrap:normal}.s-prose code{font-size:var(--fs-body1);font-family:var(--ff-mono)}.s-prose li{overflow-wrap:break-word}.s-prose p:last-child,.s-prose dl:last-child,.s-prose blockquote:last-child,.s-prose table:last-child,.s-prose .s-table-container:last-child,.s-prose .s-link-preview:last-child,.s-prose hr:last-child,.s-prose ol:last-child,.s-prose ul:last-child,.s-prose img:last-child,.s-prose pre:last-child,.s-prose h1:last-child,.s-prose h2:last-child,.s-prose h3:last-child,.s-prose h4:last-child,.s-prose h5:last-child,.s-prose h6:last-child,.s-prose p:only-child,.s-prose dl:only-child,.s-prose blockquote:only-child,.s-prose table:only-child,.s-prose .s-table-container:only-child,.s-prose .s-link-preview:only-child,.s-prose hr:only-child,.s-prose ol:only-child,.s-prose ul:only-child,.s-prose img:only-child,.s-prose pre:only-child,.s-prose h1:only-child,.s-prose h2:only-child,.s-prose h3:only-child,.s-prose h4:only-child,.s-prose h5:only-child,.s-prose h6:only-child{margin-bottom:0}.s-prose h2{font-weight:bold!important}.s-prose h2{font-size:var(--fs-title);margin-bottom:.7em}.s-prose p+h2{margin-top:1.667em}.s-prose ul{margin-top:0;margin-bottom:var(--s-prose-spacing)}.s-prose ul li{margin-bottom:var(--s-prose-spacing-condensed)}.s-prose ol li:last-child,.s-prose ul li:last-child{margin-bottom:0}.s-prose *:not(.s-code-block)>code{padding:var(--su2) var(--su4);color:var(--black-800);background-color:var(--black-075);border-radius:var(--br-sm)}.s-prose pre{margin-top:0;margin-bottom:calc(var(--s-prose-spacing) + .4em)}.s-prose pre:not(.s-code-block){padding:var(--su12);color:var(--highlight-color);width:auto;max-height:600px;overflow:auto;font-size:var(--fs-body1);line-height:var(--lh-md);background-color:var(--highlight-bg);border-radius:var(--br-md);scrollbar-color:var(--scrollbar) transparent}.s-prose pre:not(.s-code-block) code{background-color:transparent;padding:0;border-radius:0}.s-prose pre:not(.s-code-block)::-webkit-scrollbar{width:calc(var(--su-static12) - var(--su-static2));height:calc(var(--su-static12) - var(--su-static2));background-color:transparent}.s-prose pre:not(.s-code-block)::-webkit-scrollbar-track{border-radius:calc(var(--su-static12) - var(--su-static2));background-color:transparent}.s-prose pre:not(.s-code-block)::-webkit-scrollbar-thumb{border-radius:calc(var(--su-static12) - var(--su-static2));background-color:var(--scrollbar)}.s-prose pre:not(.s-code-block)::-webkit-scrollbar-corner{background-color:transparent;border-color:transparent}@media not all and (min-resolution:.001dpcm){@supports (-webkit-appearance:none) and (stroke-color:transparent){.s-spinner,.s-spinner:before,.s-spinner:after{box-shadow:0 0 0 2px transparent}}}@keyframes s-spinner-rotate{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}@supports ((-webkit-clip-path:polygon(0% 0%,100% 0%,100% 100%,0% 100%)) or (clip-path:polygon(0% 0%,100% 0%,100% 100%,0% 100%))) or (-webkit-clip-path:polygon(0% 0%,100% 0%,100% 100%,0% 100%)){.s-sidebarwidget:after{-webkit-clip-path:polygon(0% 0%,100% 0%,100% 50%,0% 50%);clip-path:polygon(0% 0%,100% 0%,100% 50%,0% 50%);border:1px solid var(--s-sidebarwidget-outer-border-color)}}@font-face{font-family:"Segoe UI Adjusted";src:local(Segoe UI);ascent-override:95%}@font-face{font-family:"Segoe UI Adjusted";src:local(Segoe UI Bold);ascent-override:90%;font-weight:700}html,body{--ff-sans:-apple-system,BlinkMacSystemFont,"Segoe UI Adjusted","Segoe UI","Liberation Sans",sans-serif;--ff-serif:Georgia,Cambria,"Times New Roman",Times,serif;--ff-mono:ui-monospace,"Cascadia Mono","Segoe UI Mono","Liberation Mono",Menlo,Monaco,Consolas,monospace;--theme-body-font-family:var(--ff-sans);--fs-fine:11px;--fs-caption:12px;--fs-body1:13px;--fs-body2:1.15384615rem;--fs-body3:1.30769231rem;--fs-subheading:1.46153846rem;--fs-title:1.61538462rem;--fs-headline1:2.07692308rem;--fs-headline2:2.61538461rem;--fs-display1:3.30769231rem;--fs-display2:4.23076923rem;--fs-display3:5.30769231rem;--fs-display4:7.61538461rem;--fs-body2-relative:1.15384615em;--fs-body3-relative:1.30769231em;--fs-subheading-relative:1.46153846em;--fs-title-relative:1.61538462em;--fs-headline1-relative:2.07692308em;--fs-headline2-relative:2.61538461em;--fs-display1-relative:3.30769231em;--fs-display2-relative:4.23076923em;--fs-display3-relative:5.30769231em;--fs-display4-relative:7.61538461em;--fs-base:13px;--stacks-internals-lh-unit:13;--lh-xs:1;--lh-sm:calc((var(--stacks-internals-lh-unit) + 2)/var(--stacks-internals-lh-unit));--lh-md:calc((var(--stacks-internals-lh-unit) + 4)/var(--stacks-internals-lh-unit));--lh-lg:calc((var(--stacks-internals-lh-unit) + 8)/var(--stacks-internals-lh-unit));--lh-xl:calc((var(--stacks-internals-lh-unit) + 12)/var(--stacks-internals-lh-unit));--lh-xxl:2;--lh-base:var(--lh-md);--lh-6:((var(--stacks-internals-lh-unit) + 6)/var(--stacks-internals-lh-unit))}body{--zi-hide:-1;--zi-base:0;--zi-selected:25;--zi-active:30;--zi-dropdown:1000;--zi-popovers:2000;--zi-tooltips:3000;--zi-banners:4000;--zi-navigation:5000;--zi-navigation-fixed:5050;--zi-modals-background:8050;--zi-modals:9000;--br-sm:3px;--br-md:5px;--br-lg:7px;--br-circle:50%;--te-smooth-slow:cubic-bezier(.25,.46,.45,.94);--te-smooth:cubic-bezier(.165,.84,.44,1);--te-smooth-quick:cubic-bezier(.19,1,.22,1);--te-back-out:cubic-bezier(.175,.885,.32,1.275);--te-back-in-out:cubic-bezier(.68,-0.55,.265,1.55);--te-ease-in:cubic-bezier(.47,0,.745,.715);--te-ease-in-out:cubic-bezier(.445,.05,.55,.95);--te-ease-out:cubic-bezier(.39,.575,.565,1);--default-transition-duration:.1s;--transition-time:var(--default-transition-duration);--s-full:97.2307692rem;--s-step:calc(var(--s-full)/12)}.component-colors,body:not(.theme-dark),body.theme-dark .theme-light__forced,body.theme-system .theme-light__forced,body:not(.theme-dark) .themed,body.theme-dark .theme-light__forced .themed,body.theme-system .theme-light__forced .themed,body.theme-dark,body:not(.theme-dark) .theme-dark__forced,body.theme-dark .themed,body:not(.theme-dark) .theme-dark__forced .themed{--theme-body-font-color:var(--black-800);--theme-background-color:var(--white);--theme-link-color:var(--theme-secondary-400);--theme-link-color-hover:var(--theme-secondary-350);--theme-link-color-visited:var(--theme-secondary-500);--theme-button-color:var(--theme-secondary-400);--theme-button-background-color:transparent;--theme-button-hover-color:var(--theme-secondary-500);--theme-button-hover-background-color:var(--theme-secondary-050);--theme-button-active-background-color:var(--theme-secondary-100);--theme-button-selected-color:var(--theme-secondary-900);--theme-button-selected-background-color:var(--theme-secondary-150);--theme-button-primary-color:var(--white);--theme-button-primary-background-color:var(--theme-secondary-400);--theme-button-primary-hover-color:var(--white);--theme-button-primary-hover-background-color:var(--theme-secondary-500);--theme-button-primary-active-background-color:var(--theme-secondary-700);--theme-button-primary-selected-color:var(--white);--theme-button-primary-selected-background-color:var(--theme-secondary-700);--theme-button-primary-number-color:var(--theme-secondary-900);--theme-button-filled-color:var(--theme-secondary-700);--theme-button-filled-background-color:var(--theme-secondary-050);--theme-button-filled-border-color:var(--theme-secondary-350);--theme-button-filled-hover-color:var(--theme-secondary-800);--theme-button-filled-hover-background-color:var(--theme-secondary-100);--theme-button-filled-active-background-color:var(--theme-secondary-150);--theme-button-filled-active-border-color:var(--theme-secondary-350);--theme-button-filled-selected-color:var(--theme-secondary-900);--theme-button-filled-selected-background-color:var(--theme-secondary-300);--theme-button-filled-selected-border-color:var(--theme-secondary-500);--theme-button-outlined-border-color:var(--theme-secondary-300);--theme-button-outlined-selected-border-color:var(--theme-secondary-400);--theme-tag-color:var(--theme-secondary-800);--theme-tag-background-color:var(--theme-secondary-075);--theme-tag-border-color:transparent;--theme-tag-hover-color:var(--theme-secondary-900);--theme-tag-hover-background-color:var(--theme-secondary-100);--theme-tag-hover-border-color:transparent;--theme-topbar-height:var(--su-static48);--theme-topbar-background-color:var(--black-025);--theme-topbar-search-color:var(--black-700);--theme-topbar-search-background:var(--white);--theme-topbar-search-placeholder:var(--black-400);--theme-topbar-search-border:var(--black-200);--theme-topbar-search-border-focus:var(--blue-300);--theme-topbar-search-shadow-focus:0 0 0 var(--su-static4) var(--focus-ring);--theme-topbar-select-color:var(--black-700);--theme-topbar-select-background:var(--black-075);--theme-topbar-item-color:var(--black-600);--theme-topbar-item-color-hover:var(--black-800);--theme-topbar-item-background-hover:var(--black-075);--theme-topbar-item-color-current:var(--black);--theme-topbar-item-border-current:var(--theme-primary-color);--theme-topbar-accent-border:3px solid var(--theme-primary-color);--theme-post-title-color:var(--theme-link-color);--theme-post-title-color-hover:var(--theme-link-color-hover);--theme-post-title-color-visited:var(--theme-link-color-visited);--theme-post-title-font-family:var(--theme-body-font-family);--theme-post-body-font-family:var(--theme-body-font-family)}:root{--theme-base-primary-color-h:27;--theme-base-primary-color-s:90%;--theme-base-primary-color-l:55%;--theme-base-primary-color-r:243.525;--theme-base-primary-color-g:129.9225;--theme-base-primary-color-b:36.975;--theme-base-secondary-color-h:206;--theme-base-secondary-color-s:100%;--theme-base-secondary-color-l:40%;--theme-base-secondary-color-r:0;--theme-base-secondary-color-g:115.6;--theme-base-secondary-color-b:204}body:not(.theme-dark),body.theme-dark .theme-light__forced,body.theme-system .theme-light__forced{--white:hsl(0,0%,100%);--black:hsl(210,8%,5%);--orange:hsl(27,90%,55%);--yellow:hsl(47,83%,91%);--green:hsl(140,40%,55%);--blue:hsl(206,100%,40%);--powder:hsl(205,46%,92%);--red:hsl(358,62%,52%);--black-025:hsl(210,8%,97.5%);--black-050:hsl(210,8%,95%);--black-075:hsl(210,8%,90%);--black-100:hsl(210,8%,85%);--black-150:hsl(210,8%,80%);--black-200:hsl(210,8%,75%);--black-300:hsl(210,8%,65%);--black-350:hsl(210,8%,60%);--black-400:hsl(210,8%,55%);--black-500:hsl(210,8%,45%);--black-600:hsl(210,8%,35%);--black-700:hsl(210,8%,25%);--black-750:hsl(210,8%,20%);--black-800:hsl(210,8%,15%);--black-900:hsl(210,8%,5%);--orange-050:hsl(27,100%,97%);--orange-100:hsl(27,95%,90%);--orange-200:hsl(27,90%,83%);--orange-300:hsl(27,90%,70%);--orange-400:hsl(27,90%,55%);--orange-500:hsl(27,90%,50%);--orange-600:hsl(27,90%,45%);--orange-700:hsl(27,90%,39%);--orange-800:hsl(27,87%,35%);--orange-900:hsl(27,80%,30%);--blue-050:hsl(206,100%,97%);--blue-100:hsl(206,96%,90%);--blue-200:hsl(206,93%,83.5%);--blue-300:hsl(206,90%,69.5%);--blue-400:hsl(206,85%,57.5%);--blue-500:hsl(206,100%,52%);--blue-600:hsl(206,100%,40%);--blue-700:hsl(209,100%,37.5%);--blue-800:hsl(209,100%,32%);--blue-900:hsl(209,100%,26%);--powder-050:hsl(205,47%,97%);--powder-100:hsl(205,46%,92%);--powder-200:hsl(205,53%,88%);--powder-300:hsl(205,57%,81%);--powder-400:hsl(205,56%,76%);--powder-500:hsl(205,41%,63%);--powder-600:hsl(205,36%,53%);--powder-700:hsl(205,47%,42%);--powder-800:hsl(205,46%,32%);--powder-900:hsl(205,46%,22%);--green-025:hsl(140,42%,95%);--green-050:hsl(140,40%,90%);--green-100:hsl(140,40%,85%);--green-200:hsl(140,40%,75%);--green-300:hsl(140,40%,65%);--green-400:hsl(140,40%,55%);--green-500:hsl(140,40%,47%);--green-600:hsl(140,40%,40%);--green-700:hsl(140,41%,31%);--green-800:hsl(140,40%,27%);--green-900:hsl(140,40%,20%);--yellow-050:hsl(47,87%,94%);--yellow-100:hsl(47,83%,91%);--yellow-200:hsl(47,65%,84%);--yellow-300:hsl(47,69%,69%);--yellow-400:hsl(47,79%,58%);--yellow-500:hsl(47,73%,50%);--yellow-600:hsl(47,76%,46%);--yellow-700:hsl(47,79%,40%);--yellow-800:hsl(47,82%,34%);--yellow-900:hsl(47,84%,28%);--red-025:hsl(358,80%,98%);--red-050:hsl(358,75%,97%);--red-100:hsl(358,76%,90%);--red-200:hsl(358,74%,83%);--red-300:hsl(358,70%,70%);--red-400:hsl(358,68%,59%);--red-500:hsl(358,62%,52%);--red-600:hsl(358,62%,47%);--red-700:hsl(358,64%,41%);--red-800:hsl(358,64%,35%);--red-900:hsl(358,67%,29%);--gold:hsl(48,100%,50%);--gold-lighter:hsl(48,100%,91%);--gold-darker:hsl(45,100%,47%);--silver:hsl(210,6%,72%);--silver-lighter:hsl(0,0%,91%);--silver-darker:hsl(210,3%,61%);--bronze:hsl(28,38%,67%);--bronze-lighter:hsl(28,40%,92%);--bronze-darker:hsl(28,31%,52%);--bc-lightest:var(--black-025);--bc-lighter:var(--black-050);--bc-light:var(--black-075);--bc-medium:var(--black-100);--bc-dark:var(--black-150);--bc-darker:var(--black-200);--fc-dark:hsl(210,8%,5%);--fc-medium:hsl(210,8%,25%);--fc-light:hsl(210,8%,45%);--focus-ring-success:hsla(140,40%,75%,0.4);--focus-ring-warning:hsla(47,79%,58%,0.4);--focus-ring-error:hsla(358,62%,47%,0.15);--focus-ring-muted:hsla(210,8%,15%,0.1);--_o-disabled:.5;--_o-disabled-static:.5;--bs-sm:0 1px 2px hsla(0,0%,0%,0.05),0 1px 4px hsla(0,0%,0%,0.05),0 2px 8px hsla(0,0%,0%,0.05);--bs-md:0 1px 3px hsla(0,0%,0%,0.06),0 2px 6px hsla(0,0%,0%,0.06),0 3px 8px hsla(0,0%,0%,0.09);--bs-lg:0 1px 4px hsla(0,0%,0%,0.09),0 3px 8px hsla(0,0%,0%,0.09),0 4px 13px hsla(0,0%,0%,0.13);--bs-xl:0 10px 24px hsla(0,0%,0%,0.05),0 20px 48px hsla(0,0%,0%,0.05),0 1px 4px hsla(0,0%,0%,0.1);--scrollbar:hsla(0,0%,0%,0.2);--highlight-bg:hsl(0,0%,96.5%);--highlight-color:var(--black-750);--highlight-comment:hsl(210,8%,43.5%);--highlight-punctuation:var(--black-600);--highlight-namespace:hsl(27,99%,36%);--highlight-attribute:hsl(206,98.5%,29%);--highlight-literal:hsl(27,99%,36%);--highlight-symbol:hsl(306,43%,35%);--highlight-keyword:hsl(206,98.5%,29%);--highlight-variable:hsl(80,80.5%,26.5%);--highlight-addition:var(--green-700);--highlight-deletion:var(--red-600)}body:not(.theme-dark),body.theme-dark .theme-light__forced,body.theme-system .theme-light__forced,body:not(.theme-dark) .themed,body.theme-dark .theme-light__forced .themed,body.theme-system .theme-light__forced .themed{color:var(--theme-body-font-color);--theme-primary-color-h:var(--theme-light-primary-color-h,var(--theme-base-primary-color-h));--theme-primary-color-s:var(--theme-light-primary-color-s,var(--theme-base-primary-color-s));--theme-primary-color-l:var(--theme-light-primary-color-l,var(--theme-base-primary-color-l));--theme-primary-color-r:var(--theme-light-primary-color-r,var(--theme-base-primary-color-r));--theme-primary-color-g:var(--theme-light-primary-color-g,var(--theme-base-primary-color-g));--theme-primary-color-b:var(--theme-light-primary-color-b,var(--theme-base-primary-color-b));--theme-secondary-color-h:var(--theme-light-secondary-color-h,var(--theme-base-secondary-color-h));--theme-secondary-color-s:var(--theme-light-secondary-color-s,var(--theme-base-secondary-color-s));--theme-secondary-color-l:var(--theme-light-secondary-color-l,var(--theme-base-secondary-color-l));--theme-secondary-color-r:var(--theme-light-secondary-color-r,var(--theme-base-secondary-color-r));--theme-secondary-color-g:var(--theme-light-secondary-color-g,var(--theme-base-secondary-color-g));--theme-secondary-color-b:var(--theme-light-secondary-color-b,var(--theme-base-secondary-color-b));--theme-primary-color:hsl(var(--theme-primary-color-h),var(--theme-primary-color-s),var(--theme-primary-color-l));--theme-primary-900:hsl(var(--theme-primary-color-h),var(--theme-primary-color-s),calc(var(--theme-primary-color-l) - 26%));--theme-primary-800:hsl(var(--theme-primary-color-h),var(--theme-primary-color-s),calc(var(--theme-primary-color-l) - 21%));--theme-primary-700:hsl(var(--theme-primary-color-h),var(--theme-primary-color-s),calc(var(--theme-primary-color-l) - 16%));--theme-primary-600:hsl(var(--theme-primary-color-h),var(--theme-primary-color-s),calc(var(--theme-primary-color-l) - 10%));--theme-primary-500:hsl(var(--theme-primary-color-h),var(--theme-primary-color-s),calc(var(--theme-primary-color-l) - 5%));--theme-primary-400:var(--theme-primary-color);--theme-primary-350:rgb(calc(51 + var(--theme-primary-color-r)*.8),calc(51 + var(--theme-primary-color-g)*.8),calc(51 + var(--theme-primary-color-b)*.8));--theme-primary-300:rgb(calc(89.25 + var(--theme-primary-color-r)*.65),calc(89.25 + var(--theme-primary-color-g)*.65),calc(89.25 + var(--theme-primary-color-b)*.65));--theme-primary-200:rgb(calc(122.4 + var(--theme-primary-color-r)*.52),calc(122.4 + var(--theme-primary-color-g)*.52),calc(122.4 + var(--theme-primary-color-b)*.52));--theme-primary-150:rgb(calc(165.75 + var(--theme-primary-color-r)*.35),calc(165.75 + var(--theme-primary-color-g)*.35),calc(165.75 + var(--theme-primary-color-b)*.35));--theme-primary-100:rgb(calc(198.9 + var(--theme-primary-color-r)*.22),calc(198.9 + var(--theme-primary-color-g)*.22),calc(198.9 + var(--theme-primary-color-b)*.22));--theme-primary-075:rgb(calc(216.75 + var(--theme-primary-color-r)*.15),calc(216.75 + var(--theme-primary-color-g)*.15),calc(216.75 + var(--theme-primary-color-b)*.15));--theme-primary-050:rgb(calc(234.6 + var(--theme-primary-color-r)*.08),calc(234.6 + var(--theme-primary-color-g)*.08),calc(234.6 + var(--theme-primary-color-b)*.08));--theme-primary-025:rgb(calc(244.8 + var(--theme-primary-color-r)*.04),calc(244.8 + var(--theme-primary-color-g)*.04),calc(244.8 + var(--theme-primary-color-b)*.04));--theme-secondary-color:hsl(var(--theme-secondary-color-h),var(--theme-secondary-color-s),var(--theme-secondary-color-l));--theme-secondary-900:hsl(var(--theme-secondary-color-h),var(--theme-secondary-color-s),calc(var(--theme-secondary-color-l) - 26%));--theme-secondary-800:hsl(var(--theme-secondary-color-h),var(--theme-secondary-color-s),calc(var(--theme-secondary-color-l) - 21%));--theme-secondary-700:hsl(var(--theme-secondary-color-h),var(--theme-secondary-color-s),calc(var(--theme-secondary-color-l) - 16%));--theme-secondary-600:hsl(var(--theme-secondary-color-h),var(--theme-secondary-color-s),calc(var(--theme-secondary-color-l) - 10%));--theme-secondary-500:hsl(var(--theme-secondary-color-h),var(--theme-secondary-color-s),calc(var(--theme-secondary-color-l) - 5%));--theme-secondary-400:var(--theme-secondary-color);--theme-secondary-350:rgb(calc(51 + var(--theme-secondary-color-r)*.8),calc(51 + var(--theme-secondary-color-g)*.8),calc(51 + var(--theme-secondary-color-b)*.8));--theme-secondary-300:rgb(calc(89.25 + var(--theme-secondary-color-r)*.65),calc(89.25 + var(--theme-secondary-color-g)*.65),calc(89.25 + var(--theme-secondary-color-b)*.65));--theme-secondary-200:rgb(calc(122.4 + var(--theme-secondary-color-r)*.52),calc(122.4 + var(--theme-secondary-color-g)*.52),calc(122.4 + var(--theme-secondary-color-b)*.52));--theme-secondary-150:rgb(calc(165.75 + var(--theme-secondary-color-r)*.35),calc(165.75 + var(--theme-secondary-color-g)*.35),calc(165.75 + var(--theme-secondary-color-b)*.35));--theme-secondary-100:rgb(calc(198.9 + var(--theme-secondary-color-r)*.22),calc(198.9 + var(--theme-secondary-color-g)*.22),calc(198.9 + var(--theme-secondary-color-b)*.22));--theme-secondary-075:rgb(calc(216.75 + var(--theme-secondary-color-r)*.15),calc(216.75 + var(--theme-secondary-color-g)*.15),calc(216.75 + var(--theme-secondary-color-b)*.15));--theme-secondary-050:rgb(calc(234.6 + var(--theme-secondary-color-r)*.08),calc(234.6 + var(--theme-secondary-color-g)*.08),calc(234.6 + var(--theme-secondary-color-b)*.08));--theme-secondary-025:rgb(calc(244.8 + var(--theme-secondary-color-r)*.04),calc(244.8 + var(--theme-secondary-color-g)*.04),calc(244.8 + var(--theme-secondary-color-b)*.04));--focus-ring:hsla(var(--theme-secondary-color-h),var(--theme-secondary-color-s),var(--theme-secondary-color-l),.15)}.bt{border-top-style:solid!important;border-top-width:var(--su-static1)!important}.bb{border-bottom-style:solid!important;border-bottom-width:var(--su-static1)!important}.bc-black-075{border-color:var(--black-075)!important}.fc-black-500{color:var(--black-500)!important}.fc-black-200{color:var(--black-200)!important}.fc-green-700{color:var(--green-700)!important}.fc-theme-primary-500{color:var(--theme-primary-500)!important}.gs4{margin:calc(var(--su4)/2*-1)}.gs4>.d-flex,.gs4>.flex--item{margin:calc(var(--su4)/2)}.gsy,.gsy>.d-flex{margin-right:0;margin-left:0}.fd-column{flex-direction:column!important}.fw-wrap{flex-wrap:wrap!important}.jc-center{justify-content:center!important}.ai-center{align-items:center!important}.ai-stretch{align-items:stretch!important}.fl1{flex:1 auto!important}body{--su-base:1;--su-static1:1px;--su-static2:2px;--su-static4:4px;--su-static6:6px;--su-static8:8px;--su-static12:12px;--su-static16:16px;--su-static24:24px;--su-static32:32px;--su-static48:48px;--su-static64:64px;--su-static96:96px;--su-static128:128px;--su1:clamp(var(--su-static1),calc(var(--su-static1)*var(--su-base)),calc(var(--su-static1)*var(--su-base)));--su2:calc(var(--su-static2)*var(--su-base));--su4:calc(var(--su-static4)*var(--su-base));--su6:calc(var(--su-static6)*var(--su-base));--su8:calc(var(--su-static8)*var(--su-base));--su12:calc(var(--su-static12)*var(--su-base));--su16:calc(var(--su-static16)*var(--su-base));--su24:calc(var(--su-static24)*var(--su-base));--su32:calc(var(--su-static32)*var(--su-base));--su48:calc(var(--su-static48)*var(--su-base));--su64:calc(var(--su-static64)*var(--su-base));--su96:calc(var(--su-static96)*var(--su-base));--su128:calc(var(--su-static128)*var(--su-base))}.mr0{margin-right:0!important}.mb0{margin-bottom:0!important}.ml0{margin-left:0!important}.mt12{margin-top:var(--su12)!important}.mt24{margin-top:var(--su24)!important}.mtn8{margin-top:calc(var(--su8)*-1)!important}.mr2{margin-right:var(--su2)!important}.mr4{margin-right:var(--su4)!important}.mr16{margin-right:var(--su16)!important}.mr0{margin-right:0!important}.mb8{margin-bottom:var(--su8)!important}.mb12{margin-bottom:var(--su12)!important}.mb16{margin-bottom:var(--su16)!important}.mb24{margin-bottom:var(--su24)!important}.mb0{margin-bottom:0!important}.ml12{margin-left:var(--su12)!important}.ml0{margin-left:0!important}.mln2{margin-left:calc(var(--su2)*-1)!important}.mln4{margin-left:calc(var(--su4)*-1)!important}.pb8{padding-bottom:var(--su8)!important}.py4{padding-top:var(--su4)!important;padding-bottom:var(--su4)!important}.py6{padding-top:var(--su6)!important;padding-bottom:var(--su6)!important}h1,h2{margin-top:0}.fs-headline1{font-size:var(--fs-headline1)!important}.fs-title{font-size:var(--fs-title)!important}@media (max-width:640px){html.html__responsive:not(.html__unpinned-leftnav) .fs-headline1{font-size:2rem!important}html.html__responsive:not(.html__unpinned-leftnav) .fs-title{font-size:1.8rem!important}}.fc-light{color:var(--fc-light)!important}.ta-center{text-align:center!important}.ws-nowrap{white-space:nowrap!important}.ow-break-word{overflow-wrap:break-word!important}.list-ls-none{list-style:none!important}.d-flex{display:flex!important}.d-inline-flex{display:inline-flex!important}.d-inline{display:inline!important}.d-none{display:none!important}.c-pointer{cursor:pointer!important}.clearfix:before,.clearfix:after{content:"";display:table}.clearfix:after{clear:both}.ps-relative{position:relative!important}@media (max-width:640px){html.html__responsive:not(.html__unpinned-leftnav) .sm\:fd-column{flex-direction:column!important}html.html__responsive:not(.html__unpinned-leftnav) .sm\:as-end{align-self:flex-end!important}html.html__responsive:not(.html__unpinned-leftnav) .sm\:order-first{order:-1!important}html.html__responsive:not(.html__unpinned-leftnav) .sm\:mb12{margin-bottom:var(--su12)!important}html.html__responsive:not(.html__unpinned-leftnav) .sm\:ml0{margin-left:0!important}html.html__responsive:not(.html__unpinned-leftnav) .sm\:d-none{display:none!important}}body.unified-theme{--theme-base-primary-color-h:27;--theme-base-primary-color-s:90%;--theme-base-primary-color-l:55%;--theme-base-primary-color-r:243.525;--theme-base-primary-color-g:129.9225;--theme-base-primary-color-b:36.975;--theme-button-color:var(--blue-600);--theme-button-hover-color:var(--blue-700);--theme-button-hover-background-color:var(--blue-050);--theme-button-active-background-color:var(--blue-100);--theme-button-selected-color:var(--blue-900);--theme-button-selected-background-color:var(--blue-200);--theme-button-filled-color:var(--powder-700);--theme-button-filled-background-color:var(--powder-100);--theme-button-filled-border-color:var(--powder-500);--theme-button-filled-hover-color:var(--powder-800);--theme-button-filled-hover-background-color:var(--powder-300);--theme-button-filled-active-background-color:var(--powder-400);--theme-button-filled-active-border-color:var(--powder-600);--theme-button-filled-selected-color:var(--powder-900);--theme-button-filled-selected-background-color:var(--powder-300);--theme-button-filled-selected-border-color:var(--powder-700);--theme-button-outlined-border-color:var(--blue-400);--theme-button-outlined-selected-border-color:var(--blue-600);--theme-button-primary-background-color:var(--blue-500);--theme-button-primary-hover-background-color:var(--blue-600);--theme-button-primary-active-background-color:var(--blue-700);--theme-button-primary-selected-background-color:var(--blue-800);--theme-background-color:var(--white);--theme-background-position:top left;--theme-background-repeat:repeat;--theme-background-size:auto;--theme-background-attachment:auto;--theme-content-background-color:var(--white);--theme-content-border-color:var(--black-100);--theme-header-background-color:var(--theme-primary-color);--theme-header-background-position:center left;--theme-header-background-repeat:repeat;--theme-header-background-size:auto;--theme-header-background-border-bottom:0;--theme-header-link-color:var(--theme-primary-color);--theme-header-sponsored-color:hsla(0,0%,100%,0.4);--theme-header-foreground-color:transparent;--theme-header-foreground-position:bottom right;--theme-header-foreground-repeat:no-repeat;--theme-header-foreground-size:auto;--theme-footer-background-color:hsl(210,8%,15%);--theme-footer-background-position:top left;--theme-footer-background-repeat:no-repeat;--theme-footer-background-size:auto;--theme-footer-background-border-top:0;--theme-footer-title-color:hsl(210,8%,75%);--theme-footer-text-color:hsl(210,8%,60%);--theme-footer-link-color:hsl(210,8%,60%);--theme-footer-link-color-hover:hsl(210,8%,65%);--theme-footer-link-color-active:hsl(27,90%,55%);--theme-footer-link-caret-color:var(--theme-footer-background-color);--theme-footer-divider-color:hsl(210,8%,25%);--theme-footer-padding-top:0;--theme-footer-padding-bottom:0;--theme-link-color:var(--blue-600);--theme-link-color-hover:var(--blue-500);--theme-link-color-visited:var(--blue-700);--theme-tag-color:var(--powder-700);--theme-tag-background-color:var(--powder-100);--theme-tag-border-color:transparent;--theme-tag-hover-color:var(--powder-800);--theme-tag-hover-background-color:var(--powder-200);--theme-tag-hover-border-color:transparent;--theme-body-font-family:var(--ff-sans);--theme-body-font-color:var(--black-800);--theme-post-title-font-family:var(--ff-sans);--theme-post-title-color:var(--theme-link-color);--theme-post-title-color-hover:var(--theme-link-color-hover);--theme-post-title-color-visited:var(--theme-link-color-visited);--theme-post-body-font-family:var(--ff-sans);--theme-post-owner-background-color:var(--theme-secondary-075);--theme-post-owner-new-background-color:var(--powder-200)}html,body{color:var(--theme-body-font-color);font-family:var(--theme-body-font-family);font-size:var(--fs-base);line-height:var(--lh-base)}@media (max-width:640px){html.html__responsive:not(.html__unpinned-leftnav),html.html__responsive:not(.html__unpinned-leftnav) body{font-size:11px}}body{box-sizing:border-box}body *,body *:before,body *:after{box-sizing:inherit}.s-btn{position:relative;display:inline-block;background-color:transparent;font-family:inherit;font-size:var(--fs-body1);font-weight:normal;line-height:var(--lh-sm);text-align:center;text-decoration:none}.s-btn:hover,.s-btn:focus,.s-btn:active{color:var(--theme-button-hover-color);background:var(--theme-button-hover-background-color);text-decoration:none}.s-btn:active{background:var(--theme-button-active-background-color)}.s-btn:focus{outline:none;box-shadow:0 0 0 var(--su-static4) var(--focus-ring)}.s-btn__unset,.s-btn__unset:hover,.s-btn__unset:active,.s-btn__unset:focus{padding:0;border:none;outline:initial;font:unset;border-radius:0;color:unset;background:none;box-shadow:none;cursor:default;user-select:auto}.s-btn__unset:focus,.s-btn__link:focus,.s-btn__unset:focus-visible,.s-btn__link:focus-visible{outline-style:auto}a,.s-link{text-decoration:none;cursor:pointer;user-select:auto}a:hover,.s-link:hover,a.s-link__visited:hover,.s-link.s-link__visited:hover,a:active,.s-link:active,a.s-link__visited:active,.s-link.s-link__visited:active{color:var(--theme-link-color-hover)}.s-link.s-link__inherit{color:inherit!important}a.s-link__inherit:hover,.s-link.s-link__inherit:hover,a.s-link__inherit:active,.s-link.s-link__inherit:active,a.s-link__inherit.s-link__visited:visited,.s-link.s-link__inherit.s-link__visited:visited{color:inherit!important}.svg-icon{vertical-align:bottom}.svg-icon:not(.native) *{fill:currentColor}[class*="btn-"]{font-size:100%}ul,li{margin:0;padding:0}ul{margin-left:30px;margin-bottom:1em}ul{list-style-type:disc}a{color:var(--theme-link-color);text-decoration:none;cursor:pointer}a:hover,a:active{color:var(--theme-link-color-hover);text-decoration:none}a.comment-user{display:inline-block;white-space:nowrap;padding:0}.s-prose a:not(.post-tag):not(.s-tag):not(.badge-tag):not(.s-link__visited):not(.s-btn):not(.s-editor-btn),.comment-copy a{text-decoration:underline}.s-prose a:not(.post-tag):not(.s-tag):not(.badge-tag):not(.s-link__visited):not(.s-btn):not(.s-editor-btn):visited,.comment-copy a:visited{color:var(--theme-link-color-visited)}.question-hyperlink:hover,.answer-hyperlink:hover,.question-hyperlink:active,.answer-hyperlink:active{color:var(--theme-post-title-color-hover)}.question-hyperlink:visited,.answer-hyperlink:visited{color:var(--theme-post-title-color-visited)}strong{font-weight:bold}p{clear:both;margin-top:0}p code{padding:1px 5px}code{background-color:var(--black-075)}pre{width:auto;max-height:600px}pre code{background-color:transparent}pre::-webkit-scrollbar{width:calc(var(--su-static12) - var(--su-static2));height:calc(var(--su-static12) - var(--su-static2));background-color:transparent}pre::-webkit-scrollbar-track{border-radius:calc(var(--su-static12) - var(--su-static2));background-color:transparent}pre::-webkit-scrollbar-thumb{border-radius:calc(var(--su-static12) - var(--su-static2));background-color:var(--scrollbar)}pre::-webkit-scrollbar-corner{background-color:transparent;border-color:transparent}h1,h2{line-height:1.3;margin:0 0 1em}h2{font-size:var(--fs-subheading)}.s-prose,.comment-copy{font-family:var(--theme-post-body-font-family)}@keyframes spinnerRotate{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}@keyframes blink{50%{background-color:transparent}}.post-layout{display:grid;grid-template-columns:-webkit-max-content 1fr;grid-template-columns:max-content 1fr}.post-layout--left{grid-column:1}.post-layout--left.votecell{width:auto;padding-right:var(--su16)}.post-layout--right{padding-right:var(--su16);grid-column:2;width:auto;min-width:0}.post-layout--right .s-prose,.post-layout--right .comments{width:100%}@media not all and (min-resolution:0.001dpcm){@supports (-webkit-appearance:none) and (stroke-color:transparent){.s-editor-shadow:after{transition:none}}}html{--top-bar-allocated-space:50px}body{--hack-topbar-scrollbar-fallback:var(--scrollbar)}.comments{padding-bottom:10px}.comment:not([style*="background-color"]){transition:background-color linear 2s}.comment-actions{padding-left:3px}.comment-text{vertical-align:text-top}ul.comments-list{list-style-type:none;margin:0}ul.comments-list .comment{display:flex}ul.comments-list .comment-score{width:2ch;padding-right:4px}ul.comments-list .comment-text{flex-grow:1}ul.comments-list .comment>*{border-bottom:1px solid var(--black-050)}ul.comments-list .comment-text,ul.comments-list .comment-actions{padding:6px 0}ul.comments-list .comment-text{min-width:0;flex-basis:0;padding-left:6px;padding-right:6px}ul.comments-list .comment-body{word-wrap:break-word}ul.comments-list .comment-actions{padding-right:2px}ul.comments-list .comment-text,ul.comments-list .comment-actions{transition:background-color ease-out 3s}ul.comments-list .comment-actions{width:38px;flex-shrink:0}ul.comments-list .comment-score{display:inline-block}@supports (display:grid){ul.comments-list .comment-actions{display:grid;grid-template-columns:repeat(2,max-content);align-content:flex-start;width:37px;width:calc(2ch + 16px + 4px + 2px)}ul.comments-list .comment-flagging:nth-child(3){grid-column:2}}@supports (display:grid) and (display:contents) and (not (-apple-trailing-word:auto)){body:not(.no-grid-comments) ul.comments-list{display:grid;grid-template-columns:max-content 1fr}body:not(.no-grid-comments) ul.comments-list .comment-score{width:auto;min-width:var(--su-static16)}body:not(.no-grid-comments) ul.comments-list .comment-score>span{min-width:0;float:none}body:not(.no-grid-comments) ul.comments-list .comment-actions{width:auto}body:not(.no-grid-comments) ul.comments-list .comment{display:contents}body:not(.no-grid-comments) ul.comments-list .comment__highlight .comment-actions{transition:none;background-color:var(--yellow-100)}}html{height:100%}body{min-height:100%;display:flex;flex-direction:column;background-color:var(--theme-background-color);background-image:none;background-position:var(--theme-background-position);background-repeat:var(--theme-background-repeat);background-size:var(--theme-background-size);background-attachment:var(--theme-background-attachment);--mp-alt-row-color:var(--black-050);--mp-critical-color:var(--red-600);--mp-duration-color:var(--black-800);--mp-gap-bg-color:var(--black-025);--mp-gap-font-color:var(--black-700);--mp-highlight-default-color:var(--fc-dark);--mp-highlight-fade-color:var(--yellow-300);--mp-highlight-keyword-color:var(--blue-700);--mp-highlight-literal-color:var(--green-500);--mp-label-color:var(--black-700);--mp-link-color:var(--blue-700);--mp-main-bg-color:var(--white);--mp-muted-color:var(--black-300);--mp-popup-shadow:var(--bs-sm);--mp-query-border-color:var(--black-100);--mp-result-border:solid .5px var(--black-300);--mp-warning-color:var(--red-600)}.container{position:relative;flex:1 0 auto;text-align:left}#content{margin:0 auto}#content:before,#content:after{content:"";display:table}#content:after{clear:both}#answers{clear:both}#question-header .question-hyperlink{font-size:var(--fs-headline1);font-family:var(--theme-post-title-font-family);line-height:1.35;font-weight:normal;margin-bottom:0}#answers{padding-top:10px}#answers-header{margin-top:10px}.question{clear:both}.question .postcell{vertical-align:top}.question-page #answers .answer{border-bottom:1px solid var(--black-075)}.votecell{vertical-align:top}.answer{padding-bottom:var(--su16);padding-top:var(--su16)}#notify-container{font-size:var(--fs-body3);text-align:center;position:fixed;left:0;top:0;width:100%;height:0;z-index:calc(var(--zi-navigation-fixed) + 1)}.post-taglist{margin-bottom:10px;clear:both}#mainbar h2{font-weight:400}#mainbar{float:left;margin:0;padding:0}code{white-space:pre-wrap}pre code{white-space:inherit;padding:0}@keyframes highlighted-post-fade{0%{background-color:var(--yellow-100)}100%{background-color:rgba(0,0,0,0)}}.comment-date,.comment-date>a,.comment-date>a:hover{border-bottom:none;color:var(--black-350)}.comments{-webkit-tap-highlight-color:hsla(0,0%,100%,0)}@keyframes blinking{from{background:#f4a83d}to{background:rgba(244,168,61,0)}}#question-header{display:flex;flex-flow:row nowrap;justify-content:space-between}#question-header .question-hyperlink{color:var(--black-700)}.comment-text{font-size:var(--fs-body1);line-height:1.4}html.html__responsive,html.html__responsive body{min-width:auto}body{padding-top:50px}body .s-topbar~.container{margin-top:0}body>.container{max-width:1264px;width:100%;background:none;display:flex;justify-content:space-between;margin:0 auto}body>.container:after,body>.container:before{display:none}#content{max-width:1100px;width:calc(100% - 164px);background-color:var(--theme-content-background-color);border-radius:0;border:1px solid var(--theme-content-border-color);border-top-width:0;border-bottom-width:0;border-left-width:1px;border-right-width:0;padding:var(--su24);box-sizing:border-box}@media screen and (max-width:640px){html.html__responsive #content{border-left:0;border-right:0}}@media screen and (max-width:980px){html.html__responsive:not(.html__unpinned-leftnav) #content{padding-left:var(--su16);padding-right:var(--su16)}}@media screen and (max-width:640px){html.html__responsive #content{padding-left:var(--su12);padding-right:var(--su12);width:100%}}#mainbar{width:calc(100% - 300px - var(--su-static24))}@media screen and (max-width:980px){html.html__responsive:not(.html__unpinned-leftnav) #mainbar,html.html__responsive:not(.html__unpinned-leftnav) .mainbar{width:100%;float:none}}#answers{width:auto;float:none}.answer,#answers-header{width:100%}@supports (position:sticky) or (position:-webkit-sticky){.left-sidebar--sticky-container:not(.left-sidebar__fake-sticky){position:-webkit-sticky;position:sticky;width:auto;top:0;margin-bottom:var(--su8);max-height:100vh;overflow-y:auto;scrollbar-color:var(--scrollbar) transparent;top:var(--top-bar-allocated-space);max-height:calc(100vh - var(--top-bar-allocated-space))}.left-sidebar--sticky-container:not(.left-sidebar__fake-sticky)::-webkit-scrollbar{width:calc(var(--su-static12) - var(--su-static2));height:calc(var(--su-static12) - var(--su-static2));background-color:transparent}.left-sidebar--sticky-container:not(.left-sidebar__fake-sticky)::-webkit-scrollbar-track{border-radius:calc(var(--su-static12) - var(--su-static2));background-color:transparent}.left-sidebar--sticky-container:not(.left-sidebar__fake-sticky)::-webkit-scrollbar-thumb{border-radius:calc(var(--su-static12) - var(--su-static2));background-color:var(--scrollbar)}.left-sidebar--sticky-container:not(.left-sidebar__fake-sticky)::-webkit-scrollbar-corner{background-color:transparent;border-color:transparent}html.html__unpinned-leftnav .left-sidebar--sticky-container:not(.left-sidebar__fake-sticky){max-height:calc(100vh - 50px)}}</style>
+<link rel=alternate type=application/atom+xml title="Feed for question 'C++ : Association, Aggregation and Composition'" href=https://stackoverflow.com/feeds/question/25779394>
+<meta name=twitter:app:country content=US>
+<meta name=twitter:app:name:iphone content="Stack Exchange iOS">
+<meta name=twitter:app:id:iphone content=871299723>
+<meta name=twitter:app:url:iphone content=se-zaphod://stackoverflow.com/questions/25779394/c-association-aggregation-and-composition>
+<meta name=twitter:app:name:ipad content="Stack Exchange iOS">
+<meta name=twitter:app:id:ipad content=871299723>
+<meta name=twitter:app:url:ipad content=se-zaphod://stackoverflow.com/questions/25779394/c-association-aggregation-and-composition>
+<meta name=twitter:app:name:googleplay content="Stack Exchange Android">
+<meta name=twitter:app:url:googleplay content=https://stackoverflow.com/questions/25779394/c-association-aggregation-and-composition>
+<meta name=twitter:app:id:googleplay content=com.stackexchange.marvin>
+<style>@keyframes researchshow{0%{transform:translate3d(0,300px,0);opacity:0}25%{transform:translate3d(0,-12px,0);opacity:1}40%{transform:translate3d(0,-2px,0)}100%{transform:translate3d(0,0,0);opacity:1}}@keyframes researchhide{0%,50%{transform:translate3d(0,0,0);opacity:1}75%{transform:translate3d(0,-12px,0);opacity:1}100%{transform:translate3d(0,300px,0);opacity:0}}</style>
+<noscript id=noscript-css><style>body,.s-topbar{margin-top:1.9em}</style></noscript>
+<link rel="shortcut icon" href=data:image/x-icon;base64,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/wMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACKI7g8kgPTvJID0/ySA89sggO8QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACKA9TQkgPPII4DzLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP////////////////wAAD/8AAA//P//P/z//z/8wAM//MADP/z//z/8/4E//+AB///AAf//wBD//8OA///+AH//+AA//+AQH//gYA//8cAP//8CD//+BB///Ag///4wf//+cP///+D////B////4///////////////////////><style>.sf-hidden{display:none!important}</style><meta http-equiv=content-security-policy content="default-src 'none'; font-src 'self' data:; img-src 'self' data:; style-src 'unsafe-inline'; media-src 'self' data:; script-src 'unsafe-inline' data:;"><style>img[src="data:,"],source[src="data:,"]{display:none!important}</style></head>
+ <body class="question-page unified-theme">
+ <div id=notify-container></div>
+ <div id=custom-header class=sf-hidden></div>
+ 
+<header class="s-topbar ps-fixed t0 l0 js-top-bar sf-hidden">
+ 
+</header>
+ 
+ <div class=container>
+ 
+<div id=left-sidebar data-is-here-when="md lg" class="left-sidebar js-pinned-left-sidebar ps-relative sf-hidden">
+ 
+ 
+ 
+</div>
+ <div id=content class=snippet-hidden>
+ 
+<div itemprop=mainEntity itemscope itemtype=https://schema.org/Question>
+ <link itemprop=image href="https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon.png?v=c78bd457575a" class=sf-hidden>
+ <div class="inner-content clearfix">
+ 
+ <div id=question-header class="d-flex sm:fd-column">
+ <h1 itemprop=name class="fs-headline1 ow-break-word mb8 flex--item fl1"><a href=https://stackoverflow.com/questions/25779394/c-association-aggregation-and-composition class=question-hyperlink>C++ : Association, Aggregation and Composition</a></h1>
+ <div class="ml12 aside-cta flex--item print:d-none sm:ml0 sm:mb12 sm:order-first sm:as-end">
+ <a href=https://stackoverflow.com/questions/ask class="ws-nowrap s-btn s-btn__primary sf-hidden">
+ Ask Question
+ </a>
+ </div>
+ </div>
+ <div class="d-flex fw-wrap pb8 mb16 bb bc-black-075">
+ <div class="flex--item ws-nowrap mr16 mb8" title="2014-09-11 04:59:40Z">
+ <span class="fc-light mr2">Asked</span>
+ <time itemprop=dateCreated datetime=2014-09-11T04:59:40>8 years, 1 month ago</time>
+ </div>
+ <div class="flex--item ws-nowrap mr16 mb8">
+ <span class="fc-light mr2">Modified</span>
+ <a href=https://stackoverflow.com/questions/25779394/c-association-aggregation-and-composition?lastactivity class="s-link s-link__inherit" title="2020-08-28 17:22:42Z">2 years, 1 month ago</a>
+ </div>
+ <div class="flex--item ws-nowrap mb8" title="Viewed 35,995 times">
+ <span class="fc-light mr2">Viewed</span>
+ 36k times
+ </div>
+ </div>
+ <div id=mainbar role=main aria-label="question and answers">
+ 
+<div class="question js-question" data-questionid=25779394 data-position-on-page=0 data-score=29 id=question>
+ 
+<div class="js-zone-container zone-container-main sf-hidden">
+ 
+ 
+</div>
+ <div class=post-layout>
+ <div class="votecell post-layout--left">
+ <div class="js-voting-container d-flex jc-center fd-column ai-stretch gs4 fc-black-200" data-post-id=25779394>
+ <button class="js-vote-up-btn flex--item s-btn s-btn__unset c-pointer" data-controller=s-tooltip data-s-tooltip-placement=right aria-pressed=false aria-label="Up vote" data-selected-classes=fc-theme-primary data-unselected-classes aria-describedby=--stacks-s-tooltip-atqhlye1>
+ <svg aria-hidden=true class="svg-icon iconArrowUpLg" width=36 height=36 viewBox="0 0 36 36"><path d="M2 25h32L18 9 2 25Z"></path></svg>
+ </button><div id=--stacks-s-tooltip-atqhlye1 class="s-popover s-popover__tooltip sf-hidden" role=tooltip>This question shows research effort; it is useful and clear</div>
+ <div class="js-vote-count flex--item d-flex fd-column ai-center fc-black-500 fs-title" itemprop=upvoteCount data-value=29>
+ 29
+ </div>
+ <button class="js-vote-down-btn flex--item s-btn s-btn__unset c-pointer" data-controller=s-tooltip data-s-tooltip-placement=right aria-pressed=false aria-label="Down vote" data-selected-classes=fc-theme-primary data-unselected-classes aria-describedby=--stacks-s-tooltip-xfa6hwsv>
+ <svg aria-hidden=true class="svg-icon iconArrowDownLg" width=36 height=36 viewBox="0 0 36 36"><path d="M2 11h32L18 27 2 11Z"></path></svg>
+ </button><div id=--stacks-s-tooltip-xfa6hwsv class="s-popover s-popover__tooltip sf-hidden" role=tooltip>This question does not show any research effort; it is unclear or not useful</div>
+ 
+<button class="js-saves-btn s-btn s-btn__unset c-pointer py4" id=saves-btn-25779394 data-controller=s-tooltip data-s-tooltip-placement=right data-s-popover-placement aria-pressed=false data-post-type-id=1 data-user-privilege-for-post-click=0 aria-controls data-s-popover-auto-show=false aria-describedby=--stacks-s-tooltip-9ewx3bcb>
+ <svg aria-hidden=true class="fc-theme-primary-500 js-saves-btn-selected d-none svg-icon iconBookmark" width=18 height=18 viewBox="0 0 18 18"><path d="M3 17V3c0-1.1.9-2 2-2h8a2 2 0 0 1 2 2v14l-6-4-6 4Z"></path></svg>
+ <svg aria-hidden=true class="js-saves-btn-unselected svg-icon iconBookmarkAlt" width=18 height=18 viewBox="0 0 18 18"><path d="m9 10.6 4 2.66V3H5v10.26l4-2.66ZM3 17V3c0-1.1.9-2 2-2h8a2 2 0 0 1 2 2v14l-6-4-6 4Z"></path></svg>
+</button><div id=--stacks-s-tooltip-9ewx3bcb class="s-popover s-popover__tooltip sf-hidden" role=tooltip>Save this question.</div>
+ 
+ <a class="js-post-issue flex--item s-btn s-btn__unset c-pointer py6 mx-auto sf-hidden" href=https://stackoverflow.com/posts/25779394/timeline data-shortcut=T data-ks-title=timeline data-controller=s-tooltip data-s-tooltip-placement=right aria-label=Timeline aria-describedby=--stacks-s-tooltip-70jkibzv><svg aria-hidden=true class="mln2 mr0 svg-icon iconHistory" width=19 height=18 viewBox="0 0 19 18"><path d="M3 9a8 8 0 1 1 3.73 6.77L8.2 14.3A6 6 0 1 0 5 9l3.01-.01-4 4-4-4h3L3 9Zm7-4h1.01L11 9.36l3.22 2.1-.6.93L10 10V5Z"></path></svg></a><div id=--stacks-s-tooltip-70jkibzv class="s-popover s-popover__tooltip sf-hidden" role=tooltip>Show activity on this post.</div>
+</div>
+ </div>
+ 
+<div class="postcell post-layout--right">
+ 
+ <div class="s-prose js-post-body" itemprop=text>
+ 
+<p>I'm beginning to study OOAD and I'm having difficulty finding a <code>C++</code> code example that'd illustrate how <code>Association</code>, <code>Aggregation</code> and <code>Composition</code> are implemented programmatically. (There are several posts everywhere but they relate to C# or java). I did find an example or two, but they all conflict with my instructor's instructions and I'm confused.</p>
+<p>My understanding is that in:</p>
+<ul>
+<li><strong>Association:</strong> Foo has a pointer to Bar object as a data member</li>
+<li><strong>Aggregation:</strong> Foo has a pointer to Bar object and data of Bar is deep copied in that pointer.</li>
+<li><strong>Composition:</strong> Foo has a Bar object as data member.</li>
+</ul>
+<p>And this is how I've implemented it:</p>
+<pre class="lang-cpp s-code-block"><code class="hljs language-cpp"><span class=hljs-keyword>class</span> <span class="hljs-title class_">Bar</span>
+{
+    Baz baz;
+};
+
+<span class=hljs-comment>//ASSOCIATION (with Bar)</span>
+<span class=hljs-keyword>class</span> <span class="hljs-title class_">Foo</span>
+{
+    Bar* bar;
+    <span class=hljs-function><span class=hljs-type>void</span> <span class=hljs-title>setBar</span><span class=hljs-params>(Bar* _bar)</span>
+    </span>{
+        bar = _bar;
+    }
+};
+
+<span class=hljs-comment>//AGGREGATION (with Bar)</span>
+<span class=hljs-keyword>class</span> <span class="hljs-title class_">Foo</span>
+{
+    Bar* bar;
+    <span class=hljs-function><span class=hljs-type>void</span> <span class=hljs-title>setBar</span><span class=hljs-params>(Bar* _bar)</span>
+    </span>{
+        bar = <span class=hljs-keyword>new</span> Bar;
+        bar-&gt;baz = _bar-&gt;baz;
+    }
+};
+
+
+<span class=hljs-comment>//COMPOSTION (with Bar)</span>
+<span class=hljs-keyword>class</span> <span class="hljs-title class_">Foo</span>
+{
+    Bar bar;
+    <span class=hljs-built_in>Foo</span>(Baz baz)
+    {
+        bar.baz = baz;
+    }
+};
+</code></pre>
+<p>Is this correct? If not, then how should it be done instead? It'd be appreciated if you also give me a reference of a code from a book (so that I can discuss with my instructor)</p>
+ </div>
+ <div class="mt24 mb12">
+ <div class="post-taglist d-flex gs4 gsy fd-column">
+ <div class="d-flex ps-relative fw-wrap">
+ <ul class="ml0 list-ls-none js-post-tag-list-wrapper d-inline"><li class="d-inline mr4 js-post-tag-list-item"><a href=https://stackoverflow.com/questions/tagged/c%2b%2b class="post-tag sf-hidden" title="show questions tagged 'c++'" aria-label="show questions tagged 'c++'" rel=tag aria-labelledby=c++-container>c++</a><li class="d-inline mr4 js-post-tag-list-item"><a href=https://stackoverflow.com/questions/tagged/oop class="post-tag sf-hidden" title="show questions tagged 'oop'" aria-label="show questions tagged 'oop'" rel=tag aria-labelledby=oop-container>oop</a><li class="d-inline mr4 js-post-tag-list-item"><a href=https://stackoverflow.com/questions/tagged/associations class="post-tag sf-hidden" title="show questions tagged 'associations'" aria-label="show questions tagged 'associations'" rel=tag aria-labelledby=associations-container>associations</a><li class="d-inline mr4 js-post-tag-list-item"><a href=https://stackoverflow.com/questions/tagged/aggregation class="post-tag sf-hidden" title="show questions tagged 'aggregation'" aria-label="show questions tagged 'aggregation'" rel=tag aria-labelledby=aggregation-container>aggregation</a><li class="d-inline mr4 js-post-tag-list-item"><a href=https://stackoverflow.com/questions/tagged/ooad class="post-tag sf-hidden" title="show questions tagged 'ooad'" aria-label="show questions tagged 'ooad'" rel=tag aria-labelledby=ooad-container>ooad</a></ul>
+ </div>
+ </div>
+ </div>
+ <div class=mb0>
+ <div class="mt16 d-flex gs8 gsy fw-wrap jc-end ai-start pt4 mb16 sf-hidden">
+ 
+ 
+ 
+ </div>
+ </div>
+ 
+</div>
+ <span class="d-none sf-hidden" itemprop=commentCount>3</span> 
+ <div class="post-layout--right js-post-comments-component">
+ <div id=comments-25779394 class="comments js-comments-container bt bc-black-075 mt12" data-post-id=25779394 data-min-length=15>
+ <ul class="comments-list js-comments-list" data-remaining-comments-count=0 data-canpost=false data-cansee=true data-comments-unavailable=false data-addlink-disabled=true>
+ <li id=comment-40318282 class="comment js-comment" data-comment-id=40318282 data-comment-owner-id=434551 data-comment-score=0>
+ <div class="js-comment-actions comment-actions">
+ <div class="comment-score js-comment-edit-hide">
+ </div>
+ </div>
+ <div class="comment-text js-comment-text-and-form">
+ <div class="comment-body js-comment-edit-hide">
+ 
+ <span class=comment-copy><a href=http://programmers.stackexchange.com/>programmers.stackexchange.com</a> is a better place for this question.</span>
+ 
+ <div class="d-inline-flex ai-center">
+–&nbsp;<a href=https://stackoverflow.com/users/434551/r-sahu title="201,915 reputation" class=comment-user>R Sahu</a>
+ </div>
+ <span class=comment-date dir=ltr><a class=comment-link href=#comment40318282_25779394 aria-label="Link to comment"><span title="2014-09-11 05:33:31Z, License: CC BY-SA 3.0" class=relativetime-clean>Sep 11, 2014 at 5:33</span></a></span>
+ </div>
+ </div>
+ </li>
+ <li id=comment-40318669 class="comment js-comment" data-comment-id=40318669 data-comment-owner-id=3422652 data-comment-score=1>
+ <div class="js-comment-actions comment-actions">
+ <div class="comment-score js-comment-edit-hide">
+ <span title="number of 'useful comment' votes received" class="cool sf-hidden">1</span>
+ </div>
+ </div>
+ <div class="comment-text js-comment-text-and-form">
+ <div class="comment-body js-comment-edit-hide">
+ 
+ <span class=comment-copy>The difference between aggregation and association <a href=http://stackoverflow.com/q/9640885/3422652>is subtle</a> and they are generally implemented in c++ in the same way.</span>
+ 
+ <div class="d-inline-flex ai-center">
+–&nbsp;<a href=https://stackoverflow.com/users/3422652/chris-drew title="14,614 reputation" class=comment-user>Chris Drew</a>
+ </div>
+ <span class=comment-date dir=ltr><a class=comment-link href=#comment40318669_25779394 aria-label="Link to comment"><span title="2014-09-11 05:52:54Z, License: CC BY-SA 3.0" class=relativetime-clean>Sep 11, 2014 at 5:52</span></a></span>
+ </div>
+ </div>
+ </li>
+ <li id=comment-40501929 class="comment js-comment" data-comment-id=40501929 data-comment-owner-id=2668666 data-comment-score=0>
+ <div class="js-comment-actions comment-actions">
+ <div class="comment-score js-comment-edit-hide">
+ </div>
+ </div>
+ <div class="comment-text js-comment-text-and-form">
+ <div class="comment-body js-comment-edit-hide">
+ 
+ <span class=comment-copy>I remember being utterly confused when I was in school about this same terminology. Then, when I got into the work force, the only terminology that was used to discuss object relationships was is-a, has-a, inheritance, and composition. That said, i know UML has different symbols for aggregation and composition, but I've never really seen anyone make a distinction between the two. So, find the answer to get you the correct answers in your course, but don't stress about it too much.</span>
+ 
+ <div class="d-inline-flex ai-center">
+–&nbsp;<a href=https://stackoverflow.com/users/2668666/jmrah title="5,062 reputation" class=comment-user>jmrah</a>
+ </div>
+ <span class=comment-date dir=ltr><a class=comment-link href=#comment40501929_25779394 aria-label="Link to comment"><span title="2014-09-16 23:52:50Z, License: CC BY-SA 3.0" class=relativetime-clean>Sep 16, 2014 at 23:52</span></a></span>
+ </div>
+ </div>
+ </li>
+ </ul>
+ </div>
+ <div id=comments-link-25779394 data-rep=50 data-anon=true>
+ <a class="js-add-link comments-link disabled-link sf-hidden" title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments." href=# role=button>Add a comment</a>
+ <span class="js-link-separator dno sf-hidden">&nbsp;|&nbsp;</span>
+ <a class="js-show-link comments-link dno sf-hidden" title="Expand to show all comments on this post" href=# role=button></a>
+ </div> 
+ </div>
+ </div>
+</div>
+<div class="js-zone-container zone-container-responsive sf-hidden">
+ 
+ 
+</div>
+ <div id=answers>
+ <a name=tab-top></a>
+ <div id=answers-header>
+ <div class="answers-subheader d-flex ai-center mb8">
+ <div class="flex--item fl1">
+ <h2 class=mb0 data-answercount=1>
+ 1 Answer
+ <span style=display:none itemprop=answerCount>1</span>
+ </h2>
+ </div>
+ <div class=flex--item>
+ 
+<div class="d-flex g4 gsx ai-center sm:fd-column sm:ai-start sf-hidden">
+ 
+ 
+</div>
+ </div>
+ </div>
+ 
+ </div>
+ 
+<a name=25914787></a>
+<div id=answer-25914787 class="answer js-answer accepted-answer js-accepted-answer" data-answerid=25914787 data-parentid=25779394 data-score=21 data-position-on-page=1 data-highest-scored=1 data-question-has-accepted-highest-score=1 itemprop=acceptedAnswer itemscope itemtype=https://schema.org/Answer>
+ <div class=post-layout>
+ <div class="votecell post-layout--left">
+ <div class="js-voting-container d-flex jc-center fd-column ai-stretch gs4 fc-black-200" data-post-id=25914787>
+ <button class="js-vote-up-btn flex--item s-btn s-btn__unset c-pointer" data-controller=s-tooltip data-s-tooltip-placement=right aria-pressed=false aria-label="Up vote" data-selected-classes=fc-theme-primary data-unselected-classes aria-describedby=--stacks-s-tooltip-oeiavjhk>
+ <svg aria-hidden=true class="svg-icon iconArrowUpLg" width=36 height=36 viewBox="0 0 36 36"><path d="M2 25h32L18 9 2 25Z"></path></svg>
+ </button><div id=--stacks-s-tooltip-oeiavjhk class="s-popover s-popover__tooltip sf-hidden" role=tooltip>This answer is useful</div>
+ <div class="js-vote-count flex--item d-flex fd-column ai-center fc-black-500 fs-title" itemprop=upvoteCount data-value=21>
+ 21
+ </div>
+ <button class="js-vote-down-btn flex--item s-btn s-btn__unset c-pointer" data-controller=s-tooltip data-s-tooltip-placement=right aria-pressed=false aria-label="Down vote" data-selected-classes=fc-theme-primary data-unselected-classes aria-describedby=--stacks-s-tooltip-xfbsrpzf>
+ <svg aria-hidden=true class="svg-icon iconArrowDownLg" width=36 height=36 viewBox="0 0 36 36"><path d="M2 11h32L18 27 2 11Z"></path></svg>
+ </button><div id=--stacks-s-tooltip-xfbsrpzf class="s-popover s-popover__tooltip sf-hidden" role=tooltip>This answer is not useful</div>
+ 
+<button class="js-saves-btn s-btn s-btn__unset c-pointer py4" id=saves-btn-25914787 data-controller=s-tooltip data-s-tooltip-placement=right data-s-popover-placement aria-pressed=false data-post-type-id=2 data-user-privilege-for-post-click=0 aria-controls data-s-popover-auto-show=false aria-describedby=--stacks-s-tooltip-k9gxipou>
+ <svg aria-hidden=true class="fc-theme-primary-500 js-saves-btn-selected d-none svg-icon iconBookmark" width=18 height=18 viewBox="0 0 18 18"><path d="M3 17V3c0-1.1.9-2 2-2h8a2 2 0 0 1 2 2v14l-6-4-6 4Z"></path></svg>
+ <svg aria-hidden=true class="js-saves-btn-unselected svg-icon iconBookmarkAlt" width=18 height=18 viewBox="0 0 18 18"><path d="m9 10.6 4 2.66V3H5v10.26l4-2.66ZM3 17V3c0-1.1.9-2 2-2h8a2 2 0 0 1 2 2v14l-6-4-6 4Z"></path></svg>
+</button><div id=--stacks-s-tooltip-k9gxipou class="s-popover s-popover__tooltip sf-hidden" role=tooltip>Save this answer.</div>
+ <div class="js-accepted-answer-indicator flex--item fc-green-700 py6 mtn8" data-s-tooltip-placement=right title="Loading when this answer was accepted…" tabindex=0 role=note aria-label=Accepted>
+ <div class=ta-center>
+ <svg aria-hidden=true class="svg-icon iconCheckmarkLg" width=36 height=36 viewBox="0 0 36 36"><path d="m6 14 8 8L30 6v8L14 30l-8-8v-8Z"></path></svg>
+ </div>
+ </div>
+ 
+ <a class="js-post-issue flex--item s-btn s-btn__unset c-pointer py6 mx-auto sf-hidden" href=https://stackoverflow.com/posts/25914787/timeline data-shortcut=T data-ks-title=timeline data-controller=s-tooltip data-s-tooltip-placement=right aria-label=Timeline aria-describedby=--stacks-s-tooltip-czew1wt1><svg aria-hidden=true class="mln2 mr0 svg-icon iconHistory" width=19 height=18 viewBox="0 0 19 18"><path d="M3 9a8 8 0 1 1 3.73 6.77L8.2 14.3A6 6 0 1 0 5 9l3.01-.01-4 4-4-4h3L3 9Zm7-4h1.01L11 9.36l3.22 2.1-.6.93L10 10V5Z"></path></svg></a><div id=--stacks-s-tooltip-czew1wt1 class="s-popover s-popover__tooltip sf-hidden" role=tooltip>Show activity on this post.</div>
+</div>
+ </div>
+ 
+<div class="answercell post-layout--right">
+ 
+ <div class="s-prose js-post-body" itemprop=text>
+<p>I'm going to ignore Aggregation. It is <a href=https://stackoverflow.com/q/9640885/3422652>not a very clearly defined concept</a> and in my opinion it causes more confusion than it is worth. Composition and Association are quite enough, <a href=http://www.amazon.co.uk/Applying-UML-Patterns-Introduction-Object-Oriented/dp/0130925691 rel=noreferrer>Craig Larman</a> told me so. It might not be the answer your instructor was looking for but it is unlikely to be implemented in C++ any differently to Association anyway.</p>
+<p>There is not one way of implementing Composition and Association. How you implement them will depend on your requirements, for example the multiplicity of the relationship.</p>
+<h2>Composition</h2>
+<p>The simplest way of implementing composition is using a simple <code>Bar</code> member variable much like you suggested. The only change I would make is to initialize the <code>bar</code> in the constructor member initializer list:</p>
+<pre class="lang-cpp s-code-block"><code class="hljs language-cpp"><span class=hljs-comment>// COMPOSITION - with simple member variable</span>
+<span class=hljs-keyword>class</span> <span class="hljs-title class_">Foo</span> {
+ <span class=hljs-keyword>private</span>:
+  Bar bar;
+ <span class=hljs-keyword>public</span>:   
+  <span class=hljs-built_in>Foo</span>(<span class=hljs-type>int</span> baz) : <span class=hljs-built_in>bar</span>(baz) {}
+};
+</code></pre>
+<p>It is generally a good idea to initialize member variables using the constructor initialization list, it can be quicker and in some cases like const member variables it is the only way to initialize them.</p>
+<p>There might also be a reason to implement composition using a pointer. For example <code>Bar</code> could be a polymorphic type and you don't know the concrete type at compile time. Or perhaps you want to forward declare <code>Bar</code> to minimize compilation dependencies (see <a href=http://herbsutter.com/gotw/_100/ rel=noreferrer>PIMPL idiom</a>). Or perhaps the multiplicity of this relationship is 1 to 0..1 and you need to be able to have a null <code>Bar</code>. Of course because this is Composition <code>Foo</code> should own the <code>Bar</code> and in the modern world of C++11/C++14 we prefer to use smart pointers instead of owning raw pointers:</p>
+<pre class="lang-cpp s-code-block"><code class="hljs language-cpp"> <span class=hljs-comment>// COMPOSITION - with unique_ptr</span>
+<span class=hljs-keyword>class</span> <span class="hljs-title class_">Foo</span> {
+ <span class=hljs-keyword>private</span>:
+  std::unique_ptr&lt;Bar&gt; bar;
+ <span class=hljs-keyword>public</span>:   
+  <span class=hljs-built_in>Foo</span>(<span class=hljs-type>int</span> baz) : <span class=hljs-built_in>bar</span>(<span class=hljs-built_in>barFactory</span>(baz)) {}
+};
+</code></pre>
+<p>I've used <code>std::unique_ptr</code> here because <code>Foo</code> is the sole owner of <code>Bar</code> but you might want to use <code>std::shared_ptr</code> if some other object needs a <code>std::weak_ptr</code> to <code>Bar</code>.</p>
+<h2>Association</h2>
+<p>Association would usually be implemented using a pointer as you have done:</p>
+<pre class="lang-cpp s-code-block"><code class="hljs language-cpp"><span class=hljs-comment>// Association - with non-owning raw pointer</span>
+<span class=hljs-keyword>class</span> <span class="hljs-title class_">Foo</span> {
+ <span class=hljs-keyword>private</span>:
+  Bar* bar;
+ <span class=hljs-keyword>public</span>:   
+  <span class=hljs-function><span class=hljs-type>void</span> <span class=hljs-title>setBar</span><span class=hljs-params>(Bar* b)</span> </span>{ bar = b; }
+};
+</code></pre>
+<p>Of course you need to be confident that <code>Bar</code> will be alive while <code>Foo</code> is using it otherwise you have a dangling pointer. If the lifetime of <code>Bar</code> is less clear then a <code>std::weak_ptr</code>may be more appropriate:</p>
+<pre class="lang-cpp s-code-block"><code class="hljs language-cpp"><span class=hljs-comment>// Association - with weak pointer</span>
+<span class=hljs-keyword>class</span> <span class="hljs-title class_">Foo</span> {
+ <span class=hljs-keyword>private</span>:
+  std::weak_ptr&lt;Bar&gt; bar;
+ <span class=hljs-keyword>public</span>:   
+  <span class=hljs-function><span class=hljs-type>void</span> <span class=hljs-title>setBar</span><span class=hljs-params>(std::weak_ptr&lt;Bar&gt; b)</span> </span>{ bar = std::<span class=hljs-built_in>move</span>(b); }
+  <span class=hljs-function><span class=hljs-type>void</span> <span class=hljs-title>useBar</span><span class=hljs-params>()</span> </span>{
+    <span class=hljs-keyword>auto</span> b = bar.<span class=hljs-built_in>lock</span>();
+    <span class=hljs-keyword>if</span> (b)
+      std::cout &lt;&lt; b-&gt;baz &lt;&lt; <span class=hljs-string>"\n"</span>;
+  }
+};
+</code></pre>
+<p>Now <code>Foo</code> can use the <code>Bar</code> without fear of being left with a dangling pointer:</p>
+<pre class="lang-cpp s-code-block"><code class="hljs language-cpp"> Foo foo;
+ {
+   <span class=hljs-keyword>auto</span> bar = std::<span class=hljs-built_in>make_shared</span>&lt;Bar&gt;(<span class=hljs-number>3</span>);
+   foo.<span class=hljs-built_in>setBar</span>(bar);
+   foo.<span class=hljs-built_in>useBar</span>(); <span class=hljs-comment>// ok</span>
+ }  
+ foo.<span class=hljs-built_in>useBar</span>(); <span class=hljs-comment>// bar has gone but it is ok</span>
+</code></pre>
+<p>In some cases where ownership of <code>Bar</code> is really unclear an Association could be implemented using a <code>std::shared_ptr</code> but I think that should be a last resort.</p>
+<p>Regarding your implementation of Aggregation with a deep copy of a <code>Bar</code> pointer. I wouldn't have said that was a typical implementation but, as I said, it depends on your requirements.
+ You do need to make sure you call <code>delete</code> on your <code>bar</code> member pointer in the <code>Foo</code> destructor though otherwise you have a memory leak (or use a smart pointer). </p>
+ </div>
+ <div class=mt24>
+ <div class="d-flex fw-wrap ai-start jc-end gs8 gsy sf-hidden">
+ 
+ 
+ 
+ 
+ </div>
+ 
+ 
+ </div>
+ 
+</div>
+ <span class="d-none sf-hidden" itemprop=commentCount></span> 
+ <div class="post-layout--right js-post-comments-component">
+ <div id=comments-25914787 class="comments js-comments-container bt bc-black-075 mt12 dno sf-hidden" data-post-id=25914787 data-min-length=15>
+ 
+ </div>
+ <div id=comments-link-25914787 data-rep=50 data-anon=true>
+ <a class="js-add-link comments-link disabled-link sf-hidden" title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”." href=# role=button>Add a comment</a>
+ <span class="js-link-separator dno sf-hidden">&nbsp;|&nbsp;</span>
+ <a class="js-show-link comments-link dno sf-hidden" title="Expand to show all comments on this post" href=# role=button></a>
+ </div> 
+ </div>
+ </div>
+</div>
+<div class="js-zone-container zone-container-main sf-hidden">
+ 
+ 
+</div>
+ <a name=new-answer></a>
+ <form id=post-form action=/questions/25779394/answer/submit method=post class="js-add-answer-component post-form sf-hidden">
+ 
+ 
+ 
+ 
+ 
+ 
+ <div class="ps-relative sf-hidden">
+ <div class="form-item new-post-login p0 my16 sf-hidden">
+ <div class="d-flex gs16 md:fd-column new-login-form sf-hidden">
+ <div class="d-flex fd-column w50 md:w-auto gsy gs8 jc-space-between new-login-left sf-hidden">
+ 
+ 
+ 
+ 
+ 
+ </div>
+ 
+ 
+ 
+ 
+ </div>
+ </div>
+ 
+ <noscript>
+                        <h3 class="flex--item fs-title">Post as a guest</h3>
+            <div class="flex--item">
+                <div class="d-flex gs4 gsy fd-column">
+                    <label class="s-label" for="display-name">Name</label>
+                    <div class="d-flex ps-relative">
+                        <input class="s-input" id="display-name" name="display-name" maxlength="30" type="text" value="" tabindex="105" placeholder="">
+                    </div>
+                </div>
+            </div>
+            <div class="flex--item">
+                <div class="d-flex gs4 gsy fd-column">
+                    <div class="flex--item">
+                        <div class="d-flex gs2 gsy fd-column">
+                            <label class="flex--item s-label" for="m-address">Email</label>
+                            <p class="flex--item s-description">Required, but never shown</p>
+                        </div>
+                    </div>
+                    <div class="d-flex ps-relative">
+                        <input class="s-input js-post-email-field" id="m-address" name="m-address" type="text" value="" size="40" tabindex="106" placeholder="">
+                    </div>
+                </div>
+            </div>
+
+            </noscript>
+ </div>
+ 
+ 
+ </form>
+ <h2 class="bottom-notice sf-hidden" data-loc=1>
+ 
+ </h2>
+ </div>
+ </div>
+ <div id=sidebar class="show-votes sf-hidden" role=complementary aria-label=sidebar>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ </div>
+ </div>
+<noscript class=sf-hidden><div><img src="/posts/25779394/ivc/6dd4" class="dno" alt="" width="0" height="0"></div></noscript><div style=display:none id=js-codeblock-lang>lang-cpp</div></div>
+ </div>
+ </div>
+ 
+ 
+ <footer id=footer class="site-footer js-footer sf-hidden" role=contentinfo>
+ 
+ </footer>
+ 
+ 
+ 
+ 
+ 
+ <div class="ff-sans ps-fixed z-nav-fixed ws4 sm:w-auto p32 sm:p16 bg-black-750 fc-white bar-lg b16 l16 r16 js-consent-banner sf-hidden">
+ <svg aria-hidden=true class="mln4 mb24 sm:d-none svg-spot spotCookieLg" style=color:var(--theme-button-filled-background-color) width=96 height=96 viewBox="0 0 96 96">
+ <path d="M35 45.5a7.5 7.5 0 11-15 0 7.5 7.5 0 0115 0zM63.5 63a7.5 7.5 0 100-15 7.5 7.5 0 000 15zm-19 19a7.5 7.5 0 100-15 7.5 7.5 0 000 15z" opacity=.2></path>
+ <path d="M56.99 2.53a23.1 23.1 0 0114.66 6.15h.01l.01.02c.57.55.61 1.27.5 1.74v.07a10.95 10.95 0 01-3.07 4.77 9 9 0 01-6.9 2.5 10.34 10.34 0 01-9.72-10.44v-.08a10 10 0 011.03-3.74l.01-.03.02-.02c.28-.5.82-.92 1.52-.95.63-.02 1.27-.02 1.93.01zm12.04 7.83a20.1 20.1 0 00-12.2-4.83l-.92-.03c-.23.6-.38 1.25-.43 1.94a7.34 7.34 0 006.95 7.34 6 6 0 004.64-1.7c.94-.88 1.6-1.9 1.96-2.72zm15.3 8.76a6.84 6.84 0 00-5.09-.24 7.9 7.9 0 00-3.28 2.05 1.8 1.8 0 00-.3 1.95l.02.02v.02a15.16 15.16 0 008.74 7.47c.64.23 1.32.08 1.8-.33a6.63 6.63 0 001.63-1.97l.01-.03.01-.03c1.67-3.5-.12-7.32-3.54-8.91zm-5.5 3.28c.36-.25.82-.5 1.35-.67.92-.3 1.92-.35 2.89.1 2.14 1 2.92 3.14 2.11 4.88-.12.21-.26.41-.43.6l-.26-.1a12.29 12.29 0 01-5.66-4.81zM32 24a2 2 0 11-4 0 2 2 0 014 0zm12 21a2 2 0 11-4 0 2 2 0 014 0zm36 4a2 2 0 11-4 0 2 2 0 014 0zm-7 21a2 2 0 11-4 0 2 2 0 014 0zM59 81a2 2 0 11-4 0 2 2 0 014 0zM22 63a2 2 0 11-4 0 2 2 0 014 0zm27 7a9 9 0 11-18 0 9 9 0 0118 0zm-3 0a6 6 0 10-12 0 6 6 0 0012 0zM33 41a9 9 0 11-18 0 9 9 0 0118 0zm-15 0a6 6 0 1012 0 6 6 0 00-12 0zm50 11a9 9 0 11-18 0 9 9 0 0118 0zm-3 0a6 6 0 10-12 0 6 6 0 0012 0zM44.08 4.24c.31.48.33 1.09.05 1.58a17.46 17.46 0 00-2.36 8.8c0 9.55 7.58 17.24 16.85 17.24 2.97 0 5.75-.78 8.16-2.15a1.5 1.5 0 012.1.66 12.08 12.08 0 0011 6.74 12.4 12.4 0 007.85-2.75 1.5 1.5 0 012.38.74A45.76 45.76 0 0192 48.16c0 24.77-19.67 44.9-44 44.9S4 72.93 4 48.16C4 25.23 20.84 6.28 42.64 3.58a1.5 1.5 0 011.44.66zM40.22 7C21.32 10.71 7 27.7 7 48.16c0 23.17 18.39 41.9 41 41.9s41-18.73 41-41.9c0-3.52-.42-6.93-1.22-10.2a15.5 15.5 0 01-7.9 2.15c-5.5 0-10.36-2.83-12.97-7.1a19.46 19.46 0 01-8.28 1.85c-11 0-19.86-9.1-19.86-20.24 0-2.7.52-5.26 1.45-7.62zM92 91a2 2 0 100-4 2 2 0 000 4zM7 8.5a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zM82.5 90a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm9.5-7.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM13.5 8a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM80 14.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM53.5 20a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path>
+ </svg>
+ 
+ 
+ 
+ </div>
+ <div id=onetrust-consent-sdk class="d-none sf-hidden"></div>
+ <div id=onetrust-banner-sdk data-controller=s-modal></div>
+ <div id=ot-pc-content class="d-none sf-hidden"></div>
+ <div id=onetrust-style class="d-none sf-hidden">&nbsp;</div>
+ <div class="d-none js-consent-banner-version sf-hidden" data-consent-banner-version=baseline></div>
+ 
+ 
+ 
