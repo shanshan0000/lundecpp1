@@ -17,9 +17,18 @@ class Foo1
 };
 
 // Simple ASSOCIATION
-class Foo2
+class Foo2A
 {
     void useBar(Bar bar)
+    {
+        bar.doSth();
+    }
+};
+
+// Simple ASSOCIATION
+class Foo2B
+{
+    void useBar(Bar& bar)
     {
         bar.doSth();
     }
