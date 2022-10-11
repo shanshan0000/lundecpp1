@@ -59,11 +59,11 @@ public:
     ~Foo4(){}
     void useBar(int i)
     {
-        bar[i]->doSth();
+        arr[i]->doSth();
     }
 
 private:
-    Bar** bar;
+    Bar** arr;
 };
 
 // Aggregation
