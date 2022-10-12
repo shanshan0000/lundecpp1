@@ -1,7 +1,7 @@
 #include <iostream>
 
 int main() {
-    // TODO
+    // See the pdf and html files
 
     return 0;
 }
