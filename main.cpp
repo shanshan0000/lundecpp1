@@ -3,7 +3,6 @@
 int main() {
 
 
-    // See Readme.md
 
 
     std::cin.get();

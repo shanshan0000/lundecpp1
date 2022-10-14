@@ -79,7 +79,8 @@ namespace Set {
         static Jeu& getInstance() {
             if (handler.instance == nullptr)
                 handler.instance = new Jeu;
-            return *handler.instance; }
+            return *handler.instance;
+        }
 
         static void libererInstance() {
             delete handler.instance;
