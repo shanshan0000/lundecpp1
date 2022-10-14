@@ -5,7 +5,7 @@ class A
 {
 private:
     static A* instance;
-    A(){instance = nullptr;};
+    A(){};
     ~A(){};
     A(const A& another) = delete;
     A& operator=(const A& another) = delete;
@@ -21,6 +21,7 @@ public:
     static void libererInstance()
     {
         delete instance;
+        instance = nullptr;
     }
 
     void func(){}
