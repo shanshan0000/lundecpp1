@@ -5,6 +5,7 @@ class A
 {
 public:
     static int n;
+    int m = 7;
 };
 
 
