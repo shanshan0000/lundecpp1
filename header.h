@@ -3,9 +3,20 @@
 
 class A
 {
+private:
+    A(){};
+    ~A(){};
+    A(const A& another) = delete;
+    A& operator=(const A& another) = delete;
+
 public:
-    static int n;
-    int m = 7;
+    static A& getInstance()
+    {
+        static A instance;
+        return instance;
+    }
+
+    void func(){}
 };
 
 
