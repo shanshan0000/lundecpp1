@@ -3,8 +3,8 @@
 
 
 int main() {
-    A& a = A::getInstance();
-    a.func();
-
+    A::getInstance().func();
+    A::getInstance().func();
+    A::libererInstance();
     return 0;
 }

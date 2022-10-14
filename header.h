@@ -4,7 +4,8 @@
 class A
 {
 private:
-    A(){};
+    static A* instance;
+    A(){instance = nullptr;};
     ~A(){};
     A(const A& another) = delete;
     A& operator=(const A& another) = delete;
@@ -12,8 +13,14 @@ private:
 public:
     static A& getInstance()
     {
-        static A instance;
-        return instance;
+        if(instance == nullptr)
+            instance = new A();
+        return *instance;
+    }
+
+    static void libererInstance()
+    {
+        delete instance;
     }
 
     void func(){}
