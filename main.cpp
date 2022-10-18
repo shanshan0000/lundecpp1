@@ -5,6 +5,5 @@ int main() {
     Integers a;
 
 
-
     return 0;
 }
