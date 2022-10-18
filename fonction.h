@@ -5,12 +5,12 @@
 
 class Integers {
 public:
-    int m_data[200];
+    int* m_data[200];
 
     Integers()
     {
         for(int i = 0; i <= 20; i ++)
-            m_data[i] = i;
+            *(m_data[i]) = i;
     }
 
     class Iterator {
