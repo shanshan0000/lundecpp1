@@ -4,6 +4,17 @@
 class A
 {
 private:
+    class Handler
+    {
+    public:
+        A* instance;
+        Handler():instance(nullptr){}
+        ~Handler()
+        {
+            delete instance;
+            instance = nullptr;
+        }
+    };
     static Handler handler;
     A(){};
     ~A(){};
@@ -24,15 +35,7 @@ public:
         handler.instance = nullptr;
     }
 
-    class Handler
-    {
-    public:
-        A* instance;
-        ~Handler()
-        {
-            delete instance;
-        }
-    };
+
 
 
 

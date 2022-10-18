@@ -1,3 +1,3 @@
 #include "header.h"
 
-Han
+A::Handler A::handler;
