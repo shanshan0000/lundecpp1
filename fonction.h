@@ -45,6 +45,9 @@ public:
     private:
         int* m_ptr;
     };
+
+    Iterator begin() { return Iterator(&m_data[0]); }
+    Iterator end()   { return Iterator(&m_data[200]); } // 200 is out of bounds
 };
 
 
