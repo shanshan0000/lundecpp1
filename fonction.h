@@ -23,6 +23,13 @@ public:
         }
     }
 
+    ~Integers(){
+        for(int i = 0; i <= 200; i ++)
+            delete m_data[i];
+        delete[] m_data;
+    }
+
+
     class Iterator {
     public:
         Iterator(Item** ptr) : m_ptr(ptr) {}
