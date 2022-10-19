@@ -31,7 +31,7 @@ int main() {
     PeekingIterator* pi = new PeekingIterator(v);
 
     while(pi->hasNext()){
-        cout << "pop:  " << pi->next();
+        cout << "next:  " << pi->next();
         cout << "  peek: " << pi->peek();
         cout << endl;
     }
