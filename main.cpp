@@ -11,6 +11,5 @@ int main() {
         cout << (*it).value << endl;
     }
 
-
     return 0;
 }
