@@ -17,7 +17,7 @@ public:
     public:
         Iterator(int* ptr) : m_ptr(ptr) {}
 
-        int& operator*() const
+        int& operator*() const  // *it.m_ptr  equivalent to: *it
         {
             return *m_ptr;
         }
@@ -46,8 +46,8 @@ public:
         int* m_ptr;
     };
 
-    Iterator begin() { return Iterator(&m_data[0]); }
-    Iterator end()   { return Iterator(&m_data[200]); } // 200 is out of bounds
+    Iterator begin() { return Iterator(m_data); }
+    Iterator end()   { return Iterator(m_data + 200); } // 200 is out of bounds
 };
 
 

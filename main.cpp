@@ -6,8 +6,9 @@ using namespace std;
 int main() {
     Integers a;
 
-    for(Integers::Iterator it = a.begin(); it != a.end(); ++ it)
+    for(auto it = a.begin(); it != a.end(); ++ it)
     {
+        *it += 3;
         cout << *it << endl;
     }
 
