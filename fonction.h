@@ -14,33 +14,31 @@ public:
     }
 
     class Iterator {
+    private:
+        int j;
+        int* m_ptr;
     public:
-        Iterator(int _data[]) : j(0), data(_data) {}
+        Iterator(int* _data): j(0), m_ptr(_data){}
 
-        bool isDone() const
-        {
+        bool isDone() const{
             return j >= 200;
         }
 
-        void next()
-        {
+        void next() {
             j ++;
         }
 
-        int& currentItem()
-        {
-            return data[j];
+        int& currentItem(){
+            return m_ptr[j];
         }
 
-    private:
-        int j;
-        int* data;
     };
 
-    Iterator getIterator()
-    {
+    Iterator getIterator(){
         return Iterator(m_data);
     }
+
+
 };
 
 
