@@ -32,7 +32,7 @@ public:
             return **m_ptr;
         }
 
-        Item* operator->() { return *m_ptr; }
+        Item* operator->() const { return *m_ptr; }
 
         // Prefix increment
         Iterator &operator++()
@@ -49,7 +49,7 @@ public:
             return tmp;  // or, return Iterator(tmp);
         }
 
-        bool operator!=(const Iterator &b)
+        bool operator!=(const Iterator &b) const
         {
             return m_ptr != b.m_ptr;
         }
@@ -58,8 +58,8 @@ public:
         Item** m_ptr;
     };
 
-    Iterator begin() { return Iterator(&(m_data[0])); }
-    Iterator end()   { return Iterator(&(m_data[200])); } // 200 is out of bounds
+    Iterator begin() const { return Iterator(&(m_data[0])); }
+    Iterator end()   const { return Iterator(&(m_data[200])); } // 200 is out of bounds
 };
 
 
