@@ -6,9 +6,11 @@ using namespace std;
 int main() {
     Integers a;
 
-    for(Integers::Iterator it = a.begin(); it != a.end(); ++ it)
+    Integers::Iterator it = a.getIterator();
+
+    while(it.hasNext())
     {
-        cout << *it << endl;
+        cout << it.next() << endl;
     }
 
     return 0;

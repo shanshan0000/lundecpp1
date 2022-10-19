@@ -15,39 +15,27 @@ public:
 
     class Iterator {
     public:
-        Iterator(int* ptr) : m_ptr(ptr) {}
+        Iterator(int _data[]) : j(0), data(_data) {}
 
-        int& operator*() const
+        bool hasNext() const
         {
-            return *m_ptr;
+            return j < 200;
         }
 
-        // Prefix increment
-        Iterator& operator++()
+        int& next()
         {
-            m_ptr++;
-            return *this;
-        }
-
-        // Postfix increment
-        Iterator operator++(int)
-        {
-            Iterator tmp = *this;
-            ++(*this);
-            return tmp;  // or, return Iterator(tmp);
-        }
-
-        bool operator!=(const Iterator &b)
-        {
-            return m_ptr != b.m_ptr;
+            return data[j++];
         }
 
     private:
-        int* m_ptr;
+        int j;
+        int* data;
     };
 
-    Iterator begin() { return Iterator(&m_data[0]); }
-    Iterator end()   { return Iterator(&m_data[200]); } // 200 is out of bounds
+    Iterator getIterator()
+    {
+        return Iterator(m_data);
+    }
 };
 
 
