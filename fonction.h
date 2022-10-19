@@ -17,14 +17,19 @@ public:
     public:
         Iterator(int _data[]) : j(0), data(_data) {}
 
-        bool hasNext() const
+        bool isDone() const
         {
-            return j < 200;
+            return j >= 200;
         }
 
-        int& next()
+        void next()
         {
-            return data[j++];
+            j ++;
+        }
+
+        int& currentItem()
+        {
+            return data[j];
         }
 
     private:

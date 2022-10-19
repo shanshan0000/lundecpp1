@@ -8,9 +8,10 @@ int main() {
 
     Integers::Iterator it = a.getIterator();
 
-    while(it.hasNext())
+    while(!it.isDone())
     {
-        cout << it.next() << endl;
+        cout << it.currentItem() << endl;
+        it.next();
     }
 
     return 0;
