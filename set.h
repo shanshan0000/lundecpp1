@@ -69,12 +69,7 @@ namespace Set {
         {
             return 81;
         }
-        const Carte& getCarte(size_t i) const
-        {
-            if (i >= 81)
-                throw SetException("Carte invalide");
-            return *cartes[i];
-        }
+
 
         static Jeu& getInstance() {
             if (instance == nullptr)
@@ -112,7 +107,7 @@ namespace Set {
 
         class Iterator3{
         private:
-            Carte** current = nullptr;
+            Carte* * current = nullptr;
         public:
             Iterator3(Carte** c):current(c){}
 
@@ -177,6 +172,15 @@ namespace Set {
         Jeu& operator=(const Jeu& j) = delete;
 
         static Jeu* instance;
+
+        const Carte& getCarte(size_t i) const
+        {
+            if (i >= 81)
+                throw SetException("Carte invalide");
+            return *cartes[i];
+        }
+
+        friend class Iterator2;
 
     };
 

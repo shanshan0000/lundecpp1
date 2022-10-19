@@ -16,7 +16,7 @@ int main() {
         it2b.next();
     }
 
-    for(Jeu::Iterator2 it2c = Jeu::getInstance().getInterator2(); !it2c.isDone(); it2c.next())
+    for(auto it2c = Jeu::getInstance().getInterator2(); !it2c.isDone(); it2c.next())
     {
 
     }
