@@ -3,23 +3,33 @@
 
 // Reference: https://www.internalpointers.com/post/writing-custom-iterators-modern-cpp
 
+class Item
+{
+public:
+    int value;
+};
+
 class Integers {
 public:
-    int* m_data[200];
+    Item** m_data;
 
     Integers()
     {
-        for(int i = 0; i <= 20; i ++)
-            *(m_data[i]) = i;
+        m_data = new Item*[200];
+        for(int i = 0; i <= 200; i ++)
+        {
+            m_data[i] = new Item;
+            m_data[i]->value = i;
+        }
     }
 
     class Iterator {
     public:
-        Iterator(int* ptr) : m_ptr(ptr) {}
+        Iterator(Item** ptr) : m_ptr(ptr) {}
 
-        int& operator*() const
+        Item& operator*() const
         {
-            return *m_ptr;
+            return **m_ptr;
         }
 
         // Prefix increment
@@ -43,11 +53,11 @@ public:
         }
 
     private:
-        int* m_ptr;
+        Item** m_ptr;
     };
 
-    Iterator begin() { return Iterator(&m_data[0]); }
-    Iterator end()   { return Iterator(&m_data[200]); } // 200 is out of bounds
+    Iterator begin() { return Iterator(&(m_data[0])); }
+    Iterator end()   { return Iterator(&(m_data[200])); } // 200 is out of bounds
 };
 
 
