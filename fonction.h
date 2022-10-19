@@ -32,6 +32,8 @@ public:
             return **m_ptr;
         }
 
+        Item* operator->() { return *m_ptr; }
+
         // Prefix increment
         Iterator &operator++()
         {

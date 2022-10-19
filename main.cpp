@@ -8,9 +8,8 @@ int main() {
 
     for(auto it = a.begin(); it != a.end(); ++ it)
     {
-        cout << (*it).value << endl;
+        cout << it->value << endl;
     }
-
 
     return 0;
 }
