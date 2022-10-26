@@ -28,7 +28,7 @@ namespace TIME{
                 debut(h),duree(t){}
         const Horaire& getHoraire() const { return debut; }
         const Duree& getDuree() const { return duree; }
-        void afficher(std::ostream& f= std::cout) const;
+        void afficher(std::ostream& f= std::cout) const override;
 
     };
 
@@ -68,7 +68,7 @@ namespace TIME{
 
         const std::string& getPersonne() const { return personne; }
         const std::string& getLieu() const { return lieu; }
-        void afficher(std::ostream& f= std::cout) const;
+        void afficher(std::ostream& f= std::cout) const override;
 
     };
 }
