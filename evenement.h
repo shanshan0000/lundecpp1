@@ -38,6 +38,7 @@ namespace TIME{
     };
 
     class Rdv : public Evt1jDur {
+    private:
         std::string personne;
         std::string lieu;
     public:
