@@ -58,9 +58,13 @@ public:
         Item **m_ptr;
     };
 
-    Iterator begin() const { return Iterator(&(m_data[0])); }
+    Iterator begin() const {
+        return Iterator(&(m_data[0]));
+    }
 
-    Iterator end() const { return Iterator(&(m_data[200])); } // 200 is out of bounds
+    Iterator end() const {
+        return Iterator(&(m_data[200])); // 200 is out of bounds
+    }
 };
 
 
