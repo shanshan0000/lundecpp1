@@ -95,6 +95,7 @@ namespace TIME{
         };
         iterator begin() { return iterator(tab.begin()); }
         iterator end() { return iterator(tab.end()); }
+
         class const_iterator : public std::vector<Evt*>::const_iterator {
         public:
             const Evt& operator*() const {
@@ -110,12 +111,42 @@ namespace TIME{
         const_iterator begin() const { return const_iterator(tab.begin()); }
         const_iterator end() const { return const_iterator(tab.end()); }
 
+
+        class reverse_iterator : public std::vector<Evt*>::reverse_iterator  {
+        public:
+            Evt & operator*() const {
+                return *std::vector<Evt*>::reverse_iterator ::operator*();
+            }
+        private:
+            friend class Agenda;
+            reverse_iterator (const std::vector<Evt*>::reverse_iterator & it):
+                    std::vector<Evt*>::reverse_iterator (it) {}
+        };
+        reverse_iterator  rbegin() { return reverse_iterator (tab.rbegin()); }
+        reverse_iterator  rend() { return reverse_iterator (tab.rend()); }
+
+        class const_reverse_iterator : public std::vector<Evt*>::const_reverse_iterator  {
+        public:
+            const Evt & operator*() const {
+                return *std::vector<Evt*>::const_reverse_iterator ::operator*();
+            }
+        private:
+            friend class Agenda;
+            const_reverse_iterator (const std::vector<Evt*>::const_reverse_iterator & it):
+                    std::vector<Evt*>::const_reverse_iterator (it) {}
+        };
+        const_reverse_iterator  crbegin() const { return const_reverse_iterator (tab.crbegin()); }
+        const_reverse_iterator  crend() const { return const_reverse_iterator (tab.crend()); }
+        const_reverse_iterator  rbegin() const { return const_reverse_iterator (tab.crbegin()); }
+        const_reverse_iterator  rend() const { return const_reverse_iterator (tab.crend()); }
+
+
         Agenda() = default;
         virtual ~Agenda(); // destructeur par défaut virtuel
         Agenda(const Agenda&) = delete;
         Agenda& operator=(const Agenda&) = delete;
         Agenda& operator<<(Evt& e);
-        void afficher(std::ostream& f = std::cout)const;
+        void afficher(std::ostream& f = std::cout) const;
     };
 }
 
