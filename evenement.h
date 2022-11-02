@@ -106,8 +106,8 @@ namespace TIME{
             const_iterator(const std::vector<Evt*>::const_iterator& it) :
                     std::vector<Evt*>::const_iterator(it) {}
         };
-        const_iterator cbegin() const { return const_iterator(tab.begin()); }
-        const_iterator cend() const { return const_iterator(tab.end()); }
+        const_iterator cbegin() const { return const_iterator(tab.cbegin()); }
+        const_iterator cend() const { return const_iterator(tab.cend()); }
         const_iterator begin() const { return const_iterator(tab.begin()); }
         const_iterator end() const { return const_iterator(tab.end()); }
 
@@ -137,8 +137,8 @@ namespace TIME{
         };
         const_reverse_iterator  crbegin() const { return const_reverse_iterator (tab.crbegin()); }
         const_reverse_iterator  crend() const { return const_reverse_iterator (tab.crend()); }
-        const_reverse_iterator  rbegin() const { return const_reverse_iterator (tab.crbegin()); }
-        const_reverse_iterator  rend() const { return const_reverse_iterator (tab.crend()); }
+        const_reverse_iterator  rbegin() const { return const_reverse_iterator (tab.rbegin()); }
+        const_reverse_iterator  rend() const { return const_reverse_iterator (tab.rend()); }
 
 
         Agenda() = default;
