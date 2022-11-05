@@ -48,7 +48,7 @@ namespace TIME{
         Duree duree;
     public:
         Evt1jDur(const Date& d, const std::string& s,
-                 const Horaire& h, const Duree t):
+                 const Horaire& h, const Duree& t):
                 Evt1j(d,s), // appel au constructeur de la classe de base
                 debut(h),duree(t){}
         const Horaire& getHoraire() const { return debut; }
