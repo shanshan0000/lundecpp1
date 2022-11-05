@@ -4,13 +4,16 @@
 
 int main() {
     set<unsigned int> chiffres;
-    for (unsigned int i = 0; i <= 9; i++) chiffres.insert(i);
+    for (unsigned int i = 0; i <= 9; i++)
+        chiffres.insert(i);
+
     set<char> voy;
     voy.insert('a');
     voy.insert('e');
     voy.insert('i');
     voy.insert('o');
     voy.insert('u');
+
     relation<unsigned int, char> R("chiffre-voyelle", "R", chiffres, voy);
     R.ajouter(0, 'e');
     R.ajouter(0, 'o');
@@ -30,10 +33,12 @@ int main() {
     R.ajouter(9, 'e');
     R.ajouter(9, 'u');
     std::cout << R;
+
     if (R.est_en_relation(8, 'u'))
         cout << "oui\n";
     else
         cout << "non\n";
+
     set<std::string> s;
     s.insert("Bao");
     s.insert("Charles");
