@@ -30,8 +30,11 @@ int main() {
     R.ajouter(9, 'e');
     R.ajouter(9, 'u');
     std::cout << R;
-    if (R.est_en_relation(8, 'u')) cout << "oui\n"; else cout << "non\n";
-    set<individu> s;
+    if (R.est_en_relation(8, 'u'))
+        cout << "oui\n";
+    else
+        cout << "non\n";
+    set<std::string> s;
     s.insert("Bao");
     s.insert("Charles");
     s.insert("Cheng");
@@ -39,9 +42,9 @@ int main() {
     s.insert("Li");
     s.insert("Pierre");
     s.insert("Xiaokang");
-    endorelation<individu> A("amour", "@", s);
-    A.ajouter(individu("Bao"), individu("Pierre"));
-    A.ajouter(individu("Pierre"), individu("Bao"));
+    endorelation<std::string> A("amour", "@", s);
+    A.ajouter(std::string("Bao"), std::string("Pierre"));
+    A.ajouter(std::string("Pierre"), std::string("Bao"));
     std::cout << A;
     return 0;
 }
