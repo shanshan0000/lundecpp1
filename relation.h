@@ -24,15 +24,22 @@ public:
 
     bool est_en_relation(const A &, const B &) const;
 
-    class iterator : public set<pair<A, B> >::const_iterator {
+    class iterator {
     public:
-        iterator(typename set<pair<A, B> >::const_iterator it
-        = set<pair<A, B> >::const_iterator()) :
-                set<pair<A, B> >::const_iterator(it) {}
+        iterator& operator++(){ ++current; return *this; }
+        const pair<A,B>& operator*() const { return *current; }
+        bool operator==(const iterator& it) const {
+            return current==it.current;
+        }
+        bool operator!=(const iterator& it) const {
+            return current!=it.current;
+        }
+        iterator(typename set<pair<A,B> >::const_iterator it
+        =set<pair<A,B> >::const_iterator()):current(it){}
+    private:
+        typename set<pair<A,B> >::const_iterator current;
     };
-
     iterator begin() const { return iterator(couples.begin()); }
-
     iterator end() const { return iterator(couples.end()); }
 
 protected :
