@@ -81,9 +81,9 @@ public:
     endorelation(const string &n, const string &sym,
             const set<A> &sd) : relation<A, A>(n, sym, sd, sd) {}
 
-//    bool est_transitive() const;
+    bool est_transitive() const;
 
-//    bool est_reflexive() const;
+    bool est_reflexive() const;
 
     bool est_symetrique() const;
 };
