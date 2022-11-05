@@ -71,15 +71,11 @@ ostream &operator<<(ostream &f, const relation<A, B> &r) {
 }
 
 
-
-
-
-
 template<class A>
 class endorelation : public relation<A, A> {
 public:
     endorelation(const string &n, const string &sym,
-            const set<A> &sd) : relation<A, A>(n, sym, sd, sd) {}
+                 const set<A> &sd) : relation<A, A>(n, sym, sd, sd) {}
 
     bool est_transitive() const;
 
@@ -99,12 +95,11 @@ bool endorelation<A>::est_symetrique() const {
 }
 
 
-
 template<class A, class B>
 class fonction : public relation<A, B> {
 public:
     fonction(const string &n, const string &sym,
-            const set<A> &s, const set<B> &d) :
+             const set<A> &s, const set<B> &d) :
             relation<A, B>(n, sym, s, d) {}
 
     void ajouter(const A &, const B &);
@@ -121,7 +116,6 @@ void fonction<A, B>::ajouter(const A &a, const B &b) {
     }
     this->couples.insert(make_pair(a, b));
 }
-
 
 
 #endif //CPP_RELATION_H
