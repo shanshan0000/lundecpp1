@@ -1,0 +1,553 @@
+<html class="cye-disabled cye-lm" style><!--
+ Page saved with SingleFile 
+ url: https://cecas.clemson.edu/~stb/ece417/ 
+ saved date: Fri Nov 04 2022 22:26:34 GMT+0800 (China Standard Time)
+--><meta charset=utf-8><title>ECE 417/617</title>
+<link rel=icon type=image/ico href="data:image/vnd.microsoft.icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFl/x4BZf+fAWX/vwFl/88BZf8gAWX/TgFl/w4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWX/PgFl/68BZf//AWX//wFl//8BZf/fAWX/PgFl//8BZf/fAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWX/DgFl/88BZf//AWX//wFl//8BZf//AWX//wFl//8BZf//AWX//wFl/zABZf//AAAAAAAAAAAAAAAAAAAAAAFl/48BZf//AWX//wFl//8BZf//AWX//wFl//8BZf//AWX//wFl/78BZf+fAWX//wFl/14AAAAAAAAAAAAAAAABZf/PAWX//wFl//8BZf//AWX//wFl//8BZf//AWX//wFl//8BZf9oAWX//wFl//8BZf//AWX/jwAAAAAAAAAAAWX/nwFl//8BZf//AWX//wFl//8BZf//AWX//wFl//8BZf+vAWX/vwFl//8BZf//AWX//wFl/+8BZf8eAAAAAAFl/14BZf9uAWX/zwFl//8BZf//AWX//wFl//8BZf//AWX/bgFl/34BZf//AWX//wFl//8BZf//AWX/nwFl/34BZf//AWX//wFl/58BZf9KAWX/vwFl//8BZf//AWX//wFl/3YBZf8uAWX/gQFl/+8BZf//AWX//wFl/98BZf/vAWX//wFl//8BZf//AWX/bgAAAAABZf9WAWX/jwFl/1ABZf/PAWX//wFl//8BZf9+AWX/YAFl/8EBZf9QAWX/zwFl//8BZf//AWX//wFl/78BZf+PAWX//wFl/+8BZf+HAWX//wFl//8BZf//AWX//wFl/x4AAAAAAAAAAAFl/2ABZf//AWX//wFl//8BZf+1AWX//wFl//8BZf//AWX/8QFl/+8BZf//AWX//wFl//8BZf9+AAAAAAAAAAAAAAAAAWX/YAFl/+8BZf//AWX/jwFl/+8BZf//AWX//wFl/+8BZf9+AWX//wFl//8BZf//AWX/7wAAAAAAAAAAAAAAAAAAAAABZf8QAWX/QAAAAAABZf/PAWX//wFl//8BZf//AWX/LgFl/4EBZf//AWX//wFl/68AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWX/QAFl/+8BZf//AWX//wFl/z4AAAAAAWX/IAFl/2AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABZf8wAWX/3wFl/68BZf8gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//8AAPj/AADgnwAAwBcAAIAHAACAIQAAgAEAAOBgAACIYAAADo0AAAAHAACABwAAwEMAAPhDAAD8fwAA/n8AAA=="><style>.sf-hidden{display:none!important}</style><link rel=canonical href=https://cecas.clemson.edu/~stb/ece417/><meta http-equiv=content-security-policy content="default-src 'none'; font-src 'self' data:; img-src 'self' data:; style-src 'unsafe-inline'; media-src 'self' data:; script-src 'unsafe-inline' data:; object-src 'self' data:;"><style>img[src="data:,"],source[src="data:,"]{display:none!important}</style><body><center>
+<table border=0 cellpadding=2 cellspacing=0 width=100%>
+ <tbody><tr align=center>
+ <td height=25 bgcolor=#444444><font face="Helvetica, Arial" size=6 color=#FFFFFF><b>ECE 
+ 417/617 Elements of <br>
+ Software Engineering</b></font>
+ <td bgcolor=#444444><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD//gAmRmlsZSB3cml0dGVuIGJ5IEFkb2JlIFBob3Rvc2hvcKggNS4y/+0VelBob3Rvc2hvcCAzLjAAOEJJTQQEAAAAAAANHAIAAAIAAhwCeAABAAA4QklNA+kAAAAAAHgAAwAAAEgASAAAAAAC2gIo/+H/4gL5AkYDRwUoA/wAAgAAAEgASAAAAAAC2AIoAAEAAABkAAAAAAADAwMAAAABJw8AAQABAAAAAAAAAAAAAAAAYAgAGQGQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4QklNA+0AAAAAABAASAAAAAEAAQBIAAAAAQABOEJJTQQNAAAAAAAEAAAAeDhCSU0D8wAAAAAACAAAAAAAAAAAOEJJTQQKAAAAAAABAAA4QklNJxAAAAAAAAoAAQAAAAAAAAACOEJJTQP1AAAAAABIAC9mZgABAGxmZgAGAAAAAAABAC9mZgABAKGZmgAGAAAAAAABADIAAAABAFoAAAAGAAAAAAABADUAAAABAC0AAAAGAAAAAAABOEJJTQP4AAAAAABwAAD/////////////////////////////A+gAAAAA/////////////////////////////wPoAAAAAP////////////////////////////8D6AAAAAD/////////////////////////////A+gAADhCSU0ECAAAAAAAEAAAAAEAAAJAAAACQAAAAAA4QklNBBQAAAAAAAQAAAACOEJJTQQMAAAAABNLAAAAAQAAAHAAAABDAAABUAAAV/AAABMvABgAAf/Y/+AAEEpGSUYAAQIBAEgASAAA//4AJkZpbGUgd3JpdHRlbiBieSBBZG9iZSBQaG90b3Nob3CoIDUuMv/uAA5BZG9iZQBkgAAAAAH/2wCEAAwICAgJCAwJCQwRCwoLERUPDAwPFRgTExUTExgRDAwMDAwMEQwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwBDQsLDQ4NEA4OEBQODg4UFA4ODg4UEQwMDAwMEREMDAwMDAwRDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDP/AABEIAEMAcAMBIgACEQEDEQH/3QAEAAf/xAE/AAABBQEBAQEBAQAAAAAAAAADAAECBAUGBwgJCgsBAAEF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" width=116 height=70>
+</table>
+<b>Spring 2012</b>
+</center>
+<p>In this course students will learn to build high-quality, reliable, and 
+extensible software systems that are too large for a single programmer.&nbsp; 
+Emphasis is placed upon good programming practices (object-oriented design and 
+clean, well-documented code), teamwork skills (planning, communicating, and 
+interacting), and bringing the project to completion (testing and 
+verification).&nbsp; A semester-long project complements the theory with practice.
+</p>
+<p>
+<b>
+<a href=https://cecas.clemson.edu/~stb/ece417/syllabus_ece417.pdf>Syllabus</a></b> <br>
+&nbsp;<p>
+<table border=0 cellpadding=2 cellspacing=0 width=100%>
+ <tbody><tr align=center>
+ <td height=25 bgcolor=#444444><font face="Helvetica, Arial" size=3 color=#FFFFFF><b>Schedule</b></font>
+</table>
+<p>
+<table border=2 cellpadding=2 cellspacing=0 width=735>
+<tbody><tr>
+ <td width=40><b>Week</b>
+ <td width=400><b>Topic</b>
+ <td width=273><b>Assignment</b>
+<tr>
+ <td width=40>1
+ <td width=400>introduction / overview<td width=273>
+<a href=https://cecas.clemson.edu/~stb/ece417/hw01.pdf>hw01</a> due 1/23<tr>
+ <td width=40>2
+ <td width=400>C++ and Visual Studio IDE<td width=273>
+<a href=https://cecas.clemson.edu/~stb/ece417/hw02.pdf>hw02</a> due 1/30<tr>
+ <td width=40>3
+ <td width=400>More C++, object-oriented programming, and CVS<td width=273>
+Individual project, attempt #1 due 2/6<tr>
+ <td width=40>4
+ <td width=400>Software life cycles<td width=273>
+<a href=https://cecas.clemson.edu/~stb/ece417/hw03.pdf>hw03</a> due 2/13<tr>
+ <td width=40>5
+ <td width=400>Software process and modeling (UML)<td width=273>
+<a href=https://cecas.clemson.edu/~stb/ece417/hw04.pdf>hw04</a> due 2/20 (and string class)<tr>
+ <td width=40>6
+ <td width=400>Project management<td width=273>
+<a href=https://cecas.clemson.edu/~stb/ece417/hw05.pdf>hw05</a> due 2/27<tr>
+ <td width=40>7
+ <td width=400>Agile methods<td width=273>
+Individual project, attempt #2 due 3/5<tr>
+ <td width=40>8
+ <td width=400>Requirements<td width=273>
+<a href=https://cecas.clemson.edu/~stb/ece417/hw06.pdf>hw06</a> due 3/12 (and string class, attempt #2)<tr>
+ <td width=40>9
+ <td width=400>System design<td width=273>
+&nbsp;<tr>
+ <td width=40>10
+ <td width=400>[Spring break]<td width=273>
+<a href=https://cecas.clemson.edu/~stb/ece417/hw07.pdf>hw07</a> due 3/26<tr>
+ <td width=40>11
+ <td width=400>Testing<td width=273>
+<a href=https://cecas.clemson.edu/~stb/ece417/hw08.pdf>hw08</a> due 4/2<tr>
+ <td width=40>12
+ <td width=400>Risk analysis<td width=273>
+<a href=https://cecas.clemson.edu/~stb/ece417/hw09.pdf>hw09</a> due 4/9<tr>
+ <td width=40>13
+ <td width=400>User interfaces<td width=273>
+<a href=https://cecas.clemson.edu/~stb/ece417/hw10.pdf>hw10</a> due 4/16<tr>
+ <td width=40>14
+ <td width=400>Formal methods<td width=273>
+<a href=https://cecas.clemson.edu/~stb/ece417/hw11.pdf>hw11</a> due 4/23<tr>
+ <td width=40>15<td width=400>Ergonomics<td width=273>
+&nbsp;</table>
+<p>The final exam is scheduled for Thursday 5/03, 3:30 - 5:00.<p>&nbsp;<p>
+<table border=0 cellpadding=2 cellspacing=0 width=100%>
+ <tbody><tr align=center>
+ <td height=25 bgcolor=#444444><font face="Helvetica, Arial" size=3 color=#FFFFFF><b>
+ Textbook and Resources</b></font>
+</table>
+<p>
+Required text:<ul>
+ <li>Steve McConnell, <i><a href=http://cc2e.com/>Code Complete</a></i>, 2nd 
+ ed., Microsoft Press, 2004.</li>
+ </ul>
+<p>
+Recommended
+books:
+<ul>
+ <li>Bjarne Stroustrup, <i>
+ <a href=http://www.bookpool.com/.x/mz7x9b4m4m/sm/0201700735>The C++ Programming 
+ Language</a></i>, Addison-Wesley, 2000.</li>
+ <li>Fred Brooks, <i>
+ <a href="http://www.amazon.com/dp/0201835959?tag=forum2&amp;link_code=as3&amp;creativeASIN=0201835959&amp;creative=373489&amp;camp=211189">
+ The Mythical Man Month:&nbsp; Essays on Software Engineering - Anniversary 
+ Edition</a></i>, 1995.</li>
+ <li>Roger S. Pressman, <i>
+ <a href="http://www.bookpool.com/ss?qs=pressman&amp;x=0&amp;y=0">Software Engineering</a></i>, 
+ 6th ed., McGraw-Hill, 2005.</li>
+</ul>
+ <p>Suggested readings:</p>
+ <ul>
+ <li>Gary Pollice, 
+ <a href=http://www.ibm.com/developerworks/rational/library/dec05/pollice/index.html>Teaching Software Development vs. Software Engineering</a>, 
+ 2005</li>
+ <li>
+ <a href=http://www.cis.gsu.edu/~mmoore/CIS3300/handouts/SciAmSept1994.html>Software's Chronic Crisis</a>, Sept. 1994</li>
+ <li>Bugs in the news:&nbsp; Rover, MS Server, Mars Climate Orbiter, Mars 
+ Spirit, Toyota</li>
+ <li>Walter Royce, 
+ <a href=http://www.inf.ed.ac.uk/teaching/courses/seoc/2006_2007/resources/PM_Balance.pdf>Successful Software Management Style:&nbsp; Steering and 
+ Balance</a>, <i>IEEE Software</i>, 20(5):40-47, 2005</li>
+ <li>Michael Cusumano and Richard Selby, 
+ <a href="http://portal.acm.org/citation.cfm?id=255698">How Microsoft Builds Software</a> 
+ (<a href=http://www.cs.umd.edu/class/spring2003/cmsc838p/Process/microsoftProcess.pdf>another 
+ copy accessible from off campus</a>), 
+ <i>Communications of the ACM</i>, 40(6), June 1997</li>
+ <li>Robert Guth, <a href=http://www.ladlass.com/ice/archives/010197.html>Battling Google, 
+ Microsoft Changes How it Builds Software</a>, 
+ <a href="http://online.wsj.com/article/SB112743680328349448.html?mod=todays_us_page_one">
+ Wall Street Journal</a>, Sept. 23, 2005</li>
+ <li>Fred Brooks, <a href=https://cecas.clemson.edu/~stb/ece417/readings/brooks_mmm1995.pdf>The Mythical Man-Month After 20 Years</a>, <i>IEEE Software</i>, 
+ 12(5):57-60, Sept. 1995 (<a href=http://www.developerdotstar.com/mag/bookreviews/read_manmonth.html>review of 
+ the book</a>)</li>
+ <li>Eric Raymond, 
+ <a href=http://www.catb.org/~esr/writings/cathedral-bazaar/>The Cathedral and the Bazaar</a>, 1999</li>
+ <li>Cliff Jones et al., 
+ <a href=http://www.dcs.qmul.ac.uk/~ohearn/papers/ieee-computer-final.pdf>Verified Software:&nbsp; A Grand Challenge</a>, 
+ <i>IEEE 
+ Computer</i>, 39(4), April 2006</li>
+ <li>Barry Boehm,
+ <a href="http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=4476221">
+ Making a Difference in the Software Century</a>, <i>IEEE Computer</i>, 
+ 41(3), March 2008</li>
+ <li>Articles in<ul>
+<li><a href=http://www.icse-conferences.org/>International Conference on Software Engineering</a>
+<li><a href="http://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=32">IEEE Transactions on Software Engineering</a>
+<li><a href="http://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=2">IEEE Computer Magazine</a>
+<li><a href="http://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=52">IEEE 
+Software Magazine</a>
+ </ul>
+ </li>
+ </ul>
+<p>
+<a href=https://cecas.clemson.edu/~stb/ece417/misc_resources.html>Additional software engineering resources</a></p>
+<table border=0 cellpadding=2 cellspacing=0 width=100%>
+ <tbody><tr align=center>
+ <td height=25 bgcolor=#444444><b>
+ <font face="Helvetica, Arial" color=#FFFFFF>Lectures</font></b>
+</table>
+<ol>
+ <li><a href=https://cecas.clemson.edu/~stb/ece417/lecture01-intro.ppt>Introduction</a></li>
+ <li><a href=https://cecas.clemson.edu/~stb/ece417/lecture02-cpp.ppt>Condensed Crash Course on C++</a></li>
+ <li><a href=https://cecas.clemson.edu/~stb/ece417/lecture02b-cpp-class-example.ppt>Practice with C++: Writing a 
+ Concrete Class</a></li>
+ <li><a href=https://cecas.clemson.edu/~stb/ece417/lecture03-cvs.ppt>Concurrent Versions System (CVS)</a></li>
+ <li><a href=https://cecas.clemson.edu/~stb/ece417/lecture04-sw-process.ppt>The Software Process</a></li>
+ <li><a href=https://cecas.clemson.edu/~stb/ece417/lecture05-modeling.ppt>Modeling</a></li>
+ <li><a href=https://cecas.clemson.edu/~stb/ece417/lecture06-design.ppt>Design</a></li>
+ <li><a href=https://cecas.clemson.edu/~stb/ece417/lecture07-ui-design.ppt>User Interface Design</a></li>
+ <li>Testing</li>
+ <li>Project Management</li>
+ <li>Software Practice</li>
+ <li>Formal Methods</li>
+ <li><a href=https://cecas.clemson.edu/~stb/ece417/lecture12-rsi.ppt>Repetitive Strain Injury (RSI)</a></li>
+</ol>
+<table border=0 cellpadding=2 cellspacing=0 width=100%>
+ <tbody><tr align=center>
+ <td height=25 bgcolor=#444444><font face="Helvetica, Arial" size=3 color=#FFFFFF><b>
+ Project</b></font>
+</table>
+<br>
+A main part of the class is a semester-long project in which the entire class 
+participates.&nbsp; The project is written in C++ using Microsoft's Visual 
+Studio integrated development environment (IDE).&nbsp; The code is checked into 
+a central repository using the concurrent versions system (CVS).&nbsp; There is 
+also an individual project designed to ensure that each participant is capable 
+of contributing to the group project. <h3>Individual project</h3>
+<p>The individual project for this semester is explained
+<a href=https://cecas.clemson.edu/~stb/ece417/individual_projects_ece417.pdf>here</a>.&nbsp; <strike>Individual projects 
+will be checked into CVS in the directory <tt>
+class/imageguide/spring2012/individual_projects</tt></strike>.&nbsp; Correction:&nbsp; To make life easier for you all, use the assign server 
+instead of CVS for the individual projects.&nbsp;
+To turn in your assignment, send an email to
+<a href=mailto:assign@assign.ece.clemson.edu>assign@assign.ece.clemson.edu</a> 
+(<b>and cc the instructor and grader</b>) with the subject line "ECE417-1,#n" 
+(without quotes but with the # sign), where 'n' is the assignment number.&nbsp; 
+Note:
+<ul>
+ <li>Use "ECE417" even if you are actually enrolled in ECE617.</li>
+ <li>Use n=1 for the first submission, i.e., use "ECE417-1,#1".&nbsp; Then 
+ use n=2 for the second submission, i.e., use "ECE417-1,#2".&nbsp; </li>
+ </ul>
+You must send this email from your Clemson account, because the assign server is 
+not smart enough to know who you are if you use another account.&nbsp; <i>E.g., 
+do not use @g.clemson.edu.&nbsp; If you are using Gmail, it is not sufficient to 
+change the 'send mail as:' to @clemson.edu.&nbsp; Instead, from 'Mail Settings' 
+you need to go to 'Accounts and Import', 'Send mail as:', 'Send mail from 
+another address', type in your userid@clemson.edu, select 'Send through 
+clemson.edu SMTP servers', type 'smtp.clemson.edu' along with your userid and 
+password, select 'Secured connection using SSL', then 'Add account'.</i>
+<p></p>
+<p>Some helpful hints:</p>
+<ul>
+ <li>To create a new application in VS2010, <tt>File -&gt; New -&gt; Project -&gt; Visual C++ -&gt; MFC Application
+ </tt>(click <tt>Application Type</tt> and select <tt>Dialog based</tt>, which 
+ is the simplest choice)</li>
+ <li>To add a button or other UI widget, go to 'Resource View' tab.&nbsp; Click 
+ on dialog, then use Toolbox (small rectangle on the side of the window).&nbsp; 
+ Then right-click on button, and 'Add event handler'.</li>
+ <li>To test whether a function is being called, use AfxMessageBox(L"hello").&nbsp; 
+ The 'L' is for unicode strings.&nbsp; To display a variable, use 
+ CString::Format, like this:&nbsp;&nbsp; <br>
+ CString str;<br>
+ str.Format(L"x = %d", x);<br>
+ AfxMessageBox(str);</li>
+ <li>To draw a line, use CClientDC, like this:<br>
+ CClientDC dc(this);<br>
+ CPen pen(PS_SOLID, 1, RGB(255,0,0));<br>
+ CPen* oldpen = dc.SelectObject(&amp;pen);<br>
+ dc.MoveTo(0,0);<br>
+ dc.LineTo(100,100);</li>
+ <li>To draw in OnPaint method, use CPaintDC instead of CClientDC.&nbsp; 
+ Recommendation:&nbsp; Write a function called Redraw(CDC&amp; dc), then a function 
+ called Redraw() { CClientDC dc;&nbsp; Redraw(dc); }.&nbsp; In OnPaint, call {CPaintDC 
+ dc;&nbsp; Redraw(dc); }, but everywhere else just call Redraw();.&nbsp; </li>
+ <li>To get the text from an edit box or any other widget derived from CWnd, 
+ use CString str;&nbsp; m_edit.GetWindowText(str); if m_edit is your edit box.</li>
+ <li>For more information, browse MSDN.&nbsp; For example, if you search for "CClientDC" 
+ in Google, the first link is:
+ <a href="http://msdn.microsoft.com/en-us/library/dc7zsf0y(v=vs.80).aspx">
+ http://msdn.microsoft.com/en-us/library/dc7zsf0y%28v=vs.80%29.aspx</a> .&nbsp; 
+ From this link, you will see that CClientDC derives from CDC.&nbsp; Then click 
+ on "CDC Class", then "CDC Class Members".&nbsp; Now you will be at this site:&nbsp;
+ <a href="http://msdn.microsoft.com/en-US/library/4acfw2ha(v=vs.80).aspx">
+ http://msdn.microsoft.com/en-US/library/4acfw2ha%28v=vs.80%29.aspx</a> , which 
+ lists all the methods of the CDC base class.&nbsp; You can browse to learn the 
+ interfaces of the different methods.&nbsp; An easy one to start with is 
+ FillSolidRect.&nbsp; To fill a polygon, use CDC::Polygon.</li>
+</ul>
+<p>Deadlines:</p>
+<ul>
+ <li>Individual project is due <b>
+ <span style="font-size:11.0pt;line-height:115%;font-family:Times New Roman">
+ Feb. 6 at 11:59pm.</span></b></li>
+ <li><span style="font-family:Times New Roman;font-size:11pt">Second 
+ submission due </span><b>
+ <span style="font-size:11.0pt;line-height:115%;font-family:Times New Roman">
+ March 5 at 11:59pm.</span></b></li>
+</ul>
+<h3>Class project</h3>
+<p>This 
+semester our client is
+<a href=http://www.clemson.edu/ces/cutters/people/kwartowitz.html>Dr. David 
+Kwartowitz</a> and his lab in Bioengineering.&nbsp; Our goal is to 
+to design, plan, document, and implement an open-source application 
+to provide an infrastructure for image guidance, to be used by medical and 
+bioengineering researchers.&nbsp; The 
+code is released under the GNU General Public License.&nbsp; Students are divided into groups to develop different components of the 
+application.&nbsp; Each group is responsible for dividing up the work among its members, scoping 
+the work to be done, and keeping track of the accomplishments of each member as 
+well as the accuracy of the time estimates.&nbsp; For each milestone the group 
+should submit the source code itself (via CVS); a summary of the work done 
+including a detailed task list with the responsible individuals, estimation 
+times, and completion dates (hardcopy brought to class); and a list of 
+tasks/goals for the next milestone.&nbsp; If an individual is not pulling his or 
+her weight, the group has the right to fire that individual from the group; such 
+decisions should be communicated to the instructor as soon as they are made.</p>
+<p><a href=https://cecas.clemson.edu/~stb/ece417/group_projects_ece417.pdf>Group project grading</a></p>
+<p>Deadlines:</p>
+<ul>
+ <li>Project preferences due <b>Feb 13</b></li>
+ <li>Project plan (draft) due <b>Feb 22</b></li>
+ <li>Project plan (final) due <b>Feb 29</b></li>
+ <li>Milestone 1 is <b>April 11</b></li>
+ <li>Milestone 2 is <b>April 18</b></li>
+ <li>Final project demo and milestone is <b>April 25</b></li>
+</ul>
+<h3>Coding conventions</h3>
+<p>Writing code that compiles and runs is not enough.&nbsp; An important part of 
+software engineering is writing code that is also easy to read by other 
+programmers, not only those in your team but also those whom you've never met.&nbsp; 
+Since we will be reading each other's code,&nbsp; it is important for us to have 
+an agreed-upon set of conventions.&nbsp; The following list has been compiled using some of the more 
+common approaches adopted in the industry.</p>
+<ul>
+ <li><b>Spelling and syntax:</b><ul>
+ <li><b>class, struct, namespace, function, method:</b>&nbsp; InterCaps style 
+ (first letter of each word capitalized), also known as CamelCaps</li>
+ <li><b>typedef:</b>&nbsp; same as class</li>
+ <li><b>local variables, function parameters:</b> 
+ all_lowercase_with_underscore_between_words </li>
+ <li><b>member variables of a class:</b>&nbsp; same as local variables, but with 
+ 'm_' prefix</li>
+ <li><b>macros, enums:</b>&nbsp; 
+ ALL_UPPERCASE_WITH_UNDERSCORES_BETWEEN_WORDS</li>
+ <li><b>global variables (avoid these of course):</b>&nbsp; same as local 
+ variables, but with 'g_' prefix</li>
+ <li><b>private methods:</b>&nbsp; iInterCaps (intercaps but with a leading 
+ underscore i)</li>
+ <li><b>filename (if one file per class):</b>&nbsp; ClassName.[h,cpp]</li>
+ <li><b>braces { }:</b>&nbsp; in the same column (C++-style), not opening brace at 
+ end of line (Kernigan &amp; Ritchie C-style)</li>
+ <li><b>number of spaces in a tab:</b>&nbsp; 2 (but insert spaces, not tabs!)</li>
+ </ul>
+ </li>
+ <li><b>Comments and parameter passing:</b><ul>
+ <li>Functions that do not modify the member variables of a class are 
+ declared const</li>
+ <li>Function parameters that are not modified (except native types) are 
+ declared with const&amp;</li>
+ <li>Function parameters that are modified are declared with a pointer (*) 
+ and come after all the inputs</li>
+ <li>Functions local to a file are enclosed in an unnamed namespace to keep 
+ its linkage internal to the file.&nbsp; Like private methods, these follow 
+ the iInterCaps style.</li>
+ <li>Just before each class declaration, a comment briefly describes the 
+ purpose and functionality of the class, any non-obvious peculiarities, and 
+ the author's name in
+ <a href=http://java.sun.com/j2se/1.4.2/docs/tooldocs/windows/javadoc.html#javadoctags>
+ JavaDoc</a> /
+ <a href=http://www.stack.nl/~dimitri/doxygen/commands.html#cmdauthor>
+ Doxygen</a> format (starts with two asterisks, keywords start with @)</li>
+ <li>Each header file starts with #ifndef #define, and ends with #endif;&nbsp; 
+ double-underlines lead and trail name of file in ALL CAPS WITH UNDERSCORES; 
+ Example:<br>
+ <tt>#ifndef __BLEPO_IMAGE_H__<br>
+ #define __BLEPO_IMAGE_H__<br>
+ ...<br>
+ #endif __BLEPO_IMAGE_H__</tt>
+ </li>
+ </ul>
+ </li>
+ <li><b>Licensing:</b><ul>
+ <li>At the top of each file that you write or modify (do not worry about 
+ automatically generated files that you do not touch), include the GNU GPL 
+ license:<br>
+ <tt>/* <br>
+ * Copyright (c) 2011 Clemson University.<br>
+ *<br>
+ * This program is free software; you can redistribute it and/or modify<br>
+ * it under the terms of the GNU General Public License as published by<br>
+ * the Free Software Foundation; either version 2 of the License, or (at<br>
+ * your option) any later version.<br>
+ * <br>
+ * This program is distributed in the hope that it will be useful, but<br>
+ * WITHOUT ANY WARRANTY; without even the implied warranty of<br>
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU<br>
+ * General Public License for more details.<br>
+ * <br>
+ * You should have received a copy of the GNU General Public License<br>
+ * along with this program; if not, write to the Free Software<br>
+ * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.<br>
+ */</tt></li>
+</ul>
+ </li>
+</ul>
+<p>Example: <br>
+<tt><br>
+&nbsp;&nbsp;&nbsp;/**<br>
+&nbsp;&nbsp;&nbsp;&nbsp;This class keeps track of time.<br>
+&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;@author Ima Coder<br>
+&nbsp;&nbsp;&nbsp;*/<br>
+&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;class TimeManager<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;public:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; typedef int SecondType;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TimeManager();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; double GetTime(int day, const TimeStamp&amp; another_time);<br>
+&nbsp;&nbsp;&nbsp;private:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;double m_day_of_the_week;<br>
+&nbsp;&nbsp;&nbsp;};</tt></p>
+<p>Among the many standards on the web, Todd's very extensive and helpful
+<a href=http://www.possibility.com/Cpp/CppCodingStandard.html>C++ coding 
+standard</a> is similar to that above and also contains some insightful points 
+about software engineering in general.&nbsp; Wallach has a shorter
+<a href=http://www.cs.rice.edu/~dwallach/CPlusPlusStyle.html>coding convention</a> 
+list.&nbsp; Lott maintains an <a href=http://www.chris-lott.org/resources/cstyle/>
+extensive list of conventions</a>, some of which are quite extensive :).&nbsp;&nbsp; Linus 
+Torvald's
+<a href=http://www.chris-lott.org/resources/cstyle/LinuxKernelCodingStyle.txt>
+conventions for the Linux kernel</a> makes a fun read, though it's geared toward 
+C rather than C++.&nbsp; And, for something completely different, don't forget to 
+check out Microsoft's
+<a href=http://wombat.doc.ic.ac.uk/foldoc/foldoc.cgi?Hungarian+Notation>
+Hungarian notation</a>.</p>
+<h3>CVS (concurrent versions system) instructions</h3>
+<p>CVS is a command-line tool for managing source code revisions using a single 
+repository.&nbsp; WinCvs is a popular GUI for CVS that makes it much easier to 
+use.&nbsp; (Other interfaces exist, such as
+<a href=http://www.tortoisecvs.org/>tortoisecvs</a>).&nbsp; To start using CVS through WinCvs, do the following:</p>
+<ol>
+ <li>Download and install <a href=http://cvsgui.sourceforge.net/>WinCvs/MacCvs/gCvs</a> 
+ on your development machine</li>
+ <li>Run WinCvs (wincvs.exe) -- assuming version 2.0<ol>
+ <li>Click Admin.Login<ol>
+ <li>Under Login settings tab,<ol>
+ <li>Set CVSROOT to <tt>:pserver:yourid@cvs.ces.clemson.edu:/pub/cvsprojects/ece417</tt><br>
+ (Replace <tt>yourid</tt> with your student id)</li>
+ </ol>
+ </li>
+ </ol>
+ </li>
+ <li>Click Admin.Preferences<ol>
+ <li>Under CVS tab,<ol>
+ <li>Set Home folder to somewhere on your machine</li>
+ </ol>
+ </li>
+ <li>Under WinCvs tab,<ol>
+ <li>Enter path of external diff program, and click checkbox (For 
+ Windiff, go to C:\Program Files\Microsoft Visual Studio\Common\Tools\windiff.exe; 
+ other diff programs are <a href=http://winmerge.sourceforge.net/>
+ WinMerge</a> for Win32 or <a href=http://xxdiff.sourceforge.net/>
+ xxdiff</a> for Unix)</li>
+ </ol>
+ </li>
+ </ol>
+ </li>
+ <li>Your password will be given to you in class or emailed to you.&nbsp; If you wish to change it, please 
+email a different password to the grader so we can put it into the CVS passwd 
+ file.&nbsp; Note:&nbsp; CVS has poor security, so do not use an important 
+ password for this project.&nbsp; Instead, send something that you don't 
+ mind having compromised.&nbsp; </li>
+ <li>Click Admin.Login, select the CVSROOT (if it is not already chosen), 
+ and type your password (this will store your password locally in your Home 
+ folder/.cvspass).&nbsp; You only need to login this one time (unless of 
+ course you ever explicitly log out).</li>
+ <li>Click Remote.Checkout module<ol>
+ <li>Enter module name:&nbsp; <tt>name</tt>, where <tt>name</tt>&nbsp;is 
+ defined below</li>
+ <li>Enter local folder where you would like to store the checked out 
+ files</li>
+ </ol>
+ </li>
+ <li>Whenever a command succeeds, you will see&nbsp; <tt>*****CVS exited 
+ normally with code 0*****</tt></li>
+ <li>Ignore the warning that you don't have TCL or Python.</li>
+ </ol>
+ <li>Now CVS is ready for you to add your own files, modify them, etc.!&nbsp; 
+ <ol>
+ <li>To add a file (this means to put an existing file under CVS control),<ol>
+ <li>Create a file on your local machine in a directory under CVS control (or 
+ move an existing file there)</li>
+ <li>In WinCVS, navigate to the directory and click on the file.</li>
+ <li>Click 'Add selected' (the little button up top with the red plus on it)<br>
+ Note:&nbsp; If the file is binary, then click 'Add selected binary', but you 
+ should only rarely do this, since CVS is not really designed for binary files.</li>
+ <li>Right-Click on the file or folder and select 'Commit...', then type in a 
+ brief log message and say 'OK'</li>
+</ol>
+ </li>
+ <li>To add a folder, do the same thing.&nbsp; However, note that if you add a 
+ folder with no files in it, then most people will never see it.&nbsp; This is 
+ because the default for 'Update...' is to "Prune empty directories" (see the 
+ Globals tab of the Update popup dialog)</li>
+ <li>To remove a file (this will remove the file from CVS control, *and* delete 
+ it from your local machine),<ol>
+ <li>In WinCVS, navigate to the directory and click on the file.</li>
+ <li>Click 'Remove selected' (the little button up top with the black 'X' on 
+ it)</li>
+ <li>Right-Click on the file or folder and select 'Commit...', then type in a 
+ brief log message and say 'OK'</li>
+ <li>Note that CVS never actually deletes anything from the server; it just 
+ flags it as deleted.&nbsp; This is so you can retrieve an earlier version 
+ later if you accidentally deleted a file.&nbsp; So if you accidentally added a 
+ humongous file, notify the administrator so the file can be actually deleted 
+ rather than hogging up disk space needlessly.</li>
+</ol>
+ </li>
+ <li>To commit your changes to a file (once you are ready to share your edits 
+ with other users of the repository)<ol>
+ <li>In WinCVS, navigate to the directory and click on the file.</li>
+ <li>Right-Click on the file or folder and select 'Commit...', then type in a 
+ brief log message and say 'OK'</li>
+</ol>
+ </li>
+ <li>To update (this will merge any changes that others have committed with 
+ your own local copy),<ol>
+ <li>Right-Click on the file or folder and select 'Update...', Click the middle 
+ check box that says, "Create missing directories that exist in the 
+ repository", then say 'OK'</li>
+ <li>If CVS indicates a conflict (via a red 'C' next to the filename in the 
+ output window), then you will need to resolve the conflict by hand.&nbsp; 
+ Search in the file for "&lt;&lt;&lt;&lt;&lt;&lt;&lt;".</li>
+</ol>
+ </li>
+</ol>
+ </li>
+ <li>For reference, see the on-line CVS
+ <a href=http://www.cvshome.org/docs/manual/cvs-1.11.10/cvs.html>Cederqvist 
+ manual</a> or <a href=http://cvsbook.red-bean.com/cvsbook.html>Redbean 
+ manual</a></li>
+</ol>
+<p>Alternatively, if you would prefer to just use the command-line version (not 
+recommended),</p>
+<ol>
+ <li>Download and install the <a href=http://www.cvshome.org/>cvs</a> client 
+ on your development machine</li>
+ <li>Use a text editor to create a ~/.cvsrc file that contains a single line 
+ that looks like this:<br>
+ cvs -d <tt>:pserver:yourid@cvs.ces.clemson.edu:/pub/cvsprojects/ece417</tt><br>
+ (Replace <tt>yourid</tt> with your student id)</li>
+ <li>type <tt>cvs login</tt> at the command prompt, along with your password 
+ (this will store your password locally in your ~/.cvspass file)</li>
+ <li>cd to the directory in which you want to copy files from the repository</li>
+ <li>type cvs checkout <tt>name</tt>, where <tt>name</tt> is defined below</li>
+ <li>Now CVS is ready!&nbsp; For reference, see one of the manuals above</li>
+</ol>
+<p>Replace <tt>name</tt> with <tt>
+class/imageguide </tt>(Spring 2011 or 2012),<tt>
+class/rootfly</tt> (Spring 2005, 2007, 2008, 2009, or 2010)<tt>,
+or class/seebreeze</tt> (Spring 2006).</p>
+<p>For the grader:&nbsp; </p>
+<ul>
+ <li>To encrypt a password, use <br>
+<tt>&nbsp;&nbsp;&nbsp; /usr/local/bin/perl -e 'print crypt("MyPassword","St") . "\n";'</tt>
+ <br>
+ replacing <tt>MyPassword</tt> with the password you would like to encrypt.&nbsp; (You 
+ may need to use <tt>/usr/bin/perl</tt>&nbsp; if the above does not work.)</li>
+ <li>To print a history of all checkouts and updates,&nbsp; <tt>cvs history -x UO -a</tt> 
+ </li>
+</ul>
+<p><a href=https://cecas.clemson.edu/~stb/coding>VC++ 6.0 coding resources</a> </p>
+<p>When 
+checking in code, be sure to check in all the files needed to compile your 
+project (such as <tt>.h, .c, .cpp, .rc, .vcproj, .vcxproj, .sln, .dsp, .dsw</tt>).&nbsp; Also check in the <tt>res</tt> directory that contains <tt>.ico</tt> and <tt>.rc2</tt> files.&nbsp; The <tt>.ico</tt> 
+file is binary, while all others are text-based.&nbsp; Do NOT check in all the 
+other files that Visual Studio creates automatically, such as <tt>.aps</tt>, <tt>.clw</tt>, <tt>.ncb</tt>, 
+<tt>.opt</tt>, <tt>.plg</tt>, <tt>.suo</tt>, or the <tt>Debug</tt> or <tt>Release</tt> or <tt>
+ipch</tt> 
+directories.&nbsp; When in doubt, check out your code to a new temporary directory 
+and verify that it compiles and runs.</p>
+ <table border=0 cellpadding=2 cellspacing=0 width=100%>
+ <tbody><tr align=center>
+ <td height=25 bgcolor=#444444><font face="Helvetica, Arial" size=3 color=#FFFFFF><b>
+ Administrivia</b></font>
+</table>
+<p>
+<b>Instructor:</b> <a href=http://www.ces.clemson.edu/~stb>Stan Birchfield</a>, 
+209 Riggs Hall, 656-5912, email: stb at clemson<br>
+<b>Office hours:</b>&nbsp; Wednesdays 4-5 or by appointment<b><br>
+Grader:</b> Satish Ravindran, email:&nbsp; satishr <b><br>
+Lectures:</b> 2:30 - 3:45 MW, 226 Riggs Hall
+<div id=cyeBlackMaskLayer style=background-color:rgb(19,19,19);position:fixed;width:1980px;height:1080px;z-index:-2147483648 class=sf-hidden></div><div id=cye-workaround-body style="position:absolute;left:0px;top:0px;z-index:-2147483646;background:none 0% 0%/auto repeat scroll padding-box border-box white;height:5188px;width:1903px" class=sf-hidden></div><div id=cye-workaround-body-image style="position:absolute;left:0px;top:0px;z-index:-2147483645;background:none 0% 0%/auto repeat scroll padding-box border-box rgba(0,0,0,0);height:5188px;width:1903px" class=sf-hidden></div>

@@ -1,0 +1,700 @@
+<html class="cye-disabled cye-lm" style><!--
+ Page saved with SingleFile 
+ url: https://www.cse.wustl.edu/~cdgill/courses/cse332/ 
+ saved date: Fri Nov 04 2022 22:59:55 GMT+0800 (China Standard Time)
+--><meta charset=utf-8>
+<title>CSE 332S: Object-Oriented Software Development Laboratory</title>
+<link type=image/x-icon rel="shortcut icon" href="data:image/vnd.microsoft.icon;base64,AAABAAIAICAQAAAAAADoAgAAJgAAABAQEAAAAAAAKAEAAA4DAAAoAAAAIAAAAEAAAAABAAQAAAAAAIACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAgAAAAICAAIAAAACAAIAAgIAAAMDAwACAgIAAAAD/AAD/AAAA//8A/wAAAP8A/wD//wAA////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJkAAAAAAAAAAAAAAAAAAJndkAAAAAAAAAAAAAAAAAmZ3VAAAAAAAAAAAAAAAACZnd1EQAAAAAAAAAAAAAAJmZ3URNkAAAAAAAAAAAAAmd3URE3ZAAAAAAAAAAAACZ3dRE3ZkAAAAAAAAAAAAJmd1ETd2ZAAAAAAAAAAAAmd1ETd2ZAAAAAAAAAAAACZ3URN2ZkAAAAAAAAAAAAJmd1E3dmQAAAAAAAAAAAAmd1ETdmZAAAAAAAAAAAACZnURN2ZkAAAAAAAAAAAAAmd1E3ZmQAAAAAAAAAAAACZ3UTdmQAAAAAAAAAAAAAJndRE3ZAAAAAAAAAAAAAACd1E3ZkAAAAAAAAAAAAAAJnQTZkAAAAAAAAAAAAAAACZ0E2ZAAAAAAAAAAAAAAAB0NXZAAAAAAAAAAAAAAAAAdDV2QAAAAAAAAAAAAAAADs9mQAAAAAAAAAAAAAAAAi7WAAAAAAAAAAAAAAAAAAIu1gAAAAAAAAAAAAAAAAAA7sAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//////////////////////////////PH///BA///gBv//wB///4AP//8AD//+AB///AAf//gAf//wAP//4AH//8AD//+AB///gA///wA///4Af//+AP///AP///wD///4D///+A////A////g////4P///+P//////////////8oAAAAEAAAACAAAAABAAQAAAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAgAAAAICAAIAAAACAAIAAgIAAAMDAwACAgIAAAAD/AAD/AAAA//8A/wAAAP8A/wD//wAA////AAAAAAAAAAAAAAAAAAAJkAAAAAAACZ1QAAAAAACZ0EQAAAAACd0ETZAAAACZ0E3ZAAAACZ1E2ZAAAACZ1A2ZAAAAAJ1E2ZAAAAAJ0E2ZAAAAAAkE2ZAAAAAAnU2ZAAAAAACQ2QAAAAAABVWQAAAAAAC7WQAAAAAAALtQAAAAAAAA//8AAP/kAAD/gQAA/wMAAP4BAAD8AwAA+AcAAPAPAADwHwAA4D8AAOB/AADA/wAAw/8AAIf/AAAP/wAAH/8AAA=="><style>.sf-hidden{display:none!important}</style><link rel=canonical href=https://www.cse.wustl.edu/~cdgill/courses/cse332/><meta http-equiv=content-security-policy content="default-src 'none'; font-src 'self' data:; img-src 'self' data:; style-src 'unsafe-inline'; media-src 'self' data:; script-src 'unsafe-inline' data:; object-src 'self' data:;"><style>img[src="data:,"],source[src="data:,"]{display:none!important}</style></head>
+<body text=#000000 link=#000fff vlink=#ff0f0f bgcolor=#ffffff>
+<center>
+ <h1>CSE 332S: Object-Oriented Software Development Laboratory</h1>
+</center>
+<center><table cellpadding=4 border=0>
+ 
+<tbody><tr>
+ <td><a href=http://www.cse.wustl.edu/~ruth.miller/>Ruth Miller</a></td>
+ <td>&nbsp;</td>
+<tr>
+ <td>Office Hours:</td>
+ <td> <a href=mailto:ruth.miller@wustl.edu>by appointment</a></td>
+ <td>&nbsp;</td>
+<tr>
+ <td>Contact Info:</td>
+ <td>e-mail:
+ <a href=mailto:ruth.miller@wustl.edu>ruth.miller@wustl.edu</a></td>
+<tr>
+ <td><a href=http://www.cse.wustl.edu/~cdgill/>Chris Gill</a></td>
+ <td>&nbsp;</td>
+<tr>
+ <td>Office Hours:</td>
+ <td> <a href=mailto:cdgill@wustl.edu>by appointment</a></td>
+ <td>&nbsp;</td>
+<tr>
+ <td>Contact Info:</td>
+ <td>e-mail:
+ <a href=mailto:cdgill@wustl.edu>cdgill@wustl.edu</a></td>
+<tr>
+<td>Message Board:</td>
+<td>We will also frequently read and respond to postings on the <a href=#Messageboard>course message board</a>
+(<a href=http://bb.wustl.edu/>http://bb.wustl.edu/</a>).</td> 
+<tr>
+</table></center>
+<center>
+ <h1>Spring 2015</h1>
+</center>
+<center>
+ This page is available through:
+<a href=http://classes.cec.wustl.edu/~cse332/>
+ http://classes.cec.wustl.edu/~cse332/</a><br>
+ and through: <a href=http://www.cse.wustl.edu/~ruth.miller/courses/cse332/><strong><code>http://www.cse.wustl.edu/~ruth.miller/courses/cse332/</code></strong></a><p>
+</p></center>
+<center><font size=+1 color=black><strong>Midterm Exam:<br>
+ Thu Mar 5, during class time (10-11:30am for section 1, 11:30am-1pm 
+ for section 2) in McMillan (not McMillen) G052<br>
+ </strong></font></center><p>
+</p><center><font size=+1 color=black><strong>Final Exam:<br>
+ Thu Apr 30, 10:30am-12:30pm 
+ <br> Section 1: Lopata Hall 101 
+ <br>Section 2: Lab
+ Sciences 250<br>
+ </strong></font></center><p>
+</p><center><font size=+1 color=black><strong>TA Help Sessions:<br>
+ Saturdays, 10:00 am - 12:00 pm, in Urbauer 218<br>
+ Mondays, 6:00 pm - 8:00 pm, in Urbauer 218<br>
+ </strong></font></center><p>
+<hr><p>
+<h2><strong>Contents</strong></h2>
+<ol>
+ <li><a href=#Course%20Description>Course Description</a>
+ <li><a href=#Prerequisites>Prerequisites</a>
+ <li><a href=#Times%20and%20Locations>Times and Locations</a>
+ <li><a href=#Messageboard>Message Board</a>&nbsp;&nbsp;(Click 
+ <a href=http://bb.wustl.edu/>here</a>
+ to go directly to the message board.) 
+ <li><a href=#Sessions>Discussion/Studio Sessions</a>
+ <li><a href=#Labs>Labs</a>
+ <li><a href=#Coding%20Standards>Coding Standards</a>
+ <li><a href=#Textbook>Textbooks and Other Resources</a>
+ <li><a href=#Grading>Grading</a>
+ <li><a href=#Cheating>Cheating</a>
+</ol><p>
+<hr><p> <h2><a name="Course Description">Course Description</a></h2>
+This course will expose you to the syntax, semantics, and standard
+libraries of the C++ language; to common C++ design and implementation
+idioms; and to many opportunities to apply the knowledge and idioms you
+learn through hands-on studio exercises and projects in C++.<p>
+All programming in this course will be done in C++, a language in
+which you can combine the object-oriented, procedural, and generic
+programming ideas with which you'll gain experience throughout the
+semester. Since many students enter this course with experience in
+Java but not C++, the early portion of the syllabus is designed to
+give you a breadth-first experience of the major capabilities and
+features of C++ and to assist your progress up the rest of the C++
+learning curve. In addition to providing a reasonable coverage of the
+C++ language overall, this course also will focus on new features
+recently introduced to C++ and its libraries, particularly those from
+the C++11 standard.<p>
+<hr><p>
+<h2><a name=Prerequisites>Prerequisites</a></h2>
+<ul>
+ <li>CSE 132 (Computer Science II) or CSE 241 (Algorithms and Data Structures). If you have not
+ taken either of these courses yet you should take at least one of them before taking CSE 332,
+ especially since we will assume you have at least 2 or 3 previous semesters of programming
+ proficiency before enrolling in this course. 
+ <li>Proficiency with Java (<em>e.g.</em>, from CSE 131 and 132), C, C++, or other 
+ general-purpose industrial-strength programming language.
+</ul>
+<hr><p>
+<h2><a name="Times and Locations">Times and Locations</a></h2>
+Discussions: Tuesdays and Thursdays 10am (Section 1) or 11:30 (Section 2) in Urbauer 218<br>
+Studios: Tuesdays and Thursdays after the discussion until the end of class. 
+ <br>
+Additional TA help sessions: times and locations TBA<br>
+<p>
+The first class meeting will be on Tuesday January 13 in Urbauer 218.
+Following a presentation of the course structure and syllabus that
+day, we will also make sure each student's login works on the Windows
+machines in Urbauer 218, and address any problems that may occur.<p>
+After that introductory meeting, at each 90 minute class meeting on
+Tuesdays and Thursdays (except for the dates of the midterm and final
+reviews and exams), discussions will be held in Urbauer 218 and will consist
+of about 30 minutes of presentation and discussion of the main issues
+to consider for that day's topic, followed by a hands-on studio
+session for the remaining time that day in Urbauer 218. The review sessions prior
+to the midterm and final exams also will be held in Urbauer 218, but will
+occupy most to all of the session (and there will not be any studio
+exercises assigned on those days).<p>
+The instructors and teaching assistants will read and respond to
+postings on the <a href=#Messageboard> course message board</a> (<a href=http://bb.wustl.edu/>http://bb.wustl.edu/</a>).<p>
+<hr><p>
+<h2><a name=Messageboard>Message Board</a></h2>
+Please submit <strong>ALL</strong> questions, and concerns of public
+nature, to the class message board (<a href=http://bb.wustl.edu/>http://bb.wustl.edu/</a>).
+Please also answer other people's questions on the message board!<p>
+<p><strong><b><font size=4 color=red>Please do not e-mail
+technical questions to your professor 
+ or teaching assistants
+individually: instead, please post on the message board for all
+to see, consider, and respond.</font></b></strong></p>
+<p>Please note that the message board is a vital part of
+your CSE 332 experience. <b><font size=4>Participation in the
+message board (<em>i.e.</em>, quantity and quality of your posts) may
+be considered in your participation grade (and your completion and submission
+of studio exercises will be the baseline from which the participation grade
+is calculated).</font></b></p>
+If you have any trouble with your accounts, accessing blackboard and/or the course message
+board, etc., please let us know <strong>right away</strong>!<p>
+<hr><p> <h2><a name=Sessions>Discussion/Studio Sessions</a></h2> The
+discussions and studio sessions will emphasize three main themes: C++
+language syntax and semantics; procedural, object-oriented and generic
+programming techniques; and mastery of useful design, programming, and
+debugging techniques and tools.<p>
+In addition to class meeting dates and topics, assigned readings in
+the required textbook will be provided as we go through the
+semester.<p>
+Although the sequence of topics listed is a good guide to the course
+content overall, it may be adjusted somewhat as the semester
+progresses to emphasize, de-emphasize, or inter-relate certain topics
+depending on the progress and interests of the students in the course.
+If you are finding a given topic very easy or very difficult, please
+let your instructors know.<p>
+<hr><p>
+</p><center><table cellpadding=4 border=4>
+ <tbody><tr><td><strong>Date</strong></td>
+ <td><strong>Topic</strong></td>
+ <td><strong>Assigned Readings</strong></td>
+ <tr><td><font size=4>Tue Jan 13</font>
+ <br><br>
+ <font size=+1><strong>
+ <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/lab0/index.html>Lab 0</a>
+ <br>
+ (assigned Tue Jan 13, due 11:59pm Tue Jan 27)</strong></font>
+ 
+ </td>
+ <td>Course introduction and syllabus, C++ programs<br>
+ (slides in <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/C++_overview.ppt>ppt</a>)<br><br>
+ C++ program structure and development environment<br> 
+ (slides in <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/C++_programs.ppt>ppt</a>)<br>
+ (studio exercises in <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/CSE%20332%20Development%20Environment%20Studio.pdf>pdf</a>)<br>
+ </td>
+ <td>&nbsp;</td>
+ </tr>
+ <tr><td><font size=4>
+ Thu Jan 15
+ </font>
+ </td>
+ <td>
+ C++ variables and basic data types<br>
+ (slides in <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/C++_variables_basic_data_type.ppt>ppt</a>)<br>
+ (studio exercises in <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/CSE%20332%20Data%20Studio.pdf>pdf</a>)<br>
+ </td>
+ <td>[LLM] Chap. 1, 2
+</td>
+ </tr>
+ <tr><td><font size=4>
+ Tue Jan 20
+ </font></td>
+ <td>C++ strings, vectors, arrays, and IO<br>
+ (slides in <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/C++_strings_arrays_vectors_io.ppt>ppt</a>)<br>
+ (studio exercises in <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/CSE%20332%20Strings%20and%20Arrays%20Studio.pdf>pdf</a>)<br> 
+ </td>
+ <td>[LLM] Chap. 3 (and skim 8)
+</td>
+ </tr>
+ <tr><td><font size=4>
+ Thu Jan 22
+ </font>
+ </td>
+ <td>C++ Expressions<br>
+ (slides in <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/C++_expressions.ppt>ppt</a>)<br>
+ (studio exercises in <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/CSE%20332%20Expressions%20Studio.pdf>pdf</a>)<br>
+ (files for studio: <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/prefix_adder.h>prefix_adder.h</a>
+ <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/prefix_adder.cpp>prefix_adder.cpp</a>
+ <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/Makefile>Makefile</a>)<br>
+ 
+ </td>
+ <td>[LLM] Chap. 4</td>
+ </tr>
+ <tr><td><font size=4>
+ Tue Jan 27
+ <br><br>
+ <font size=+1><strong>
+ <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/lab1/index.html>Lab 1</a>
+ <br>
+ (assigned Tue Jan 27, due 11:59pm Tue Feb 10)</strong></font>
+ </font>
+ </td>
+ <td>C++ Statements<br>
+ (slides in <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/C++_statements.ppt>ppt</a>)<br>
+ (studio exercises in <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/CSE%20332%20Statements%20Studio.pdf>pdf</a>)<br>
+ </td>
+ <td>[LLM] Chap. 5</td>
+ </tr>
+ <tr><td><font size=4>
+ Thu Jan 29
+ </font>
+ </td>
+ <td>C++ Functions
+ (slides in <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/C++_functions.ppt>ppt</a>)<br>
+ (studio exercises in <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/CSE%20332%20Functions%20Studio.pdf>pdf</a>)<br> 
+ </td>
+ <td>[LLM] Chap. 6
+</td>
+ </tr>
+ <tr><td><font size=4>
+ Tue Feb 3
+ </font>
+ </td>
+ <td>Classes<br>(slides in <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/C++_classes.ppt>ppt</a>)<br>
+ (studio exercises in <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/CSE%20332%20Classes%20Studio.pdf>pdf</a>)<br>
+ </td>
+ <td>[LLM] Chap. 7</td>
+ </tr>
+ <tr><td><font size=4>
+ Thu Feb 5
+ </font>
+ </td>
+ <td>IO Library<br>
+ (slides in <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/C++_IO.ppt>ppt</a>)<br>
+ (studio exercises in <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/CSE%20332%20IO%20Studio.pdf>pdf</a>)<br>
+ </td>
+ <td>[LLM] Chap. 8
+</td>
+ </tr>
+ <tr><td><font size=4>
+ Tue Feb 10
+ <br><br>
+ <font size=+1><strong>
+ <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/lab2/index.html>Lab 2</a><br>
+ (assigned Wed Feb 11, due 11:59pm Tue Mar 3)
+ </strong></font>
+ </font>
+ </td>
+ <td>Sequential Containers<br>
+ (slides in <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/C++_sequential_containers.ppt>ppt</a>)<br>
+ (studio exercises in <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/CSE%20332%20Sequential%20Containers%20Studio.pdf>pdf</a>)<br>
+ </td>
+ <td>[LLM] Chap. 9
+</td>
+ </tr>
+ <tr><td><font size=4>
+ Thu Feb 12
+ </font>
+ </td>
+ <td>Generic Algorithms I<br>
+ (slides in <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/C++_algorithms_I.ppt>ppt</a>)<br>
+ (studio exercises in <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/CSE%20332%20Algorithms%20Studio%20I.pdf>pdf</a>)<br>
+ </td>
+ <td>[LLM] Chap. 10
+</td>
+ </tr>
+ <tr><td><font size=4>
+ Tue Feb 17
+ </font>
+ </td>
+ <td>Generic Algorithms II<br>
+ (slides in <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/C++_algorithms_II.ppt>ppt</a>)<br>
+ (studio exercises in <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/CSE%20332%20Algorithms%20Studio%20II.pdf>pdf</a>
+ </td>
+ <td>&nbsp;
+ </td>
+ </tr>
+ <tr><td><font size=4>
+ Thu Feb 19
+ </font>
+ </td>
+ <td>Associative Containers I<br>
+ (slides in <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/C++_associative_containers_I.ppt>ppt</a>)<br>
+ (studio exercises in <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/CSE%20332%20Associative%20Containers%20Studio%20I.pdf>pdf</a>
+ </td>
+ <td>[LLM] Chap. 11</td>
+ </tr>
+ <tr><td><font size=4>
+ Tue Feb 24
+ </font>
+ </td>
+ <td>Associative Containers II<br>
+ (slides in <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/C++_associative_containers_II.ppt>ppt</a>)<br>
+ (studio exercises in <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/CSE%20332%20Associative%20Containers%20Studio%20II.pdf>pdf</a>
+ </td>
+ <td>&nbsp;
+</td>
+ </tr>
+ <tr><td><font size=4>
+ Thu Feb 26
+ </font>
+ </td>
+ <td>
+ Review for Midterm Exam<br>
+ (slides in <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/midterm_review.ppt>ppt</a>)<br>
+ (sample questions in <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/sample_midterm_questions.pdf>pdf</a>:<br>
+ <strong>note that this is NOT intended as a study guide, but rather as an<br>
+ illustration of the kinds of questions we tend to ask in the exams in this course.</strong>)
+ </td>
+ <td>&nbsp;</td>
+ </tr>
+ <tr><td><font size=4>
+ Tue Mar 3
+ </font></td>
+ <td colspan=2>
+ <center><strong>Open Help Session<br>(time to work on labs and studios, no new material assigned)</strong></center>
+ </td>
+ </tr>
+ <tr><td><font size=4> 
+ Thu Mar 5
+ </font>
+ </td>
+ <td colspan=2>
+ <center><strong>Midterm Exam<br>
+ during class time (10-11:30am for section 1, 11:30am-1pm 
+ for section 2) in McMillan (not McMillen) G052<br> </strong></center> 
+ </td>
+ </tr>
+ <tr><td><font size=4>
+ Fri Mar 6
+ </font>
+ </td>
+ <td colspan=2>
+ <center><strong>Last day to submit studio exercises so far<br>
+ for participation credit (deadline: 11:59pm)</strong></center>
+ </td>
+ </tr>
+ <tr><td><font size=4>
+ Tue Mar 10 and Thu Mar 12
+ </font>
+ </td>
+ <td colspan=2>
+ <center><strong>Spring Break (no classes)</strong></center>
+ </td>
+ </tr>
+ <tr><td><font size=4>
+ Tue Mar 17
+ <br><br>
+ <font size=+1><strong>
+ <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/lab3/index.html>Lab 3</a><br>
+ (assigned Mon Mar 16, due 11:59pm Sun Apr 5)
+ </strong></font>
+ </font>
+ </td>
+ 
+ <td> Object-oriented programming<br> 
+ (slides in <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/C++_Object_Oriented_programming.ppt>ppt</a>)<br>
+ (studio exercises in <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/CSE%20332%20Object-Oriented%20Programming%20Studio.pdf>pdf</a>)<br> 
+ </td>
+ <td>[LLM] Chap. 15 (through section 15.6)</td>
+ </tr>
+ <tr><td><font size=4>
+ Thu Mar 19
+ </font>
+ </td>
+ <td>Return and discuss graded midterm exams<br><br>
+ Dynamic memeory <br> 
+ (slides in <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/C++_dynamic_memory.ppt>ppt</a>)<br>
+ (studio exercises in <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/CSE%20332%20Dynamic%20Memory%20Studio.pdf>pdf</a>)<br> 
+ <td>[LLM] Chap. 12</td>
+ </tr>
+ <tr><td><font size=4>
+ Tue Mar 24
+ </font>
+ </td>
+ <td>Copy Control I
+ (slides in <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/C++_copy_control_I.ppt>ppt</a>)<br>
+ (studio exercises in <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/CSE%20332%20Copy%20Control%20Studio%20I.pdf>pdf</a>)<br>
+ </td>
+ <td>[LLM] Chap. 13 (through section 13.4)
+ </tr>
+ <tr><td><font size=4>
+ Thu Mar 26
+ </font>
+ </td>
+ <td>Copy Control II
+ (slides in <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/C++_copy_control_II.ppt>ppt</a>)<br>
+ (studio exercises in <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/CSE%20332%20Copy%20Control%20Studio%20II.pdf>pdf</a>)<br> 
+ </td>
+ 
+ <td>[LLM] Chap. 13 (sections 13.5 and 13.6)<br>
+ [LLM] Chap. 15 (sections 15.7 and 15.8)</td>
+ </tr>
+ <tr><td><font size=4>
+ Tue Mar 31
+ </font>
+ </td>
+ <td>Overloaded operations and conversions
+ (slides in <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/C++_overloading.ppt>ppt</a>)<br>
+ (studio exercises in <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/CSE%20332%20Overloading%20Studio.pdf>pdf</a>)<br> 
+ </td>
+ <td>[LLM] Chap. 14
+ </td>
+ </tr>
+ <tr><td><font size=4>
+ Thu Apr 2
+ </font>
+ </td>
+ <td>Templates and generic programming I
+ <br>
+ (slides in <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/C++_templates_I.ppt>ppt</a>)<br>
+ (studio exercises in <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/CSE%20332%20Templates%20Studio%20I.pdf>pdf</a>)<br>
+ </td>
+ <td>
+ [LLM] Chap. 16
+ </td>
+ </tr>
+ <tr><td><font size=4>
+ Tue Apr 7
+ <br><br>
+ <font size=+1><strong>
+ <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/lab4/index.html>Lab 4</a>
+ <br>
+ (assigned Mon Apr 6, due 11:59pm Sun Apr 26)</strong></font>
+ </font>
+ </td>
+ <td>Templates and generic programming II<br>
+ (slides in <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/C++_templates_II.ppt>ppt</a>)<br>
+ (studio exercises in <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/CSE%20332%20Templates%20Studio%20II.pdf>pdf</a>)<br>
+ </td>
+ <td>&nbsp;
+</td>
+ </tr>
+ <tr><td><font size=4>
+ Thu Apr 9
+ </font>
+ </td>
+ <td>Specialized library facilities<br>
+ (slides in <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/C++_specialized_library_facilities.ppt>ppt</a>)<br>
+ (studio exercises in <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/CSE%20332%20Specialized%20Library%20Facilties.pdf>pdf</a>)<br>
+ </td>
+ <td>[LLM] Chap. 17
+</td>
+ </tr>
+ <tr><td><font size=4>
+ Tue Apr 14
+ </font>
+ </td>
+ <td>Advanced Topics on Inheritance<br>
+ (slides in <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/C++_advanced_topics_on_inheritance.ppt>ppt</a>)<br>
+ (studio exercises in <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/CSE%20332%20Advanced%20Topics%20on%20Inheritance.pdf>pdf</a>)<br> 
+ </td>
+ <td>[LLM] Chap. 18.3</td>
+ </tr>
+ <tr><td><font size=4>
+ Thu Apr 16
+ </font>
+ </td>
+ <td>Advanced tools and techniques
+ (slides in <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/C++_advanced_tools_and_techniques.ppt>ppt</a>)<br>
+ (studio exercises in <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/CSE%20332%20Advanced%20Tools%20and%20Techniques.pdf>pdf</a>)<br> 
+ </td>
+ <td>[LLM] Chap. 19
+</td>
+ </tr>
+ <tr><td><font size=4>
+ Tue Apr 21
+ </font>
+ </td>
+ <td>
+ Semester summary and review for Final Exam<br>
+ (slides in <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/course_review.ppt>ppt</a>)<br>
+ </td>
+ <td>&nbsp;</td>
+ </tr>
+ <tr><td><font size=4>
+ Thu Apr 23
+ </font>
+ </td>
+ <td colspan=2>
+ <center><strong>Open Help Session<br>(time to work on labs and studios, no new material assigned)</strong></center>
+ </td>
+ <td>&nbsp;
+ </td>
+ </tr>
+ <tr><td><font size=4>
+ Fri Apr 24
+ </font>
+ </td>
+ <td colspan=2>
+ <center><strong>Last day to submit studio exercises for<br>
+ participation credit (deadline: 11:59pm)</strong></center>
+ </td>
+ </tr>
+ <tr><td><font size=4>
+ Thu Apr 30
+ </font>
+ </td>
+ <td colspan=2>
+ <center><strong>
+ Final Exam 10:30am-12:30pm
+ <br>Location Section 1: Lopata Hall 101<br>
+ Section 2: Lab Sciences 250<br>
+ </strong></center>
+ </td>
+ </tr>
+</table></center>
+<p>
+<hr><p> <h2><a name=Labs>Labs</a></h2> There will be 5 lab
+assignments in this course. The labs will increase in difficulty and
+value throughout the semester.<p>
+Labs are to be submitted electronically, and will be graded and
+returned to you electronically as well. Each lab submission requires
+a separate <code>ReadMe.txt</code> file containing a lab report
+writeup. Each assigment web page will describe the procedure for
+submitting the lab, along with the report format and content
+requirements. Use of this process is required.<p>
+Labs 0, 1, and 2 are to be completed individually, though on labs 3 and 4 you
+will have the option of working in teams of 2 or 3 people. You should
+please submit your code and a lab report for each lab sufficiently
+ahead of its advertised due date and time (shown on the lab assignment
+web page) that normal e-mail delays etc. do not result in your lab
+being received late (according to the time stamp put on the e-mail by
+the CEC e-mail server used by the cse332 account).<p>
+Labs received within 24 hours after the posted deadline will be
+accepted with a 10% penalty up front, and labs submitted between 24
+and 48 hours after the posted deadline will be accepted with a 20%
+penalty up front. Labs submitted after that will not be graded,
+except in the case of <strong>documented</strong> extenuating
+circumstances.<p>
+Extensions may be granted in advance on a case-by-case basis as long
+as the circumstances warrant an extension and the request is made
+sufficiently ahead of the deadline. Extensions will not be granted
+after the deadline except in very special cases (such as documented
+medical emergencies).<p>
+You may discuss general questions related your projects with other
+students, the TAs, and your instructors during studio hours. For
+additional help please contact your TAs or instructors.
+ 
+While you are encouraged to
+ 
+ask for help on particular problems you may encounter during
+a project, you must design and implement your own solutions, and
+prepare your own reports. In particular, while discussion of small code
+fragments related to specific questions is allowed and encouraged,
+direct sharing, viewing, or other "reuse" of complete code files
+(especially if done covertly) is strictly forbidden. If you're not
+sure whether or not sharing a given section of code is ok, please ask
+your instructors' permission before doing so.<p>
+The following labs have been assigned so far in the course:
+<ul>
+ <li><a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/lab0/index.html>Lab 0</a> (assigned Tue Jan 13, due 11:59pm Tue Jan 27)
+ <li><a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/lab1/index.html>Lab 1</a> (assigned Tue Jan 27, due 11:59pm Tue Feb 10)
+ <li><a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/lab2/index.html>Lab 2</a> (assigned Wed Feb 11, due 11:59pm Tue Mar 3)
+ <li><a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/lab3/index.html>Lab 3</a> (assigned Mon Mar 16, due 11:59pm Sun Apr 5)
+ <li><a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/lab4/index.html>Lab 4</a> (assigned Mon Apr 6, due 11:59pm Sun Apr 26)
+</ul><p>
+<hr><p> <h2><a name="Coding Standards">Coding Standards</a></h2> Many
+organizations impose coding standards on programmers, and these
+standards can range from general principles to very specific
+requirements. In this class, part of the grade for each programming
+assignment will be based on the <a href=https://www.cse.wustl.edu/~cdgill/courses/cse332/Guidelines.html> CSE 332
+Programming Guidelines</a>, which are intended to build good
+programming habits that will help avoid common mistakes and help make
+your programs more readable and better organized and documented. As
+the course progresses, we'll point out relevant ones for each
+programming assignment, so please re-review it before starting each new
+programming assignment.<p>
+<hr><p>
+<h2><a name=Textbook>Textbooks and Other Resources</a></h2>
+In addition to class meeting dates and topics, assigned readings in the 
+following required textbook are shown for each of the class meetings:
+<ul>
+ <li><b><font size=4>[LLM] Stanley B. Lippman, Jose Lajoie, and Barbara E. Moo, </font><font size=4>C++ Primer,
+ Fifth Edition, ISBN 0321714113</font>
+ <font size=4>, </font>
+ <font size=4>Prentice Hall</font></b><b><font size=4>, 2012.</font></b>
+</ul><p>
+ 
+In addition to the required textbook, the following texts may be
+useful and interesting additions to your programming library:
+<ul>
+ <li>Austern, Matthew H., <em>Generic Programming and the STL</em>,
+ <a href=http://www.aw.com/>Addison-Wesley</a>, 1998.
+ <li>Beck, Kent, <em>Extreme Programming Explained: Embrace Change</em>,
+ <a href=http://www.aw.com/>Addison-Wesley</a>, 1999.
+ <li>Kernighan and Ritchie, <em>C Programming Language</em>, 2nd Ed., 1988.
+ <a href=http://www.aw.com/>Addison-Wesley</a>, 2005.
+ <li>Bjarne Stroustrup,
+ <em>The C++ Programming Language: Fourth Edition,</em>
+ Addison-Wesley, 2013.
+</ul><p>
+On-line information sources (please feel free to suggest other good ones):
+<ul>
+ <li>The <a href=http://www.cppreference.com/>C++ Reference</a> page.
+</ul><p>
+<hr><p>
+<h2><a name=Grading>Grading</a></h2>
+As a rough guideline, 90-100 has historically been the <strong>A</strong> range,
+80-89 the <strong>B</strong> range, and so on, though depending on the
+complete distribution the specific grade division points (and addition of + or - qualifiers
+to the grades near the boundaries) may vary.<p>
+For students taking the course pass/fail, a passing grade will be
+equivalent to a D or better in the course.<p>
+See the <a href=#Labs>Labs</a> section for a discussion of the labs
+and how they will be graded.<p>
+The midterm and final exams will be comprehensive: each potentially
+may cover any of the material up to that point in the course. The
+best way to study for the exams is to keep up with the studio
+exercises and programming assignments, and to ask lots of questions in
+the studio sessions
+throughout the semester.<p>
+The last grading component is an evaluation of your participation
+in the class, and of your application of the tools
+and techniques discussed in class and labs. This component is
+separated out to:
+<ol>
+ <li>broaden the evaluation criteria,
+ <li>reduce the weight of the exams a bit, and
+ <li>encourage active participation in discussions/studios.
+</ol><p>
+Percentage completion of the studio exercises (including posting
+answers to them) will be used as the baseline for evaluating
+participation grades, though other factors such as attendance and
+engagement in discussion and studio sessions also may be considered if
+they differ significantly.
+</p><center><table cellpadding=4 border=4>
+ <tbody><tr><td>Labs</td>
+ <td>50 %<br>
+ <font size=-1>
+ &nbsp;&nbsp;&nbsp;Lab 0:&nbsp;&nbsp;5 %<br>
+ &nbsp;&nbsp;&nbsp;Lab 1:&nbsp;&nbsp;7 %<br>
+ &nbsp;&nbsp;&nbsp;Lab 2:&nbsp;&nbsp;8 %<br>
+ &nbsp;&nbsp;&nbsp;Lab 3:&nbsp;&nbsp;12 %<br>
+ &nbsp;&nbsp;&nbsp;Lab 4:&nbsp;&nbsp;18 %<br>
+ </font><tr><td>Midterm Exam</td>
+ <td>15 %</td>
+ <tr><td>Final Exam</td>
+ <td>25 %</td>
+ <tr><td>Participation</td>
+ <td>&nbsp;&nbsp;10 %</td>
+</table></center>
+<p>
+<hr><p>
+<h2><a name=Cheating>Cheating</a></h2>
+Cheating is the misrepresentation of someone else's work as your own,
+or assisting someone else in cheating, and will not be tolerated in
+this course.<p>
+For this course, examples of cheating include but are not limited to:
+<ul>
+<li>providing or receiving answers or other assistance during an exam, 
+<li>accessing unapproved sources of information during an exam,
+<li>submitting program code written outside this course this semester 
+ or by another person not on your team, without specific prior approval by the instructors,
+<li>allowing another student not on your team to copy (or helping them reconstruct) essentially 
+ the same solution your team has developed for a programming assignment.
+</ul>
+<p>
+This is a very serious matter. Anyone found cheating will at a
+minimum <strong>lose</strong> points equal to the assigned value for
+the assignment in question (for example if an assignment were worth
+10% of the course grade then -10% of the course grade would be
+assigned), or possibly receive an F for the course. Further action
+may be taken in extreme cases, possibly including referral to the
+School of Engineering and Applied Science's formal academic integrity
+review process.<p>
+Furthermore, our policy is that we will make the final determination
+on what constitutes cheating. If you suspect that you may be entering
+an ambiguous situation, it is your responsibility to clarify it before
+we detect it. If in doubt, please ask.<p>
+To ensure this policy is implemented consistently and fairly, and that
+any problems are detected and addressed as early as possible, we may
+make use of automated program similarity checkers to assess uniqueness
+and independence of submitted program solutions.<p>
+<hr><p>
+<div id=cyeBlackMaskLayer style=background-color:rgb(19,19,19);position:fixed;width:1980px;height:1080px;z-index:-2147483648 class=sf-hidden></div><div id=cye-workaround-body style="position:absolute;left:0px;top:0px;z-index:-2147483646;background:none 0% 0%/auto repeat scroll padding-box border-box rgb(255,255,255);height:6049px;width:1903px" class=sf-hidden></div><div id=cye-workaround-body-image style="position:absolute;left:0px;top:0px;z-index:-2147483645;background:none 0% 0%/auto repeat scroll padding-box border-box rgba(0,0,0,0);height:6049px;width:1903px" class=sf-hidden></div>

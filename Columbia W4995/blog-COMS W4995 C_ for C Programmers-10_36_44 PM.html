@@ -1,0 +1,436 @@
+<!DOCTYPE html> <html xmlns=http://www.w3.org/1999/xhtml lang=en class="cye-disabled cye-lm"><!--
+ Page saved with SingleFile 
+ url: http://www.cs.columbia.edu/~jae/4995-LAST/?asof=20210908 
+ saved date: Fri Nov 04 2022 22:36:44 GMT+0800 (China Standard Time)
+--><meta charset=utf-8>
+<title>COMS W4995 C++ for C Programmers</title>
+<meta name=author content="Jae Woo Lee">
+<style>body{font-family:Helvetica,arial,sans-serif;font-size:14px;line-height:1.6;padding-top:10px;padding-bottom:10px;background-color:white;padding:30px}body>*:first-child{margin-top:0!important}body>*:last-child{margin-bottom:0!important}a{color:#4183C4}h1,h2{margin:20px 0 10px;padding:0;font-weight:bold;-webkit-font-smoothing:antialiased;cursor:text;position:relative}h1{font-size:28px;color:black}h2{font-size:24px;border-bottom:1px solid #cccccc;color:black}p,ul,table{margin:15px 0}body>h2:first-child{margin-top:0;padding-top:0}body>h1:first-child{margin-top:0;padding-top:0}body>h1:first-child+h2{margin-top:0;padding-top:0}li{margin:0}ul{padding-left:30px}ul :first-child,ol :first-child{margin-top:0}table{padding:0;border-collapse:collapse}table tr{border-top:1px solid #cccccc;background-color:white;margin:0;padding:0}table tr:nth-child(2n){background-color:#f8f8f8}table tr td{border:1px solid #cccccc;margin:0;padding:6px 13px}code{margin:0 2px;padding:0 5px;white-space:nowrap;border:1px solid #eaeaea;background-color:#f8f8f8;border-radius:3px}*{-webkit-print-color-adjust:exact}@media screen and (min-width:914px){body{width:854px;margin:0 auto}}</style>
+<link type=image/x-icon rel="shortcut icon" href="data:image/png;base64,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"><style>.sf-hidden{display:none!important}</style><link rel=canonical href="http://www.cs.columbia.edu/~jae/4995-LAST/?asof=20210908"><meta http-equiv=content-security-policy content="default-src 'none'; font-src 'self' data:; img-src 'self' data:; style-src 'unsafe-inline'; media-src 'self' data:; script-src 'unsafe-inline' data:; object-src 'self' data:;"><style>img[src="data:,"],source[src="data:,"]{display:none!important}</style></head>
+<body>
+<h1 id=comsw4995cforcprogrammers>COMS W4995 C++ for C Programmers</h1>
+<h2 id=summera2021>Summer (A) 2021</h2>
+<ul>
+<li><p>Tue &amp; Thu 4:10–6:40pm</p>
+<ul>
+<li>Online only</li>
+<li>Zoom links public on CourseWorks – search on Vergil</li>
+</ul></li>
+<li><p>Online but <strong>synchronous</strong> final exam on <strong>Thursday June 3rd, 4:10pm</strong></p>
+<ul>
+<li><strong>There are no make-up or alternate exams.</strong></li>
+<li>Please do not take the course if you are not available at that time.</li>
+</ul></li>
+<li><p>Instructor: <a href=http://www.cs.columbia.edu/~jae/>Jae Woo Lee</a></p></li>
+<li><p>Office hours:</p>
+<ul>
+<li><a href=http://bit.ly/jae-cal>Jae’s office hours</a></li>
+<li><a href=http://bit.ly/4995-cal>TA office hours</a></li>
+</ul></li>
+</ul>
+<h2 id=courseessentials>Course essentials</h2>
+<ul>
+<li><strong><a href=http://www.cs.columbia.edu/~jae/4995-LAST/00-overview-2021-5.pdf>OVERVIEW AND LOGISTICS</a></strong></li>
+<li><strong>REQUIRED READING:
+<a href=http://www.cs.columbia.edu/~jae/honesty.html>ACADEMIC HONESTY POLICIES</a></strong></li>
+<li><a href=http://www.cs.columbia.edu/~jae/4995-LAST/files/linux-environment.html>Linux programming environment</a></li>
+<li><a href=http://www.cs.columbia.edu/~jae/4995-LAST/files/git-tutorial.pdf>Git tutorial</a></li>
+<li><a href=https://c2cxx.github.io/labs/lab-submission>Lab submission instruction</a></li>
+</ul>
+<h2 id=supplementarymaterials>Supplementary materials</h2>
+<ul>
+<li>Supplements to Jae’s Git tutorial from COMS 3157:
+<ul>
+<li><a href=http://www.cs.columbia.edu/~jae/4995-LAST/files/git-tutorial-annotated.pdf>Annotated version by TAs</a></li>
+<li><a href=http://www.cs.columbia.edu/~jae/4995-LAST/files/git-intro-slides.pdf>Git for AP - intro slides by TAs</a></li>
+</ul></li>
+</ul>
+<h2 id=pastlectures>Past Lectures</h2>
+<table>
+<colgroup>
+<col>
+</colgroup>
+<thead>
+</thead>
+<tbody>
+<tr>
+ <td> 5/4 </td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>Course overview and logistics</p>
+<ul>
+<li>Slides: <a href=http://www.cs.columbia.edu/~jae/4995-LAST/00-overview-2021-5.pdf>OVERVIEW AND LOGISTICS</a></li>
+</ul></li>
+<li><p>Hello C++</p>
+<ul>
+<li>string, iostream, namespace
+<ul>
+<li><a href=http://www.cs.columbia.edu/~jae/4995-LAST/code/504/hello.cpp>hello.cpp</a></li>
+</ul></li>
+</ul></li>
+</ul>
+<table>
+<colgroup>
+<col>
+</colgroup>
+<thead>
+</thead>
+<tbody>
+<tr>
+ <td> 5/6 </td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Basic-4 in C++
+<ul>
+<li>constructors and destructor</li>
+<li>stack allocations and heap allocations</li>
+<li>passing by value vs. passing by reference</li>
+</ul></li>
+</ul>
+<table>
+<colgroup>
+<col>
+</colgroup>
+<thead>
+</thead>
+<tbody>
+<tr>
+ <td> 5/11 </td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Basic-4 in C++ (continued)
+<ul>
+<li>three cases of copy construction</li>
+<li>const member functions</li>
+<li>copy assignment
+<ul>
+<li><a href=http://www.cs.columbia.edu/~jae/4995-LAST/code/511/Makefile>Makefile</a>, <a href=http://www.cs.columbia.edu/~jae/4995-LAST/code/511/basic4.cpp>basic4.cpp</a></li>
+</ul></li>
+</ul></li>
+</ul>
+<table>
+<colgroup>
+<col>
+</colgroup>
+<thead>
+</thead>
+<tbody>
+<tr>
+ <td> 5/13 </td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>MyString class
+<ul>
+<li>Basic-4 of MyString class</li>
+<li>Inlining member functions</li>
+<li>operator+</li>
+<li>put-to &amp; get-from operators</li>
+<li>operator[]</li>
+<li>exception handling
+<ul>
+<li><a href=http://www.cs.columbia.edu/~jae/4995-LAST/code/513/>MyString class &amp; test drivers</a></li>
+</ul></li>
+</ul></li>
+</ul>
+<table>
+<colgroup>
+<col>
+</colgroup>
+<thead>
+</thead>
+<tbody>
+<tr>
+ <td> 5/18 </td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>Template functions</p>
+<ul>
+<li><a href=http://www.cs.columbia.edu/~jae/4995-LAST/code/518/Makefile>Makefile</a>, <a href=http://www.cs.columbia.edu/~jae/4995-LAST/code/518/template1.cpp>template1.cpp</a></li>
+</ul></li>
+<li><p>Essential-6 in C++</p>
+<ul>
+<li>Basic-4 plus move constructor &amp; move assignment</li>
+<li>rvalue reference</li>
+<li>copy elision eliminates move</li>
+<li>casting to rvalue reference
+<ul>
+<li><a href=http://www.cs.columbia.edu/~jae/4995-LAST/code/518/Makefile>Makefile</a>, <a href=http://www.cs.columbia.edu/~jae/4995-LAST/code/518/template2.cpp>template2.cpp</a></li>
+</ul></li>
+</ul></li>
+<li><p>Vector template class</p>
+<ul>
+<li><a href=http://www.cs.columbia.edu/~jae/4995-LAST/code/518/Makefile>Makefile</a>, <a href=http://www.cs.columbia.edu/~jae/4995-LAST/code/518/template3.cpp>template3.cpp</a></li>
+</ul></li>
+<li><p>Inheritance</p>
+<ul>
+<li>Object layout</li>
+<li>Static binding vs. dynamic binding</li>
+<li>Virtual function table structure</li>
+<li>Multiple inheritance</li>
+<li>Object construction order
+<ul>
+<li><a href=http://www.cs.columbia.edu/~jae/4995-LAST/code/518/inherit1.cpp>inherit1.cpp</a>,
+<a href=http://www.cs.columbia.edu/~jae/4995-LAST/code/518/inherit2.cpp>inherit2.cpp</a>,
+<a href=http://www.cs.columbia.edu/~jae/4995-LAST/code/518/inherit3.cpp>inherit3.cpp</a></li>
+</ul></li>
+</ul></li>
+</ul>
+<table>
+<colgroup>
+<col>
+</colgroup>
+<thead>
+</thead>
+<tbody>
+<tr>
+ <td> 5/20 </td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>I/O streams</p>
+<ul>
+<li>I/O stream class hierarchy</li>
+<li>I/O state</li>
+<li>Mixing C and C++ I/O
+<ul>
+<li><a href=http://www.cs.columbia.edu/~jae/4995-LAST/code/520/io1.cpp>io1.cpp</a>, <a href=http://www.cs.columbia.edu/~jae/4995-LAST/code/520/io2.cpp>io2.cpp</a></li>
+</ul></li>
+<li>I/O of user-defined types</li>
+<li>String streams</li>
+<li>File streams
+<ul>
+<li><a href=http://www.cs.columbia.edu/~jae/4995-LAST/code/520/io3.cpp>io3.cpp</a>, <a href=http://www.cs.columbia.edu/~jae/4995-LAST/code/520/entries>sample data file</a></li>
+</ul></li>
+</ul></li>
+<li><p><code>to&lt;&gt;()</code> template function using <code>stringstream</code></p>
+<ul>
+<li><a href=http://www.cs.columbia.edu/~jae/4995-LAST/code/520/to.cpp>to.cpp</a></li>
+</ul></li>
+<li><p><code>Revisited</code> Vector template class</p>
+<ul>
+<li>Replacing <code>Vec</code> with <code>std:vector</code>
+<ul>
+<li><a href=http://www.cs.columbia.edu/~jae/4995-LAST/code/520/template4.cpp>template4.cpp</a></li>
+</ul></li>
+<li>Runtime complexity of <code>vector::push_back()</code></li>
+</ul></li>
+</ul>
+<table>
+<colgroup>
+<col>
+</colgroup>
+<thead>
+</thead>
+<tbody>
+<tr>
+ <td> 5/25 </td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>Sequential STL containers</p>
+<ul>
+<li><code>array</code></li>
+<li><code>vector</code></li>
+<li><code>deque</code></li>
+<li><code>list</code> &amp; <code>forward_list</code></li>
+<li>Value semantics
+<ul>
+<li><a href=http://www.cs.columbia.edu/~jae/4995-LAST/code/525/Makefile>Makefile</a>, <a href=http://www.cs.columbia.edu/~jae/4995-LAST/code/525/stl1.cpp>stl1.cpp</a></li>
+</ul></li>
+</ul></li>
+<li><p>Iterators</p>
+<ul>
+<li><code>For_Each()</code> template function</li>
+<li><code>begin()</code> &amp; <code>end()</code>
+<ul>
+<li><a href=http://www.cs.columbia.edu/~jae/4995-LAST/code/525/Makefile>Makefile</a>, <a href=http://www.cs.columbia.edu/~jae/4995-LAST/code/525/stl2.cpp>stl2.cpp</a></li>
+</ul></li>
+</ul></li>
+</ul>
+<table>
+<colgroup>
+<col>
+</colgroup>
+<thead>
+</thead>
+<tbody>
+<tr>
+ <td> 5/27 </td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>Iterators (continued)</p>
+<ul>
+<li><code>std::initializer_list&lt;T&gt;</code></li>
+<li>Iterator adapters</li>
+<li>Stream iterators</li>
+<li>Iterator categories
+<ul>
+<li><a href=http://www.cs.columbia.edu/~jae/4995-LAST/code/527/Makefile>Makefile</a>, <a href=http://www.cs.columbia.edu/~jae/4995-LAST/code/527/stl3.cpp>stl3.cpp</a></li>
+</ul></li>
+</ul></li>
+<li><p>Intro to Template Metaprogramming</p>
+<ul>
+<li>Tag dispatching technique</li>
+<li>Template specialization</li>
+<li>Concepts in C++20
+<ul>
+<li><a href=http://www.cs.columbia.edu/~jae/4995-LAST/code/527/Makefile>Makefile</a>, <a href=http://www.cs.columbia.edu/~jae/4995-LAST/code/527/itraits.cpp>itraits.cpp</a></li>
+</ul></li>
+</ul></li>
+<li><p>Functional programming in C++</p>
+<ul>
+<li>Function objects (aks functors)</li>
+<li>STL function objects and <code>bind()</code></li>
+<li>Lamda
+<ul>
+<li><a href=http://www.cs.columbia.edu/~jae/4995-LAST/code/527/Makefile>Makefile</a>, <a href=http://www.cs.columbia.edu/~jae/4995-LAST/code/527/functor.cpp>functor.cpp</a></li>
+</ul></li>
+</ul></li>
+</ul>
+<table>
+<colgroup>
+<col>
+</colgroup>
+<thead>
+</thead>
+<tbody>
+<tr>
+ <td> 6/1 </td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p><code>Review</code> Function objects (aka functors) and Lambdas</p>
+<ul>
+<li><a href=http://www.cs.columbia.edu/~jae/4995-LAST/code/527/Makefile>Makefile</a>, <a href=http://www.cs.columbia.edu/~jae/4995-LAST/code/527/functor.cpp>functor.cpp</a></li>
+</ul></li>
+<li><p>Associative containers</p>
+<ul>
+<li><code>map</code>, <code>multimap</code>, <code>unordered_map</code>, <code>unordered_multimap</code>
+<ul>
+<li><a href=http://www.cs.columbia.edu/~jae/4995-LAST/code/601/Makefile>Makefile</a>, <a href=http://www.cs.columbia.edu/~jae/4995-LAST/code/601/words.cpp>words.cpp</a></li>
+</ul></li>
+</ul></li>
+<li><p>Random number generator</p>
+<ul>
+<li>Random number generator in C vs. C++
+<ul>
+<li><a href=http://www.cs.columbia.edu/~jae/4995-LAST/code/601/Makefile>Makefile</a>, <a href=http://www.cs.columbia.edu/~jae/4995-LAST/code/601/rand1.cpp>rand1.cpp</a></li>
+</ul></li>
+<li>Normal distribution</li>
+<li>Mersenne Twister engine</li>
+<li>Danger of narrowing conversions</li>
+<li>Stateful functors</li>
+<li><em>Very</em> stateful functors
+<ul>
+<li><a href=http://www.cs.columbia.edu/~jae/4995-LAST/code/601/Makefile>Makefile</a>, <a href=http://www.cs.columbia.edu/~jae/4995-LAST/code/601/rand2.cpp>rand2.cpp</a>,
+<a href=http://www.cs.columbia.edu/~jae/4995-LAST/code/601/c2cpp_util.h>c2cpp_util.h</a></li>
+</ul></li>
+</ul></li>
+</ul>
+<table>
+<colgroup>
+<col>
+</colgroup>
+<thead>
+</thead>
+<tbody>
+<tr>
+ <td> 6/8 </td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>Variadic templates</p>
+<ul>
+<li>lvalue vs. rvalue</li>
+<li>Forwarding reference</li>
+<li><code>std::forward&lt;T&gt;</code>
+<ul>
+<li><a href=http://www.cs.columbia.edu/~jae/4995-LAST/code/608/Makefile>Makefile</a>, <a href=http://www.cs.columbia.edu/~jae/4995-LAST/code/608/values.cpp>values.cpp</a>,
+<a href=http://www.cs.columbia.edu/~jae/4995-LAST/code/608/c2cpp_util.h>c2cpp_util.h</a></li>
+</ul></li>
+<li>Variadic template using recursion</li>
+<li>Forwarding parameter pack</li>
+<li>Fold expression
+<ul>
+<li><a href=http://www.cs.columbia.edu/~jae/4995-LAST/code/608/Makefile>Makefile</a>, <a href=http://www.cs.columbia.edu/~jae/4995-LAST/code/608/variadic.cpp>variadic.cpp</a>,
+<a href=http://www.cs.columbia.edu/~jae/4995-LAST/code/608/c2cpp_util.h>c2cpp_util.h</a></li>
+</ul></li>
+</ul></li>
+<li><p>Smart pointers</p>
+<ul>
+<li><code>SmartPtr&lt;T&gt;</code> implementation</li>
+<li><code>MakeSmartPtr()</code></li>
+<li><code>shared_ptr&lt;T&gt;</code> &amp; <code>make_shared()</code></li>
+<li>Features of <code>shared_ptr&lt;T&gt;</code>
+<ul>
+<li><a href=http://www.cs.columbia.edu/~jae/4995-LAST/code/608/Makefile>Makefile</a>, <a href=http://www.cs.columbia.edu/~jae/4995-LAST/code/608/smartptr.cpp>smartptr.cpp</a>,
+<a href=http://www.cs.columbia.edu/~jae/4995-LAST/code/608/c2cpp_util.h>c2cpp_util.h</a></li>
+</ul></li>
+</ul></li>
+</ul>
+<table>
+<colgroup>
+<col>
+</colgroup>
+<thead>
+</thead>
+<tbody>
+<tr>
+ <td> 6/10 </td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>Template Metaprogramming – <em>Guest lecture by James Yang</em></p>
+<ul>
+<li><p>Abstract:</p>
+<p>With a growing need for highly-optimized code in speed-critical
+applications, developers must seek other venues from traditional
+methods for greater optimization. In this lecture, we will introduce
+one such method called template metaprogramming, a C++ programming
+technique to make compile-time optimizations that mitigate run-time
+overhead. Specifically, we will study three common use-cases:
+compile-time function evaluation, compile-time unrolling of recursive
+function calls, and expression templates. We will also discuss the
+benefits as well as the drawbacks of these methods.</p>
+<ul>
+<li>Computing factorial at compile-time</li>
+<li>Optimizing pow function for integral exponents
+by branching at compile-time</li>
+<li>Removing unnecessary allocations in matrix operations
+using expression templates</li>
+</ul></li>
+<li><p><a href=http://www.cs.columbia.edu/~jae/4995-LAST/code/610/>Source code</a></p></li>
+</ul></li>
+<li><p>Course wrap-up</p>
+<ul>
+<li><a href=http://www.cs.columbia.edu/~jae/4995-LAST/wrap-up.pdf>Slides</a></li>
+</ul></li>
+</ul>
+<h2 id=assignments>Assignments</h2>
+<ul>
+<li><strong>HW0 Part A due T 5/4</strong></li>
+<li><strong>HW0 Part B due R 5/6</strong></li>
+<li><strong>Lab 1 due Sun 5/9</strong></li>
+<li><strong>Lab 2 due Tue 5/18</strong></li>
+<li><strong>Lab 3 due Thu 5/27</strong></li>
+<li><strong>Final exam on Thu 6/3, 4:10pm</strong></li>
+<li><strong>Lab 4 due <s>Sun 6/13</s> Wed 6/16</strong></li>
+</ul>
+<div id=cyeBlackMaskLayer style=background-color:rgb(19,19,19);position:fixed;width:1980px;height:1080px;z-index:-2147483648 class=sf-hidden></div><div id=cye-workaround-body style="position:absolute;left:0px;top:0px;z-index:-2147483646;background:none 0% 0%/auto repeat scroll padding-box border-box rgb(255,255,255);height:5310px;width:1903px" class=sf-hidden></div><div id=cye-workaround-body-image style="position:absolute;left:0px;top:0px;z-index:-2147483645;background:none 0% 0%/auto repeat scroll padding-box border-box rgba(0,0,0,0);height:5310px;width:1903px" class=sf-hidden></div>
