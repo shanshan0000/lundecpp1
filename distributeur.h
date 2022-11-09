@@ -47,8 +47,7 @@ const T &Pile<T>::item() const {
 
 template<class T>
 unsigned int Pile<T>::size() const {
-    return list<T>::size
-            ();
+    return list<T>::size();
 }
 
 template<class T>
