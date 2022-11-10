@@ -26,20 +26,30 @@ public:
 
     class iterator {
     public:
-        iterator& operator++(){ ++current; return *this; }
-        const pair<A,B>& operator*() const { return *current; }
-        bool operator==(const iterator& it) const {
-            return current==it.current;
+        iterator &operator++() {
+            ++current;
+            return *this;
         }
-        bool operator!=(const iterator& it) const {
-            return current!=it.current;
+
+        const pair<A, B> &operator*() const { return *current; }
+
+        bool operator==(const iterator &it) const {
+            return current == it.current;
         }
-        iterator(typename set<pair<A,B> >::const_iterator it
-        =set<pair<A,B> >::const_iterator()):current(it){}
+
+        bool operator!=(const iterator &it) const {
+            return current != it.current;
+        }
+
+        iterator(typename set<pair<A, B> >::const_iterator it
+        = set<pair<A, B> >::const_iterator()) : current(it) {}
+
     private:
-        typename set<pair<A,B> >::const_iterator current;
+        typename set<pair<A, B> >::const_iterator current;
     };
+
     iterator begin() const { return iterator(couples.begin()); }
+
     iterator end() const { return iterator(couples.end()); }
 
 protected :
