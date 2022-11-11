@@ -20,30 +20,14 @@ public:
         (*counter)[e] ++;
     }
 
-    class iterator {
+    class iterator : public std::map<char, int>::iterator {
     public:
         iterator(std::map<char, int>::iterator it = std::map<char, int>::iterator())
-            : it_value(it) {}
-
-        iterator &operator++() {
-            ++it_value;
-            return *this;
-        }
-
-        bool operator==(const iterator& it) const {
-            return it_value == it.it_value;
-        }
-
-        bool operator!=(const iterator& it) const {
-            return it_value != it.it_value;
-        }
+            : std::map<char, int>::iterator(it) {}
 
         char operator*() const {
-            return it_value->first;
+            return std::map<char, int>::iterator::operator*().first;
         }
-
-    private:
-        std::map<char, int>::iterator it_value;
     };
 
     iterator begin() const {
