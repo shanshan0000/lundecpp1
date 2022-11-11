@@ -18,6 +18,7 @@ public:
 
 template<class Vertex>
 class GraphG {
+private:
     map<Vertex, set<Vertex> > adj;
     unsigned int nbEdges;
     string name;
@@ -88,7 +89,8 @@ void GraphG<V>::addEdge(const V &i, const V &j) {
 template<class V>
 void GraphG<V>::removeEdge(const V &i, const V &j) {
     typename map<V, set<V> >::iterator it = adj.find(i);
-    if (it != adj.end()) nbEdges -= it->second.erase(j);
+    if (it != adj.end())
+        nbEdges -= it->second.erase(j);
 }
 
 template<class V>
@@ -138,7 +140,8 @@ public:
 template<class V>
 typename GraphG<V>::successor_iterator GraphG<V>::begin_successor(const V &x) const {
     typename map<V, set<V> >::const_iterator it = adj.find(x);
-    if (it != adj.end()) return successor_iterator(it->second.begin());
+    if (it != adj.end())
+        return successor_iterator(it->second.begin());
     throw GraphException("bad argument: vertex not defined");
 }
 
@@ -146,7 +149,8 @@ typename GraphG<V>::successor_iterator GraphG<V>::begin_successor(const V &x) co
 template<class V>
 typename GraphG<V>::successor_iterator GraphG<V>::end_successor(const V &x) const {
     typename map<V, set<V> >::const_iterator it = adj.find(x);
-    if (it != adj.end()) return successor_iterator(it->second.end());
+    if (it != adj.end())
+        return successor_iterator(it->second.end());
     throw GraphException("bad argument: vertex not defined");
 }
 
