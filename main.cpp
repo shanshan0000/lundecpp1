@@ -3,26 +3,28 @@
 #include <set>
 #include <map>
 #include <list>
+#include <vector>
+#include <algorithm>
 
 
-class FrequencySet : public std::list<char> {
+class Counter : public std::vector<char> {
 public:
-    FrequencySet() : std::list<char>() {
-        counter = new std::map<char, int>();
+    Counter() : std::vector<char>() {
+        t = new std::set<char>();
     }
 
-    ~FrequencySet() {
-        delete counter;
+    ~Counter() {
+        delete t;
     }
 
     void insert(const char e) {
-        this->std::list<char>::push_back(e);
-        (*counter)[e] ++;
+        this->std::vector<char>::push_back(e);
+        t->insert(e);
     }
 
     class iterator {
     public:
-        iterator(std::map<char, int>::iterator it = std::map<char, int>::iterator())
+        iterator(std::set<char>::iterator it = std::set<char>::iterator())
             : it_value(it) {}
 
         iterator &operator++() {
@@ -38,31 +40,42 @@ public:
             return it_value != it.it_value;
         }
 
-        char operator*() const {
-            return it_value->first;
+        std::pair<char, int> operator*() const {
+            return std::make_pair(*it_value,
+                    std::count(v->std::vector<char>::begin(),
+                            v->std::vector<char>::end(), *it_value));
+        }
+
+        void setCounter(const Counter* c) {
+            this->v = c;
         }
 
     private:
-        std::map<char, int>::iterator it_value;
+        const Counter *v;
+        std::set<char>::iterator it_value;
     };
 
     iterator begin() const {
-        return iterator(counter->begin());
+        iterator it = iterator(t->begin());
+        it.setCounter(this);
+        return it;
     }
 
     iterator end() const {
-        return iterator(counter->end());
+        iterator it = iterator(t->end());
+        it.setCounter(this);
+        return it;
     }
 
 private:
-    std::map<char, int>* counter;
+    std::set<char>* t;
 };
 
 
 
 
 int main() {
-    FrequencySet s;
+    Counter s;
     s.insert('C');
     s.insert('B');
     s.insert('B');
@@ -75,7 +88,7 @@ int main() {
     s.insert('C');
     s.insert('C');
     for(auto p : s) {
-        std::cout << p << " ";
+        std::cout << p.first << " " << p.second << std::endl;
     }
     return 0;
 }
