@@ -26,6 +26,8 @@ int main() {
         G3.addEdge("IA02", "NF16");
         G3.addEdge("NF93", "NF16");
         cout << G3;
-    } catch (exception e) { std::cout << e.what() << "\n"; }
+    } catch (exception e) {
+        std::cout << e.what() << "\n";
+    }
     return 0;
 }
