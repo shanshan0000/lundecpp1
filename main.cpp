@@ -12,13 +12,13 @@ int main() {
         G2.addEdge('e', 'b');
         cout << G2;
         cout << "vertices of G2 are: ";
-        for (GraphG<char>::vertex_iterator it = G2.begin_vertex();
-             it != G2.end_vertex(); ++it)
+        for (GraphG<char>::vertex_iterator it = G2.begin_vertex(); it != G2.end_vertex(); ++it)
             cout << *it << " ";
         cout << "\nsuccessors of a: ";
         for (GraphG<char>::successor_iterator it = G2.begin_successor('a'); it != G2.end_successor('a'); ++it) {
             std::cout << *it << " ";
         }
+
         GraphG<string> G3("Pref");
         G3.addEdge("LO21", "IA01");
         G3.addEdge("IA02", "IA01");
