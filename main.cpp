@@ -22,28 +22,17 @@ public:
         t->insert(e);
     }
 
-    class iterator {
+    class iterator : public std::set<char>::iterator{
     public:
         iterator(std::set<char>::iterator it = std::set<char>::iterator())
-            : it_value(it) {}
-
-        iterator &operator++() {
-            ++it_value;
-            return *this;
-        }
-
-        bool operator==(const iterator& it) const {
-            return it_value == it.it_value;
-        }
-
-        bool operator!=(const iterator& it) const {
-            return it_value != it.it_value;
-        }
+            : std::set<char>::iterator(it) {}
 
         std::pair<char, int> operator*() const {
-            return std::make_pair(*it_value,
+            return std::make_pair(
+                    this->std::set<char>::iterator::operator*(),
                     std::count(v->std::vector<char>::begin(),
-                            v->std::vector<char>::end(), *it_value));
+                        v->std::vector<char>::end(),
+                        this->std::set<char>::iterator::operator*()));
         }
 
         void setCounter(const Counter* c) {
@@ -52,7 +41,6 @@ public:
 
     private:
         const Counter *v;
-        std::set<char>::iterator it_value;
     };
 
     iterator begin() const {
