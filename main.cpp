@@ -33,7 +33,7 @@ public:
             return iterator(tmp);
         }
 
-        const int operator*() const {
+        int& operator*() const {
             return *current;
         }
 
@@ -59,7 +59,7 @@ public:
     class iterator : public MyVector::iterator {
     public:
         // 这儿的星号可以不重载
-        int operator*() {
+        int& operator*() {
             return MyVector::iterator::operator*();
         }
 
