@@ -111,8 +111,7 @@ int main() {
         std::cout << *it << "\n";
 // maintenant, on peut aussi utiliser un range for
     for (auto &e : mon_agenda)
-        std:
-        cout << e << "\n";
+        std::cout << e << "\n";
 
 
     MyAgenda a;
