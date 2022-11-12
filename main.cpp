@@ -12,6 +12,10 @@ public:
             arr[i] = i;
     }
 
+    ~MyVector() {
+        delete [] arr;
+    }
+
     class iterator {
     public:
         int *current;
