@@ -121,8 +121,8 @@ public:
 
     void operator()(const V &x) {
         flux << x << ":";
-        for (typename GraphG<V>::successor_iterator it = G.begin_successor(x); it != G.
-                end_successor(x); ++it) {
+        for (typename GraphG<V>::successor_iterator it = G.begin_successor(x);
+                it != G.end_successor(x); ++it) {
             flux << *it << " ";
         }
         flux << "\n";
