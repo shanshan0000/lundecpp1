@@ -12,6 +12,10 @@ public:
             arr[i] = i;
     }
 
+    ~MyVector() {
+        delete [] arr;
+    }
+
     class iterator {
     public:
         int *current;
@@ -33,7 +37,7 @@ public:
             return iterator(tmp);
         }
 
-        const int operator*() const {
+        int& operator*() const {
             return *current;
         }
 
@@ -59,7 +63,7 @@ public:
     class iterator : public MyVector::iterator {
     public:
         // 这儿的星号可以不重载
-        int operator*() {
+        int& operator*() {
             return MyVector::iterator::operator*();
         }
 
@@ -112,7 +116,6 @@ int main() {
 // maintenant, on peut aussi utiliser un range for
     for (auto &e : mon_agenda)
         std:cout << e << "\n";
-
 
     MyAgenda a;
     for (MyAgenda::iterator it = a.begin(); it != a.end(); ++it)
