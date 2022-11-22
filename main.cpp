@@ -22,7 +22,7 @@ public:
 
         iterator(int *c) : current(c) {}
 
-        bool operator!=(iterator another) {
+        bool operator!=(iterator another) const {
             return current != another.current;
         }
 
