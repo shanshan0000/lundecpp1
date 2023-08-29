@@ -136,11 +136,11 @@ NAN | [ex40-ans](../../tree/ex40-ans)  | [leetcode-2215](https://leetcode.com/pr
 
 <details closed>
 
-#### Mid-term exam revision
+#### Midterm exam revision
 
 *Note: I make those videos so as to help you revise more targetedly. It represents significant extra work (for free) on my side.*
 
-For mid-term exam revision,  [Ex23_Ex24_solution.pdf](../../tree/master/pdf/Ex23_Ex24_solution.pdf) will help a lot, and [LO02_poly_exercices.pdf](../../tree/master/pdf/LO02_poly_exercices.pdf) is your best friend.
+For midterm exam revision,  [Ex23_Ex24_solution.pdf](../../tree/master/pdf/Ex23_Ex24_solution.pdf) will help a lot, and [LO02_poly_exercices.pdf](../../tree/master/pdf/LO02_poly_exercices.pdf) is your best friend.
 
 - **Mid-term exam revision #1 - Ex70 (poly exercise)**
     - Video:
