@@ -435,16 +435,6 @@ For debugging with CLion, watch this:
 > 有红色波浪线，不能编译，那就不能 debug。
 
 
-#### Flipped Classroom
-
-Watching videos before coming to classroom, that's called flipped classroom.
-
-- [Stanford CS229 Machine Learning course](https://www.youtube.com/watch?v=jGwO_UgTS7I&list=PLoROMvodv4rMiGQp3WXShtMGgzqpfVfbU)
-- https://www.researchgate.net/figure/Students-perceptions-toward-watching-videos-prior-to-class_tbl2_292155097
-- https://en.wikipedia.org/wiki/Flipped_classroom
-- https://bokcenter.harvard.edu/flipped-classrooms
-- https://www.sciencedirect.com/science/article/abs/pii/S0360131521002761 
-
 #### How to clone this repository
 
 ##### Method 1:
