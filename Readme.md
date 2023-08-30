@@ -11,7 +11,9 @@
 ## Lectures (Cours  Magistraux) :orange_book:
 
 <details>
+
 #### Time
+
 Each Monday, 18:00-21:40
 
 #### Classroom
