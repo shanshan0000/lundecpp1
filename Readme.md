@@ -10,6 +10,7 @@
 
 ## Lectures (Cours  Magistraux) :orange_book:
 
+<details>
 #### Time
 Each Monday, 18:00-21:40
 
@@ -19,6 +20,8 @@ CJ207 (For both G1 and G2)
 #### Course videos
 
 :tv: Course videos by Prof. Antoine Jouglet are on Chaoxing Platform.
+
+</details>
 
 ## Travaux Dirigés (TD)  :computer:
 
@@ -48,7 +51,7 @@ Windows 10
 
 ## Exercises & Solutions :mag:
 
-<details open>
+<details close>
 
 
 #### List of all videos
@@ -182,7 +185,7 @@ For final exam revision, [LO02_poly_exercices.pdf](../../tree/master/pdf/LO02_po
 
 ## Project :hammer:
 
-<details open>
+<details>
 
 
 
