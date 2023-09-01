@@ -3,7 +3,8 @@
 
 ### Inline
 
-![https://www.geeksforgeeks.org/inline-functions-cpp/](inline.png)
+![](inline.png)
+[source](https://www.geeksforgeeks.org/inline-functions-cpp/)
 
 
 
