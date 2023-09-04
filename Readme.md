@@ -19,6 +19,12 @@ Each Monday, 18:00-20:40
 #### Classroom
 CJ207 (For both G1 and G2)
 
+
+#### Tencent Meeting (VooV Meeting):
+
+Room ID：958 9491 5777
+
+
 #### Course videos
 
 :tv: Course videos by Prof. Antoine Jouglet are on Chaoxing Platform.
