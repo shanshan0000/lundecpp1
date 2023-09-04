@@ -7,6 +7,10 @@
 [source](https://www.geeksforgeeks.org/inline-functions-cpp/)
 
 
+### Pointer, Reference
+
+![Alt text](image-41.png)
+
 ### Funny 
 
 ![Alt text](image-29.png)
