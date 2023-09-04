@@ -14,7 +14,7 @@
 
 #### Time
 
-Each Monday, 18:00-20:40
+Each Monday, 18:00-20:45
 
 #### Classroom
 CJ207 (For both G1 and G2)
