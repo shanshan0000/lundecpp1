@@ -18,7 +18,7 @@ int main() {
     *pt4=2.1; // ok, modification de la valeur pointée possible
     *pt5=2.1; // erreur, pas de modification de la valeur pointée possible à partir d’ un pointeur const
     pt4=&d2; // erreur, pas de conversion implicite posssible de const double* vers
-    double* pt5=&d2; // ok
+    pt5=&d2; // ok
     double* const pt6=&d1; // ok
     pt6=&d1; // erreur, on ne peut pas changer la valeur d’un pointeur constant
     *pt6=2.78; // ok, pt6 est un pointeur constant, mais pas un pointeur const
