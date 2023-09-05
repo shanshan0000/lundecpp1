@@ -30,7 +30,9 @@ void init(point* pt, int _x, int _y, int _z) {
 
 // alternative méthode de classe
 void point::init(int _x, int _y, int _z) {
-    x = _x; y = _y; z = _z;
+    this->x = _x;
+    this->y = _y;
+    (*this).z = _z;
     cout << this->x << " " << this->y << " " << this->z << " " << endl;
     cout << (*this).x << " " << (*this).y << " " << (*this).z << " " << endl;
     cout << x << " " << y << " " << z << " " << endl;
