@@ -15,6 +15,10 @@ void essai_init() {
     init(&p,1);
     init(&p,1,2);
     init(&p,1,2,3);
+    init(p);
+    init(p,1);
+    init(p,1,2);
+    init(p,1,2,3);
 }
 
 int main() {
