@@ -6,6 +6,8 @@ int main() {
 //double* pt1=4096; // erreur, pas de conversion implicite de int vers double*
     double* pt2=(double*)4096; // ok, conversion explicite de type C autorisée; dangereux à utiliser (est ce que cette adresse est valide ? y a t-il une valeur de type double à cette adresse) ;
 //double* pt2=reinterpret_cast<double*>(4096); // est la façon de faire en C++
+    double number = 99.9;
+    double* pt1 = &number;
     void* pt3=pt1; // ok, conversion implicite de double* en void* autorisée
     pt1=pt3; // erreur, conversion implicite de void* en double* interdite
     pt1=static_cast<double*>(pt3); // ok, conversion explicite autorisée
