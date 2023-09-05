@@ -21,6 +21,7 @@ int main() {
     pt5=&d2; // ok
     double* const pt6=&d1; // ok
     pt6=&d1; // erreur, on ne peut pas changer la valeur d’un pointeur constant
+    pt6=&d2; // erreur, on ne peut pas changer la valeur d’un pointeur constant
     *pt6=2.78; // ok, pt6 est un pointeur constant, mais pas un pointeur const
     double* const pt6b=&d2; // erreur, pas de conversion de const double* vers double* const
     const double* const pt7=&d1; // ok
