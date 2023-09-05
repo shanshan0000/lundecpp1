@@ -20,14 +20,19 @@ void init(point* pt) {
 
 void init(point& pt, int _x, int _y, int _z) {
     pt.x=_x; pt.y=_y; pt.z=_z;
+    cout << pt.x << " " << pt.y << " " << pt.z << " " << endl;
 }
 
 void init(point* pt, int _x, int _y, int _z) {
     pt->x=_x; pt->y=_y; pt->z=_z;
+    cout << pt->x << " " << pt->y << " " << pt->z << " " << endl;
 }
 
 // alternative méthode de classe
 void point::init(int _x, int _y, int _z) {
     x = _x; y = _y; z = _z;
+    cout << this->x << " " << this->y << " " << this->z << " " << endl;
+    cout << (*this).x << " " << (*this).y << " " << (*this).z << " " << endl;
+    cout << x << " " << y << " " << z << " " << endl;
 }
 

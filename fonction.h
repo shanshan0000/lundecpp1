@@ -1,6 +1,9 @@
 #ifndef CPP_FONCTION_H
 #define CPP_FONCTION_H
 
+#include <iostream>
+using namespace std;
+
 struct point {
     int x;
     int y;
