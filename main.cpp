@@ -3,6 +3,7 @@
 int main() {
     personne p1;
     affiche_struct(p1);
+    affiche_struct(&p1);
     raz(p1);
     affiche_struct(p1);
     personne p2={"Cooper", 28 };

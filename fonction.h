@@ -10,6 +10,7 @@ struct personne {
     unsigned int age;
 };
 void raz(personne& p);
+void raz(personne* p);
 void affiche_struct(const personne& p);
 void affiche_struct(const personne*);
 void affiche_tab(const personne* p, size_t n);

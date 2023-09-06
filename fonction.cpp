@@ -9,6 +9,17 @@ void raz(personne& p){
     p.age=0;
 }
 
+void raz(personne* p){
+    *(p->nom)=0;
+//    *((*p).nom)=0;
+//    *(p->nom)='\0';
+//    p->nom[0] = '\0';
+//    (p->nom)[0] = 0;
+//    *(p->nom) = 0;
+    p->age=0;
+//    (*p).age=0;
+}
+
 void affiche_struct(const personne& p){
     cout<<"NOM : "<<p.nom<<", age="<<p.age<<"\n";
 }
