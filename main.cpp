@@ -12,6 +12,11 @@ int main() {
     copy_struct(p1,p2);
     affiche_struct(p2);
     personne tab1[3]={ "Cooper", 28, "Wolowitz", 27, "Hofstadter", 30 };
+
+    affiche_tab(tab1, 3);
+    affiche_tab_2(tab1, 3);
+    affiche_tab_3(tab1, 3);
+
     personne tab2[3];
     copy_tab(tab2,tab1,3);
     affiche_tab(tab2,3);

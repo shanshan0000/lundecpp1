@@ -1,10 +1,11 @@
 #include "fonction.h"
 
 void raz(personne& p){
-    *(p.nom)=0;
+//    *(p.nom)=0;
 //    *p.nom='\0';
 //    p.nom[0] = '\0';
 //    ((&p)->nom)[0] = 0;
+    *((&p)->nom) = 0;
     p.age=0;
 }
 
@@ -22,6 +23,22 @@ void affiche_tab(const personne* p, size_t n){
         affiche_struct(p);
         p++;
 //        affiche_struct(*p++);
+    }
+}
+
+
+void affiche_tab_2(const personne* p, size_t n){
+    for(size_t i=0; i<n; i++)
+    {
+        affiche_struct(*p);
+        p++;
+    }
+}
+
+void affiche_tab_3(const personne* p, size_t n){
+    for(size_t i=0; i<n; i++)
+    {
+        affiche_struct(p[i]);
     }
 }
 
