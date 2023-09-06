@@ -8,7 +8,8 @@ int main() {
     personne p2={"Cooper", 28 };
     affiche_struct(p2);
     init_struct(p2, "Wolowitz", 27);
-    affiche_struct(p2);copy_struct(p1,p2);
+    affiche_struct(p2);
+    copy_struct_2(p1,p2);
     affiche_struct(p2);
     personne tab1[3]={ "Cooper", 28, "Wolowitz", 27, "Hofstadter", 30 };
     personne tab2[3];

@@ -16,6 +16,7 @@ void affiche_struct(const personne& p);
 void affiche_tab(const personne* p, size_t n);
 void init_struct(personne& p, const std::string& n, unsigned int a);
 void copy_struct(personne& dest, const personne& source);
+void copy_struct_2(personne&, const personne&);
 void copy_tab(personne* dest, const personne* source, size_t n);
 
 

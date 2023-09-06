@@ -25,6 +25,11 @@ compilateur automatiquement. Une copie champ par champ n’est donc pas nécessa
     dest=source;
 }
 
+void copy_struct_2(personne& dest, const personne& source){
+    dest.age=source.age;
+    dest.nom=source.nom;
+}
+
 void copy_tab(personne* dest, const personne* source, size_t n){
     for(size_t i=0; i<n; i++) dest[i]=source[i];
 }
