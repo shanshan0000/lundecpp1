@@ -6,7 +6,7 @@
 
 *最新通知会出现在这儿。每次上课前请查看。*
 
-- https://github.com/ocademy-ai/machine-learning
+- https://github.com/ocademy-ai/machine-learning (I expect 239 stars before I work for free for the revision.)
 - [New] [大家可以开始做项目了](pdf/LO02_Projet_A23_Schotten_Totten.pdf)
 - [New] [项目分组，大家填一下 ](https://docs.qq.com/doc/DT1R1RFdJdFRSUHVw)
 
