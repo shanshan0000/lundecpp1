@@ -43,10 +43,6 @@ std::ostream &operator<<(std::ostream &f, const Performance &d) {
     return f;
 }
 
-void Player::setPerformancePlayoff(const Performance &p) {
-    playoff = const_cast<Performance *>(&p);
-}
-
 Player::Player(const string &p, const string &n, const Performance &_regular, const Performance &_playoff) :
         Player(p, n, _regular) //nom(n), prenom(p), regular(nais) // alternative
 {
@@ -100,14 +96,14 @@ const Player &Team::getPlayer(const string &p, const string &n) const {
     for (size_t i = 0; i < nb; i++)
         if (players[i]->getNom() == n && players[i]->getNom() == p)
             return *players[i];
-    throw "erreur : player inexistant";
+    throw "error : player not existing";
 }
 
 Player &Team::getPlayer(const string &p, const string &n) {
     for (size_t i = 0; i < nb; i++)
         if (players[i]->getNom() == n && players[i]->getNom() == p)
             return *players[i];
-    throw "erreur : player inexistant";
+    throw "error : player not existing";
 }
 
 Team::~Team() {
