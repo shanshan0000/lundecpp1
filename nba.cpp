@@ -77,7 +77,8 @@ Player &Player::operator=(const Player &p) {
 }
 
 void Chemistry::ajouterBuddy(const Player &p, const Player &s) {
-    if (nb == nbMax) enlargeTable();
+    if (nb == nbMax)
+        enlargeTable();
     tab[nb++] = Buddy(p, s);
 }
 
