@@ -1,6 +1,6 @@
 #include "nba.h"
 
-Performance::Performance(size_t j, size_t m, size_t a) : points(j), rebounds(m), assists(a) {}
+Performance::Performance(size_t p, size_t r, size_t a) : points(p), rebounds(r), assists(a) {}
 
 size_t Performance::getPoints() const {
     return points;
@@ -14,9 +14,9 @@ size_t Performance::getAssists() const {
     return assists;
 }
 
-void Performance::setPerformance(size_t j, size_t m, size_t a) {
-    points = j;
-    rebounds = m;
+void Performance::setPerformance(size_t p, size_t r, size_t a) {
+    points = p;
+    rebounds = r;
     assists = a;
 }
 
@@ -37,14 +37,14 @@ bool operator>(const Performance &p1, const Performance &p2) {
     return !(p1 < p2);
 }
 
-std::ostream &operator<<(std::ostream &f, const Performance &d) {
-    f << d.getPoints() << " points, " << d.getRebounds()
-      << " rebounds, " << d.getAssists() << " assists";
+std::ostream &operator<<(std::ostream &f, const Performance &p) {
+    f << p.getPoints() << " points, " << p.getRebounds()
+      << " rebounds, " << p.getAssists() << " assists";
     return f;
 }
 
 Player::Player(const string &p, const string &n, const Performance &_regular, const Performance &_playoff) :
-        Player(p, n, _regular) //nom(n), prenom(p), regular(nais) // alternative
+        Player(p, n, _regular) //nom(n), prenom(p), regular(_regular) // alternative
 {
     setPerformancePlayoff(_playoff);
 }
@@ -57,14 +57,14 @@ Player::Player(const Player &i) : prenoms(i.prenoms), nom(i.nom), regular(i.regu
     if (i.playoff) playoff = new Performance(*i.playoff);
 }
 
-Player &Player::operator=(const Player &i) {
-    if (this != &i) {
-        prenoms = i.prenoms;
-        nom = i.nom;
-        regular = i.regular;
-        if (i.playoff) {
-            if (!playoff) playoff = new Performance(*i.playoff);
-            else *playoff = *i.playoff;
+Player &Player::operator=(const Player &p) {
+    if (this != &p) {
+        prenoms = p.prenoms;
+        nom = p.nom;
+        regular = p.regular;
+        if (p.playoff) {
+            if (!playoff) playoff = new Performance(*p.playoff);
+            else *playoff = *p.playoff;
         } else {
             delete playoff;
             playoff = nullptr;
@@ -87,21 +87,21 @@ void Chemistry::enlargeTable() {
     delete[] old;
 }
 
-void Team::ajouterPlayer(const Player &i) {
+void Team::ajouterPlayer(const Player &p) {
     if (nb == nbMax) enlargeTable();
-    players[nb++] = new Player(i);
+    players[nb++] = new Player(p);
 }
 
-const Player &Team::getPlayer(const string &p, const string &n) const {
+const Player &Team::getPlayer(const string &_prenoms, const string &_nom) const {
     for (size_t i = 0; i < nb; i++)
-        if (players[i]->getNom() == n && players[i]->getNom() == p)
+        if (players[i]->getNom() == _nom && players[i]->getPrenoms() == _prenoms)
             return *players[i];
     throw "error : player not existing";
 }
 
-Player &Team::getPlayer(const string &p, const string &n) {
+Player &Team::getPlayer(const string &_prenoms, const string &_nom) {
     for (size_t i = 0; i < nb; i++)
-        if (players[i]->getNom() == n && players[i]->getNom() == p)
+        if (players[i]->getNom() == _nom && players[i]->getPrenoms() == _prenoms)
             return *players[i];
     throw "error : player not existing";
 }

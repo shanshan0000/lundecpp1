@@ -8,11 +8,11 @@ using namespace std;
 
 class Performance {
 public:
-    Performance(size_t j, size_t m, size_t a);
+    Performance(size_t p, size_t r, size_t a);
     size_t getPoints() const;
     size_t getRebounds() const;
     size_t getAssists() const;
-    void setPerformance(size_t j, size_t m, size_t a);
+    void setPerformance(size_t p, size_t r, size_t a);
 
 private:
     size_t points, rebounds;
@@ -21,7 +21,7 @@ private:
 
 bool operator<(const Performance& p1, const Performance& p2);
 bool operator>(const Performance& p1, const Performance& p2);
-std::ostream& operator<<(std::ostream& f, const Performance& d);
+std::ostream& operator<<(std::ostream& f, const Performance& p);
 
 class Player {
 public:
@@ -37,9 +37,9 @@ public:
     Player(const string &p, const string &n, const Performance &_regular) :
             nom(n), prenoms(p), regular(_regular) {}
     Player(const string &p, const string &n, const Performance &_regular, const Performance &_playoff);
-    Player(const Player &i);
+    Player(const Player &p);
     ~Player() { delete playoff; }
-    Player &operator=(const Player &i);
+    Player &operator=(const Player &p);
 
 private:
     string prenoms;
@@ -77,9 +77,9 @@ public:
     ~Team();
     Team(const Team &) = delete;
     Team &operator=(const Team &) = delete;
-    void ajouterPlayer(const Player &i);
-    const Player &getPlayer(const string &p, const string &n) const;
-    Player &getPlayer(const string &p, const string &n);
+    void ajouterPlayer(const Player &p);
+    const Player &getPlayer(const string &_prenoms, const string &_nom) const;
+    Player &getPlayer(const string &_prenoms, const string &_nom);
     void addBuddies(const Player &p1, const Player &p2);
 
 private:
