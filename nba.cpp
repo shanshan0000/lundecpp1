@@ -46,7 +46,7 @@ std::ostream &operator<<(std::ostream &f, const Performance &p) {
 
 Player::Player(const string &p, const string &n,
         const Performance &_regular, const Performance &_playoff) :
-        Player(p, n, _regular) //nom(n), prenom(p), regular(_regular) // alternative
+        Player(p, n, _regular) //nom(n), prenoms(p), regular(_regular) // alternative
 {
     setPerformancePlayoff(_playoff);
 }
