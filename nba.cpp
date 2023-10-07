@@ -53,8 +53,8 @@ void Player::setPerformancePlayoff(const Performance &_playoff) {
     playoff = new Performance(_playoff);
 }
 
-Player::Player(const Player &i) : prenoms(i.prenoms), nom(i.nom), regular(i.regular) {
-    if (i.playoff) playoff = new Performance(*i.playoff);
+Player::Player(const Player &p) : prenoms(p.prenoms), nom(p.nom), regular(p.regular) {
+    if (p.playoff) playoff = new Performance(*p.playoff);
 }
 
 Player &Player::operator=(const Player &p) {
