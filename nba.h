@@ -36,7 +36,8 @@ public:
     void setPerformancePlayoff(const Performance &d);
     Player(const string &p, const string &n, const Performance &_regular) :
             nom(n), prenoms(p), regular(_regular) {}
-    Player(const string &p, const string &n, const Performance &_regular, const Performance &_playoff);
+    Player(const string &p, const string &n, const Performance &_regular,
+            const Performance &_playoff);
     Player(const Player &p);
     ~Player() { delete playoff; }
     Player &operator=(const Player &p);
