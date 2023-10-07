@@ -1,6 +1,7 @@
 #include "nba.h"
 
-Performance::Performance(size_t p, size_t r, size_t a) : points(p), rebounds(r), assists(a) {}
+Performance::Performance(size_t p, size_t r, size_t a) :
+    points(p), rebounds(r), assists(a) {}
 
 size_t Performance::getPoints() const {
     return points;
@@ -43,7 +44,8 @@ std::ostream &operator<<(std::ostream &f, const Performance &p) {
     return f;
 }
 
-Player::Player(const string &p, const string &n, const Performance &_regular, const Performance &_playoff) :
+Player::Player(const string &p, const string &n,
+        const Performance &_regular, const Performance &_playoff) :
         Player(p, n, _regular) //nom(n), prenom(p), regular(_regular) // alternative
 {
     setPerformancePlayoff(_playoff);
